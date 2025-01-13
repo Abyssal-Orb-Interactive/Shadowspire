@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.r3": "1.2.9",
+    "com.cysharp.ulid": "1.3.4",
+    "com.cysharp.zstring": "2.6.0",
+    "com.github-glitchenzo.nugetforunity": "4.2.0",
+    "com.leopotam.ecslite": "2024.5.22",
+    "com.leopotam.ecslite.di": "2024.5.22",
+    "com.littlebigfun.addressable-importer": "0.16.1",
     "com.unity.addressables": "2.2.2",
     "com.unity.cinemachine": "3.1.2",
     "com.unity.feature.2d": "2.0.1",
@@ -10,6 +17,7 @@
     "com.unity.test-framework": "1.4.5",
     "com.unity.timeline": "1.8.7",
     "com.unity.ugui": "2.0.0",
+    "jp.hadashikick.vcontainer": "1.16.8",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
@@ -41,6 +49,25 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0"
-  }
+    "com.unity.modules.xr": "1.0.0",
+    "com.cysharp.unitask": "2.5.10"
+  },
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.cysharp.mastermemory",
+        "com.cysharp.r3",
+        "com.cysharp.ulid",
+        "com.cysharp.unitask",
+        "com.cysharp.zstring",
+        "com.github-glitchenzo.nugetforunity",
+        "com.leopotam.ecslite",
+        "com.leopotam.ecslite.di",
+        "com.littlebigfun.addressable-importer",
+        "jp.hadashikick.vcontainer"
+      ]
+    }
+  ]
 }
