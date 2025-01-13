@@ -21,7 +21,7 @@ namespace UseCases
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float CalculateHealthAfterDamage(in IAtomicValue<float> health, float damage)
+        public static float CalculateHealthAfterDamage(in IAtomicValue<float> health, in float damage)
         {
             return CalculateHealthAfterDamage(health.CurrentValue, damage);
         }

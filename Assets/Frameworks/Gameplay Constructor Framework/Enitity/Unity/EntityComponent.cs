@@ -79,7 +79,12 @@ namespace GameplayConstructorFramework.Entity.Unity
 
             return result;
         }
-        
+
+        private void Reset()
+        {
+            _entity = new Entity();
+        }
+
         public void Awake()
         {
             _gameLoopComponent ??= GameObject.Find("Game Loop").GetComponent<GameLoopComponent>();

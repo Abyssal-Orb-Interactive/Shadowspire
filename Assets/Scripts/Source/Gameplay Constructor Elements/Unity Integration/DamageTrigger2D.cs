@@ -9,19 +9,16 @@ namespace GameplayConstructorElements.UnityIntegration
     [Serializable]
     public sealed class DamageTrigger2D : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D otherEntityGameObject)
+        private void OnTriggerEnter2D(Collider2D otherEntityCollider)
         {
-            if (!gameObject.TryGetEntity(out var entity) || !entity.TryGetDamageData(out var damage)) return;
-            if (!otherEntityGameObject.TryGetEntity(out var otherEntity)) return;
-            
-            otherEntity.TakeDamage(damage);
         }
         
-        private void OnTriggerStay2D(Collider2D other)
+        private void OnTriggerStay2D(Collider2D otherEntityCollider)
         {
+            otherEntityCollider.TryTakeDamageFrom(this);
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        private void OnTriggerExit2D(Collider2D otherEntityCollider)
         {
         }
     }

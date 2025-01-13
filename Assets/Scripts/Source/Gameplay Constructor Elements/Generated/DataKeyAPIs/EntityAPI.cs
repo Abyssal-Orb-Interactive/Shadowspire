@@ -100,9 +100,39 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.Damage);
           }
 
+        public static bool TryGetInvincibilitySecondsDurationData(this IEntity entity, out AtomicReactiveProperty<float> invincibilitySecondsDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InvincibilitySecondsDuration, out invincibilitySecondsDuration);
+         }
+
+         public static bool TryAddInvincibilitySecondsDurationData(this IEntity entity, AtomicReactiveProperty<float> invincibilitySecondsDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InvincibilitySecondsDuration, invincibilitySecondsDuration);
+          }
+
+         public static bool TryRemoveInvincibilitySecondsDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InvincibilitySecondsDuration);
+          }
+
          #endregion
 
          #region behavioursAPI
+
+        public static bool TryGetInvincibilityBehaviourBehaviour(this IEntity entity, out InvincibilityBehaviour invincibilityBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InvincibilityBehaviour, out invincibilityBehaviour);
+         }
+
+         public static bool TryAddInvincibilityBehaviourBehaviour(this IEntity entity, InvincibilityBehaviour invincibilityBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.InvincibilityBehaviour, invincibilityBehaviour);
+          }
+
+         public static bool TryRemoveInvincibilityBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<InvincibilityBehaviour>((int)GlobalBehavioursAPI.InvincibilityBehaviour);
+          }
 
         public static bool TryGetSpriteSetUpBehaviourBehaviour(this IEntity entity, out SpriteSetUpBehaviour spriteSetUpBehaviour)
          {

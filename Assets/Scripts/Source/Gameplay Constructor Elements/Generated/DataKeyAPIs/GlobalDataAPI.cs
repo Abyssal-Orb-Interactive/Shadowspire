@@ -8,5 +8,6 @@ namespace GameplayConstructorFrameworkAPIs
     MaxHealth = 3,
     Health = 4,
     Damage = 5,
+    InvincibilitySecondsDuration = 6,
      }
 }
