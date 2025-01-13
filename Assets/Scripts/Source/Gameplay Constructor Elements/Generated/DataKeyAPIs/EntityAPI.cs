@@ -55,6 +55,36 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.SpriteRenderer);
           }
 
+        public static bool TryGetMaxHealthData(this IEntity entity, out AtomicReactiveProperty<float> maxHealth)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MaxHealth, out maxHealth);
+         }
+
+         public static bool TryAddMaxHealthData(this IEntity entity, AtomicReactiveProperty<float> maxHealth)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MaxHealth, maxHealth);
+          }
+
+         public static bool TryRemoveMaxHealthData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MaxHealth);
+          }
+
+        public static bool TryGetHealthData(this IEntity entity, out AtomicReactiveProperty<float> health)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Health, out health);
+         }
+
+         public static bool TryAddHealthData(this IEntity entity, AtomicReactiveProperty<float> health)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Health, health);
+          }
+
+         public static bool TryRemoveHealthData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Health);
+          }
+
          #endregion
 
          #region behavioursAPI
