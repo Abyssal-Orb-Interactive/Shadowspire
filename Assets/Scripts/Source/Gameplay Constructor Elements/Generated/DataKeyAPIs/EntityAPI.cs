@@ -85,6 +85,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.Health);
           }
 
+        public static bool TryGetDamageData(this IEntity entity, out AtomicReactiveProperty<float> damage)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Damage, out damage);
+         }
+
+         public static bool TryAddDamageData(this IEntity entity, AtomicReactiveProperty<float> damage)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Damage, damage);
+          }
+
+         public static bool TryRemoveDamageData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Damage);
+          }
+
          #endregion
 
          #region behavioursAPI
