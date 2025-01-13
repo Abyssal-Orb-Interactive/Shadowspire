@@ -11,8 +11,6 @@ namespace GameplayConstructorElements.UnityIntegration
     {
         private void OnTriggerEnter2D(Collider2D otherEntityGameObject)
         {
-            Debug.Log(otherEntityGameObject.name);
-            
             if(!gameObject.TryGetComponent<IEntity>(out var entity) || !entity.TryGetDamageData(out var damage)) return;
             if (!otherEntityGameObject.TryGetComponent<IEntity>(out var otherEntity)) return;
             
