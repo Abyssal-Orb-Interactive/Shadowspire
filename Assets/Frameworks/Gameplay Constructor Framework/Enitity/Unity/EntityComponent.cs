@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using AtomicFramework.AtomicStructures;
-using Base.Testing.Enitity;
 using Base.UnityIntegration;
+using GameplayConstructor.Enitity.Behaviours;
 using GameplayConstructorFrameworkAPIs;
 using Sirenix.OdinInspector;
 #if UNITY_EDITOR

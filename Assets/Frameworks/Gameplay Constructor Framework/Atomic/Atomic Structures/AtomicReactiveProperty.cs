@@ -80,6 +80,8 @@ namespace AtomicFramework.AtomicStructures
 
         public override bool Equals(object obj)
         {
+            if (obj == null || CurrentValue == null) return false;
+            
             if (obj is AtomicReactiveProperty<T> another)
             {
                 return CurrentValue.Equals(another.CurrentValue);

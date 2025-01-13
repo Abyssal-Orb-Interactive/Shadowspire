@@ -1,4 +1,4 @@
-﻿using Base.Testing.Enitity;
+﻿using GameplayConstructor.Enitity.Behaviours;
 
 namespace GameplayConstructorFramework.Enitity
 {

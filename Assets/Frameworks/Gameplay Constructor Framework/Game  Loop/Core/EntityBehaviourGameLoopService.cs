@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Base.Testing.Enitity;
-using UnityEngine;
+using GameplayConstructor.Enitity.Behaviours;
 
 namespace Base
 {

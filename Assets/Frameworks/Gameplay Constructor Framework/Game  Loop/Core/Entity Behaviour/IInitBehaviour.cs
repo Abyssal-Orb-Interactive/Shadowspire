@@ -1,4 +1,4 @@
-﻿namespace Base.Testing.Enitity
+﻿namespace GameplayConstructor.Enitity.Behaviours
 {
     public interface IInitBehaviour : IGameLoopBehaviour
     {

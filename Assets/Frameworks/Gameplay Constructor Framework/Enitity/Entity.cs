@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using AtomicFramework.AtomicStructures;
 using Base;
-using Base.Testing.Enitity;
+using GameplayConstructor.Enitity.Behaviours;
 using UnityEngine;
 
 namespace GameplayConstructorFramework.Entity
