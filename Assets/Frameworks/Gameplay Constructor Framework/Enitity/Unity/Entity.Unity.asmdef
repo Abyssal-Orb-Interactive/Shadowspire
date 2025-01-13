@@ -1,0 +1,22 @@
+{
+    "name": "Unity",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7779e053dc881db4d997ca5a1c38a4a4",
+        "GUID:16f76dc4a43563b4eb36a879450bc358",
+        "GUID:826625fb5a408514cb9c2bdfaed12def",
+        "GUID:8b9baf253a524bc88195eb930dccaade",
+        "GUID:67484c7e305382c40bb3556439800d47",
+        "GUID:930c1838c76e4e5993ff61534d908728",
+        "GUID:1f79e805b829a3049950aef471d15304"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

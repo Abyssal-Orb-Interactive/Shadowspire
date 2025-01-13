@@ -1,0 +1,20 @@
+{
+    "name": "GameplayConstructor.UnityExtensions",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:2665a8d13d1b3f18800f46e256720795",
+        "GUID:930c1838c76e4e5993ff61534d908728",
+        "GUID:204d28477e544a0ea17389c4991a40f9",
+        "GUID:7779e053dc881db4d997ca5a1c38a4a4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

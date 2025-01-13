@@ -1,0 +1,24 @@
+{
+    "name": "GameplayConstructorElements",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7779e053dc881db4d997ca5a1c38a4a4",
+        "GUID:930c1838c76e4e5993ff61534d908728",
+        "GUID:8b9baf253a524bc88195eb930dccaade",
+        "GUID:826625fb5a408514cb9c2bdfaed12def",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:204d28477e544a0ea17389c4991a40f9",
+        "GUID:870c50fdbce2aeb428000575a2cdf11e",
+        "GUID:d8b63aba1907145bea998dd612889d6b",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Entity.APIs",
+    "rootNamespace": "",
+    "references": [
+        "GUID:826625fb5a408514cb9c2bdfaed12def"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
