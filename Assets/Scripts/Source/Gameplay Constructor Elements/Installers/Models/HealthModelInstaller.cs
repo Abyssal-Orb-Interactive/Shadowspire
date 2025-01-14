@@ -13,7 +13,7 @@ namespace GameplayConstructorElements.Installers.Models
     {
         [SerializeField] private AtomicReactiveProperty<float> _maxHealth = new();
         [SerializeField] private AtomicReactiveProperty<float> _health = new();
-        [SerializeReference] private IEntityConditionFabric[] _entityConditionFabrics = Array.Empty<IEntityConditionFabric>();
+        [SerializeReference] private IEntityConditionFabric[] _canTakeDamageConditionFabrics = Array.Empty<IEntityConditionFabric>();
         [SerializeField] private AtomicReactiveProperty<bool> _invincibility = new();
         [SerializeField] private AtomicReactiveProperty<float> _invincibilitySecondsDuration = new();
         public void InstallTo(IEntity entity)
@@ -24,7 +24,7 @@ namespace GameplayConstructorElements.Installers.Models
             entity.TryAddInvincibilitySecondsDurationData(_invincibilitySecondsDuration);
             
             var canTakeDamageCondition = new AtomicBoolMultiplication();
-            canTakeDamageCondition.AppendBy(_entityConditionFabrics, entity);
+            canTakeDamageCondition.AppendBy(_canTakeDamageConditionFabrics, entity);
             entity.TryAddCanTakeDamageData(canTakeDamageCondition);
             
             entity.TryAddInvincibilityBehaviourBehaviour(new InvincibilityBehaviour(entity));

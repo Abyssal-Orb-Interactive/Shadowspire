@@ -21,7 +21,7 @@ namespace GameplayConstructorElements.Behaviours
         private float _elapsedInvincibilitySeconds = 0f;
         public InvincibilityBehaviour()
         {
-            _entity = null;
+            _entity = new Entity();
         }
 
         public InvincibilityBehaviour(IEntity entity)

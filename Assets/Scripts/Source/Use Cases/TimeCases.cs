@@ -9,7 +9,7 @@ namespace UseCases
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetUpElapsedTimeByDeltaTime(ref float timer)
         {
-            timer = timer.CalculateElapsedTimeBy(Time.deltaTime);
+            timer = timer.CalculateIncreasedValueWithZeroLowerBoundBy(Time.deltaTime);
         }
     }
 }
