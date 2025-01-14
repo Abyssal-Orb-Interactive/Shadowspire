@@ -115,6 +115,36 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InvincibilitySecondsDuration);
           }
 
+        public static bool TryGetCanTakeDamageData(this IEntity entity, out AtomicExpression<bool> canTakeDamage)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanTakeDamage, out canTakeDamage);
+         }
+
+         public static bool TryAddCanTakeDamageData(this IEntity entity, AtomicExpression<bool> canTakeDamage)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanTakeDamage, canTakeDamage);
+          }
+
+         public static bool TryRemoveCanTakeDamageData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanTakeDamage);
+          }
+
+        public static bool TryGetInvincibilityData(this IEntity entity, out AtomicReactiveProperty<bool> invincibility)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Invincibility, out invincibility);
+         }
+
+         public static bool TryAddInvincibilityData(this IEntity entity, AtomicReactiveProperty<bool> invincibility)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Invincibility, invincibility);
+          }
+
+         public static bool TryRemoveInvincibilityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Invincibility);
+          }
+
          #endregion
 
          #region behavioursAPI

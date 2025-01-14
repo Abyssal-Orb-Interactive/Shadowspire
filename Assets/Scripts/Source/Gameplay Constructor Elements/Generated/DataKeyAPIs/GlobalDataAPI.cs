@@ -9,5 +9,7 @@ namespace GameplayConstructorFrameworkAPIs
     Health = 4,
     Damage = 5,
     InvincibilitySecondsDuration = 6,
+    CanTakeDamage = 7,
+    Invincibility = 8,
      }
 }

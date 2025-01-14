@@ -1,6 +1,7 @@
 using AtomicFramework.AtomicStructures;
 using FluentAssertions;
 using GameplayConstructorElements.EntityExtensions;
+using GameplayConstructorElements.Expressions.Conditions;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
@@ -40,6 +41,21 @@ namespace Tests.EntityExtensionsTests
             new {DamageRecived = result}.Should().Be(new {DamageRecived = true});
         }
         
+        [Test]
+        public void WhenEntityTryTakeDamage_AndEntityHasHealthAndHaveCanTakeDamageConditionThatReturnsFalse_ThenShouldBeFalse()
+        {
+            // Arrange.
+            var entity = SetUp.EntityWithHealthAndCanTakeDamage(0f);
+            const float damage = 1f;
+            
+            // Act.
+            var result = entity.TryTakeDamage(damage);
+
+            // Assert.
+            new {DamageRecived = result}.Should().Be(new {DamageRecived = false});
+        }
+
+
         [Test]
         public void WhenEntityTryTakeDamage_AndDamagerEntityDoesNotHaveDamage_ThenShouldBeFalse()
         {
@@ -115,7 +131,7 @@ namespace Tests.EntityExtensionsTests
         {
             // Arrange.
             var entity = SetUp.EntityWithHealth(10f);
-            var damagerComponent = Create.DamgerComponent();
+            var damagerComponent = Create.DamagerComponent();
 
             // Act.
             var result = entity.TryTakeDamageFrom(damagerComponent);

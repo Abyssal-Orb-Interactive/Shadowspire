@@ -39,7 +39,7 @@ namespace Tests.EntityExtensionsTests.TestsScriptLanguage
         
         public static Component DamagerComponentWithEntity()
         {
-            var damagerComponent = Create.DamgerComponent();
+            var damagerComponent = Create.DamagerComponent();
             damagerComponent.gameObject.AddComponent<EntityComponent>();
             return damagerComponent;
         }
@@ -71,6 +71,16 @@ namespace Tests.EntityExtensionsTests.TestsScriptLanguage
             entityCollider.gameObject.TryGetComponent<IEntity>(out var entity);
             entity.TryAddHealthData(new AtomicReactiveProperty<float>(health));
             return entityCollider;
+        }
+
+        public static IEntity EntityWithHealthAndCanTakeDamage(in float damage = 0f)
+        {
+            var entity = SetUp.EntityWithHealth(damage);
+            var conditionFabrics = Create.ConditionFabricsWithIsAliveConditionFabric();
+            var canTakeDamageCondition = Create.CanTakeDamageConditionByBoolMultiplication();
+            canTakeDamageCondition.AppendBy(conditionFabrics, entity);
+            entity.TryAddCanTakeDamageData(canTakeDamageCondition);
+            return entity;
         }
     }
 }

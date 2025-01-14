@@ -1,7 +1,6 @@
 using System.Runtime.CompilerServices;
 using AtomicFramework.AtomicStructures;
 using GameplayConstructorFramework.Entity;
-using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
 using UnityEngine;
 using UseCases;
@@ -44,8 +43,30 @@ namespace GameplayConstructorElements.EntityExtensions
         public static bool TryTakeDamage(this IEntity entity, in float damage)
         {
             if(!entity.TryGetHealthData(out var health)) return false;
-            health.Value = DamageCases.CalculateHealthAfterDamage(health, damage);
+            
+            if (entity.TryGetCanTakeDamageData(out var canTakeDamage))
+            {
+                if (!canTakeDamage.CurrentValue) return false;
+                
+                entity.SetUpHealthAfterDamageAndInvincibility(health, damage);
+                return true;
+            }
+
+            entity.SetUpHealthAfterDamageAndInvincibility(health, damage);
             return true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetUpHealthAfterDamageAndInvincibility(this IEntity entity, in AtomicReactiveProperty<float> health, in float damage)
+        {
+            health.SetUpHealthAfterDamage(damage);
+            if (entity.TryGetInvincibilityData(out var invincibility)) invincibility.Value = true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetUpHealthAfterDamage(this AtomicReactiveProperty<float> health, in float damage)
+        {
+            health.Value = DamageCases.CalculateHealthAfterDamage(health, damage);
         }
     }
 }

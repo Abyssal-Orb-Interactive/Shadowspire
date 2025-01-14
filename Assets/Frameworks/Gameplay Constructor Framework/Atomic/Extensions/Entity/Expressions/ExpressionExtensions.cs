@@ -13,7 +13,7 @@ namespace AtomicFramework.AtomicStructures
 
             for (var i = 0; i < count; i++)
             {
-                expression.Append(conditionBuilders[i].Create(entity));
+                expression.Append(conditionBuilders[i].CreateFor(entity));
             }
         }
         public static void AppendBy(this IAtomicExpression<bool> expression, IReadOnlyList<IEntityConditionFabric> conditionBuilders, IEntity entity)
@@ -24,7 +24,7 @@ namespace AtomicFramework.AtomicStructures
 
             for (var i = 0; i < count; i++)
             {
-                expression.Append(conditionBuilders[i].Create(entity));
+                expression.Append(conditionBuilders[i].CreateFor(entity));
             }
         }
         
@@ -36,7 +36,7 @@ namespace AtomicFramework.AtomicStructures
 
             for (var i = 0; i < count; i++)
             {
-                expression.Append(conditionBuilders[i].Create(entity));
+                expression.Append(conditionBuilders[i].CreateFor(entity));
             }
         }
         
@@ -48,7 +48,7 @@ namespace AtomicFramework.AtomicStructures
 
             for (var i = 0; i < count; i++)
             {
-                expression.Append(conditionBuilders[i].Create(entity));
+                expression.Append(conditionBuilders[i].CreateFor(entity));
             }
         }
         public static void AppendBy(this IAtomicExpression<int, bool> expression, IReadOnlyList<IEntityConditionFabric<int>> conditionBuilders, IEntity entity)
@@ -59,7 +59,7 @@ namespace AtomicFramework.AtomicStructures
 
             for (var i = 0; i < count; i++)
             {
-                expression.Append(conditionBuilders[i].Create(entity));
+                expression.Append(conditionBuilders[i].CreateFor(entity));
             }
         }
         
@@ -71,7 +71,7 @@ namespace AtomicFramework.AtomicStructures
 
             for (var i = 0; i < count; i++)
             {
-                expression.Append(conditionBuilders[i].Create(entity));
+                expression.Append(conditionBuilders[i].CreateFor(entity));
             }
         }
     }
