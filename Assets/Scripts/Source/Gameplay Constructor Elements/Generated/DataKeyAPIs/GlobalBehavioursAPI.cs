@@ -8,5 +8,6 @@ namespace GameplayConstructorFrameworkAPIs
     MovementInputHandlingBehaviour = 3,
     MovementBehaviour = 4,
     SpriteFlippingBehaviour = 5,
+    InteractionInputHandlingBehaviour = 6,
      }
 }

@@ -37,6 +37,24 @@ namespace InputActions
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a4c17b9-1757-4d65-a195-41b057a619ec"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""9abb0719-78a2-4f42-a43d-b61d152fd837"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -105,6 +123,28 @@ namespace InputActions
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07f16cc1-3b28-4862-ac5e-e3e7896559da"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard+Mouse"",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2dfcbd0-d1cb-4b3f-9782-c2271c50d734"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard+Mouse"",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -131,6 +171,8 @@ namespace InputActions
             // Base Map
             m_BaseMap = asset.FindActionMap("Base Map", throwIfNotFound: true);
             m_BaseMap_Movement = m_BaseMap.FindAction("Movement", throwIfNotFound: true);
+            m_BaseMap_Interaction = m_BaseMap.FindAction("Interaction", throwIfNotFound: true);
+            m_BaseMap_Use = m_BaseMap.FindAction("Use", throwIfNotFound: true);
         }
 
         ~@PlayerActions()
@@ -198,11 +240,15 @@ namespace InputActions
         private readonly InputActionMap m_BaseMap;
         private List<IBaseMapActions> m_BaseMapActionsCallbackInterfaces = new List<IBaseMapActions>();
         private readonly InputAction m_BaseMap_Movement;
+        private readonly InputAction m_BaseMap_Interaction;
+        private readonly InputAction m_BaseMap_Use;
         public struct BaseMapActions
         {
             private @PlayerActions m_Wrapper;
             public BaseMapActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_BaseMap_Movement;
+            public InputAction @Interaction => m_Wrapper.m_BaseMap_Interaction;
+            public InputAction @Use => m_Wrapper.m_BaseMap_Use;
             public InputActionMap Get() { return m_Wrapper.m_BaseMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -215,6 +261,12 @@ namespace InputActions
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Interaction.started += instance.OnInteraction;
+                @Interaction.performed += instance.OnInteraction;
+                @Interaction.canceled += instance.OnInteraction;
+                @Use.started += instance.OnUse;
+                @Use.performed += instance.OnUse;
+                @Use.canceled += instance.OnUse;
             }
 
             private void UnregisterCallbacks(IBaseMapActions instance)
@@ -222,6 +274,12 @@ namespace InputActions
                 @Movement.started -= instance.OnMovement;
                 @Movement.performed -= instance.OnMovement;
                 @Movement.canceled -= instance.OnMovement;
+                @Interaction.started -= instance.OnInteraction;
+                @Interaction.performed -= instance.OnInteraction;
+                @Interaction.canceled -= instance.OnInteraction;
+                @Use.started -= instance.OnUse;
+                @Use.performed -= instance.OnUse;
+                @Use.canceled -= instance.OnUse;
             }
 
             public void RemoveCallbacks(IBaseMapActions instance)
@@ -251,6 +309,8 @@ namespace InputActions
         public interface IBaseMapActions
         {
             void OnMovement(InputAction.CallbackContext context);
+            void OnInteraction(InputAction.CallbackContext context);
+            void OnUse(InputAction.CallbackContext context);
         }
     }
 }

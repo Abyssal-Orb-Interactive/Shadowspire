@@ -20,6 +20,8 @@ namespace GameplayConstructorFrameworkAPIs
     InputActions = 15,
     CanMove = 16,
     MovementInputAction = 17,
-    Flipped = 18,
+    Coins = 18,
+    InteractionInputAction = 19,
+    Flipped = 20,
      }
 }

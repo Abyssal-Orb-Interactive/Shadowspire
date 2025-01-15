@@ -298,6 +298,36 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.Flipped);
           }
 
+        public static bool TryGetCoinsData(this IEntity entity, out AtomicReactiveProperty<int> coins)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Coins, out coins);
+         }
+
+         public static bool TryAddCoinsData(this IEntity entity, AtomicReactiveProperty<int> coins)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Coins, coins);
+          }
+
+         public static bool TryRemoveCoinsData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Coins);
+          }
+
+        public static bool TryGetInteractionInputActionData(this IEntity entity, out AtomicEvent interactionInputAction)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InteractionInputAction, out interactionInputAction);
+         }
+
+         public static bool TryAddInteractionInputActionData(this IEntity entity, AtomicEvent interactionInputAction)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InteractionInputAction, interactionInputAction);
+          }
+
+         public static bool TryRemoveInteractionInputActionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InteractionInputAction);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -375,6 +405,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveSpriteSetUpBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<SpriteSetUpBehaviour>((int)GlobalBehavioursAPI.SpriteSetUpBehaviour);
+          }
+
+        public static bool TryGetInteractionInputHandlingBehaviourBehaviour(this IEntity entity, out InteractionInputHandlingBehaviour interactionInputHandlingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InteractionInputHandlingBehaviour, out interactionInputHandlingBehaviour);
+         }
+
+         public static bool TryAddInteractionInputHandlingBehaviourBehaviour(this IEntity entity, InteractionInputHandlingBehaviour interactionInputHandlingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.InteractionInputHandlingBehaviour, interactionInputHandlingBehaviour);
+          }
+
+         public static bool TryRemoveInteractionInputHandlingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<InteractionInputHandlingBehaviour>((int)GlobalBehavioursAPI.InteractionInputHandlingBehaviour);
           }
 
         public static bool TryGetMovementInputHandlingBehaviourBehaviour(this IEntity entity, out MovementInputHandlingBehaviour movementInputHandlingBehaviour)

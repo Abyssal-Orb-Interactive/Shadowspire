@@ -12,6 +12,7 @@ namespace GameplayConstructorElements.Installers.Models.Behaviour
         public void InstallTo(IEntity entity)
         {
             entity.TryAddMovementInputHandlingBehaviourBehaviour(new MovementInputHandlingBehaviour(entity));
+            entity.TryAddInteractionInputHandlingBehaviourBehaviour(new InteractionInputHandlingBehaviour(entity));
         }
     }
 }
