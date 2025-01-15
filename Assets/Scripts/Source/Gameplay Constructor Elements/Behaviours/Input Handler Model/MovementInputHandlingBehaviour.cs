@@ -47,7 +47,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         {
             SaveInputActionsToCache();
 
-            _subscribe = _inputActions.Subscribe(OnActionsChanged);
+            //_subscribe = _inputActions.Subscribe(OnActionsChanged);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -71,7 +71,6 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
 
         public void Awake()
         {
-            Dispose();
             OnAwake();
         }
 
@@ -88,8 +87,9 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         private void SubscribeToMovementInput(PlayerActions inputActions)
         {
             inputActions.BaseMap.Movement.performed += InvokeMovementInputAction;
+            inputActions.BaseMap.Movement.canceled += CancelMovementInputAction;
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void EnableBaseMapIn(PlayerActions inputActions)
         {
@@ -102,6 +102,12 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
             var vector2 = context.ReadValue<Vector2>();
             var direction = vector2.ToFloat2();
             _movementInputAction.Invoke(direction);
+        }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void CancelMovementInputAction(InputAction.CallbackContext context)
+        {
+            _movementInputAction.Invoke(float2.zero);
         }
 
         public void Sleep()

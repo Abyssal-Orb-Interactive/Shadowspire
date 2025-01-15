@@ -7,5 +7,6 @@ namespace GameplayConstructorFrameworkAPIs
     LevelingBehaviour = 2,
     MovementInputHandlingBehaviour = 3,
     MovementBehaviour = 4,
+    SpriteFlippingBehaviour = 5,
      }
 }

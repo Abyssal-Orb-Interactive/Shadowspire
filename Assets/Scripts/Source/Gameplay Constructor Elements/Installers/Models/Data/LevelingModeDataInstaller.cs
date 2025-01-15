@@ -1,6 +1,5 @@
 using System;
 using AtomicFramework.AtomicStructures;
-using GameplayConstructorElements.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
@@ -9,7 +8,7 @@ using UnityEngine;
 namespace GameplayConstructorElements.Installers.Models
 {
     [Serializable]
-    public sealed class LevelingModelInstaller : IEntityAtomicElementInstaller
+    public sealed class LevelingModeDataInstaller : IEntityAtomicElementInstaller
     {
         [SerializeField] private AtomicReactiveProperty<int> _level = new();
         [SerializeField] private AtomicReactiveProperty<float> _targetXp = new();
@@ -19,8 +18,6 @@ namespace GameplayConstructorElements.Installers.Models
             entity.TryAddLevelData(_level);
             entity.TryAddXpTargetData(_targetXp);
             entity.TryAddXpData(_xp);
-            
-            entity.TryAddLevelingBehaviourBehaviour(new LevelingBehaviour(entity));
         }
     }
 }

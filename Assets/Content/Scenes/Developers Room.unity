@@ -201,7 +201,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!70 &403697920
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -332,7 +332,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityComponents:
+  - {fileID: 2022747808}
   - {fileID: 403697918}
+  - {fileID: 2006882322}
 --- !u!1 &759895960
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +641,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2022747808}
+    - {fileID: 403697919}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -650,7 +653,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Global.NameInstaller,
@@ -687,7 +690,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|GameplayConstructorElements.Installers.Models.HealthModelInstaller,
+      Data: 5|GameplayConstructorElements.Installers.Models.Data.HealthModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _maxHealth
       Entry: 7
@@ -760,7 +763,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|GameplayConstructorElements.Installers.Models.LevelingModelInstaller,
+      Data: 13|GameplayConstructorElements.Installers.Models.LevelingModeDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _level
       Entry: 7
@@ -778,7 +781,7 @@ MonoBehaviour:
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
-      Data: 10
+      Data: 100
     - Name: 
       Entry: 8
       Data: 
@@ -796,6 +799,52 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 17|GameplayConstructorElements.Installers.Models.MovementModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _rigidbody2D
+      Entry: 7
+      Data: 18|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Rigidbody2D,
+        UnityEngine.Physics2DModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _speed
+      Entry: 7
+      Data: 19|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canMoveConditionsFabtics
+      Entry: 7
+      Data: 20|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 21|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -803,11 +852,32 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 22|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 23|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 24|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -1360,7 +1430,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteInstaller,
@@ -1396,6 +1466,23 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 5|GameplayConstructorElements.Installers.Atomic.Visual.Data.FlippedInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _flipped
+      Entry: 7
+      Data: 6|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -1403,14 +1490,21 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 7|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 6|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+      Data: 8|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteFlippingBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
@@ -1598,24 +1692,11 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|GameplayConstructorElements.Installers.Models.InputHandlerModelInstaller,
+      Data: 1|GameplayConstructorElements.Installers.Models.InputHandlerModelDataInstaller,
         GameplayConstructorElements.Installers
-    - Name: _inputActions
-      Entry: 7
-      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[InputActions.PlayerActions,
-        InputActions]], AtomicStructures
-    - Name: _value
-      Entry: 7
-      Data: 3|InputActions.PlayerActions, InputActions
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: _movementInputAction
       Entry: 7
-      Data: 4|AtomicFramework.AtomicStructures.AtomicEvent`1[[Unity.Mathematics.float2,
+      Data: 2|AtomicFramework.AtomicStructures.AtomicEvent`1[[Unity.Mathematics.float2,
         Unity.Mathematics]], AtomicStructures
     - Name: 
       Entry: 8
@@ -1631,11 +1712,18 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 3|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|GameplayConstructorElements.Installers.Models.Behaviour.InputHandlerModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 

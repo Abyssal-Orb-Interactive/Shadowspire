@@ -283,6 +283,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.CanMove);
           }
 
+        public static bool TryGetFlippedData(this IEntity entity, out AtomicReactiveProperty<bool> flipped)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Flipped, out flipped);
+         }
+
+         public static bool TryAddFlippedData(this IEntity entity, AtomicReactiveProperty<bool> flipped)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Flipped, flipped);
+          }
+
+         public static bool TryRemoveFlippedData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Flipped);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -330,6 +345,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveMovementBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<MovementBehaviour>((int)GlobalBehavioursAPI.MovementBehaviour);
+          }
+
+        public static bool TryGetSpriteFlippingBehaviourBehaviour(this IEntity entity, out SpriteFlippingBehaviour spriteFlippingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.SpriteFlippingBehaviour, out spriteFlippingBehaviour);
+         }
+
+         public static bool TryAddSpriteFlippingBehaviourBehaviour(this IEntity entity, SpriteFlippingBehaviour spriteFlippingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.SpriteFlippingBehaviour, spriteFlippingBehaviour);
+          }
+
+         public static bool TryRemoveSpriteFlippingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<SpriteFlippingBehaviour>((int)GlobalBehavioursAPI.SpriteFlippingBehaviour);
           }
 
         public static bool TryGetSpriteSetUpBehaviourBehaviour(this IEntity entity, out SpriteSetUpBehaviour spriteSetUpBehaviour)

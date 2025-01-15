@@ -1,15 +1,14 @@
 using System;
 using AtomicFramework.AtomicStructures;
-using GameplayConstructorElements.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
 using UnityEngine;
 
-namespace GameplayConstructorElements.Installers.Models
+namespace GameplayConstructorElements.Installers.Models.Data
 {
     [Serializable]
-    public sealed class HealthModelInstaller : IEntityAtomicElementInstaller
+    public sealed class HealthModelDataInstaller : IEntityAtomicElementInstaller
     {
         [SerializeField] private AtomicReactiveProperty<float> _maxHealth = new();
         [SerializeField] private AtomicReactiveProperty<float> _health = new();
@@ -26,8 +25,6 @@ namespace GameplayConstructorElements.Installers.Models
             var canTakeDamageCondition = new AtomicBoolMultiplication();
             canTakeDamageCondition.AppendBy(_canTakeDamageConditionFabrics, entity);
             entity.TryAddCanTakeDamageData(canTakeDamageCondition);
-            
-            entity.TryAddInvincibilityBehaviourBehaviour(new InvincibilityBehaviour(entity));
         }
     }
 }

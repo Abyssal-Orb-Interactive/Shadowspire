@@ -1,6 +1,5 @@
 using System;
 using AtomicFramework.AtomicStructures;
-using GameplayConstructorElements.Behaviours.InputHandlerModel;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
@@ -11,16 +10,13 @@ using UnityEngine;
 namespace GameplayConstructorElements.Installers.Models
 {
     [Serializable]
-    public sealed class InputHandlerModelInstaller : IEntityAtomicElementInstaller
+    public sealed class InputHandlerModelDataInstaller : IEntityAtomicElementInstaller
     {
-        [SerializeField] private AtomicReactiveProperty<PlayerActions> _inputActions = new();
         [SerializeField] private AtomicEvent<float2> _movementInputAction = new();
         public void InstallTo(IEntity entity)
         {
-            entity.TryAddInputActionsData(_inputActions);
+            entity.TryAddInputActionsData(new AtomicReactiveProperty<PlayerActions>(new PlayerActions()));
             entity.TryAddMovementInputActionData(_movementInputAction);
-            
-            entity.TryAddMovementInputHandlingBehaviourBehaviour(new MovementInputHandlingBehaviour(entity));
         }
     }
 }

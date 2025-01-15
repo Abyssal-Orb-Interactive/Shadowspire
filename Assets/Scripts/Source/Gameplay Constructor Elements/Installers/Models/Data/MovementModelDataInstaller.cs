@@ -1,6 +1,5 @@
 using System;
 using AtomicFramework.AtomicStructures;
-using GameplayConstructorElements.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
@@ -9,7 +8,7 @@ using UnityEngine;
 namespace GameplayConstructorElements.Installers.Models
 {
     [Serializable]
-    public sealed class MovementModel : IEntityAtomicElementInstaller
+    public sealed class MovementModelDataInstaller : IEntityAtomicElementInstaller
     {
         [SerializeField] private AtomicReactiveProperty<Rigidbody2D> _rigidbody2D = new();
         [SerializeField] private AtomicReactiveProperty<float> _speed = new();
@@ -23,8 +22,6 @@ namespace GameplayConstructorElements.Installers.Models
             var canMoveCondition = new AtomicBoolMultiplication();
             canMoveCondition.AppendBy(_canMoveConditionsFabtics, entity);
             entity.TryAddCanMoveData(canMoveCondition);
-            
-            entity.TryAddMovementBehaviourBehaviour(new MovementBehaviour(entity));
         }
     }
 }

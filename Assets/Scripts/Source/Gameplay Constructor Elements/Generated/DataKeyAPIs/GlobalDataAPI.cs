@@ -16,9 +16,10 @@ namespace GameplayConstructorFrameworkAPIs
     Xp = 11,
     Speed = 12,
     Rigidbody2D = 13,
-    MovementInputAction = 14,
-    InputHandler = 15,
-    InputActions = 16,
-    CanMove = 17,
+    InputHandler = 14,
+    InputActions = 15,
+    CanMove = 16,
+    MovementInputAction = 17,
+    Flipped = 18,
      }
 }

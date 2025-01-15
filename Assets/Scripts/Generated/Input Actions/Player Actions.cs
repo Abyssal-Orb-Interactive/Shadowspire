@@ -14,8 +14,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
-using UnityEngine.XR;
-using InputDevice = UnityEngine.InputSystem.InputDevice;
 
 namespace InputActions
 {
@@ -34,7 +32,7 @@ namespace InputActions
                 {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
-                    ""id"": ""3c542c14-7d3c-4e69-86b1-759c551b37c7"",
+                    ""id"": ""0f206fcd-5c7d-43ff-af46-a4fb080e1e8a"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -43,8 +41,8 @@ namespace InputActions
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""a0951a02-e21d-4667-a0fb-7f6f7ea8d5b4"",
+                    ""name"": ""AD"",
+                    ""id"": ""2ab556d8-bc56-438d-acd9-f297a21bbe48"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -54,30 +52,8 @@ namespace InputActions
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""5dfbe8d5-64f9-473f-9b04-c5928f18036f"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard+Mouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""af4ec308-9962-4be1-adfc-cf1c8e39df9f"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard+Mouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""left"",
-                    ""id"": ""45fa4377-9703-49df-9799-fb97dfbb6de2"",
+                    ""id"": ""a9984e29-338d-43d7-8603-d86d0d9c38cc"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -88,7 +64,7 @@ namespace InputActions
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""9570b990-7b10-4bd9-8225-bb2a7da51563"",
+                    ""id"": ""695b1116-d132-4a6b-9090-55d4f38d6b2e"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -99,7 +75,7 @@ namespace InputActions
                 },
                 {
                     ""name"": ""Arrows"",
-                    ""id"": ""75db49a0-a921-4480-8642-1ec6f27e9c3b"",
+                    ""id"": ""51a6474b-e03e-4362-aa7b-4d4026952b8a"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -109,45 +85,23 @@ namespace InputActions
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""f2085164-ecbe-461c-8467-2f51d83de474"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard+Mouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""f54b690a-8ef9-4bf8-8471-37bff2b8c467"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard+Mouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""left"",
-                    ""id"": ""c6087fa3-6d6f-4edd-a847-f5ab9641cf5c"",
+                    ""id"": ""555ecaea-fd09-43ef-ba00-0be4f445bbe0"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard+Mouse"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""39b81f24-ed37-4e04-a716-48145ad9e900"",
+                    ""id"": ""60a81be0-d434-4f7a-95ae-e8799bccad40"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard+Mouse"",
+                    ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
