@@ -1,12 +1,8 @@
 {
-    "name": "UseCases",
+    "name": "InputActions",
     "rootNamespace": "",
     "references": [
-        "GUID:930c1838c76e4e5993ff61534d908728",
-        "GUID:d7353df111954620a4c1a9cab1db8a15",
-        "GUID:87bb9a743fd843818b9d8cfa54941644",
-        "GUID:d8b63aba1907145bea998dd612889d6b",
-        "GUID:870c50fdbce2aeb428000575a2cdf11e"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

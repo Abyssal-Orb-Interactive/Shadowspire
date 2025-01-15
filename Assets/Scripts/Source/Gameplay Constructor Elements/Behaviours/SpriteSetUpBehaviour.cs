@@ -19,7 +19,7 @@ namespace GameplayConstructorElements.Behaviours
 
         public SpriteSetUpBehaviour()
         {
-            _entity = null;
+            _entity = new Entity();
         }
 
         public SpriteSetUpBehaviour(IEntity entity)

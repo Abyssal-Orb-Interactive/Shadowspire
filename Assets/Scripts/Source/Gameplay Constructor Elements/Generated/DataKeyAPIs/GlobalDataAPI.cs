@@ -11,5 +11,15 @@ namespace GameplayConstructorFrameworkAPIs
     InvincibilitySecondsDuration = 6,
     CanTakeDamage = 7,
     Invincibility = 8,
+    Level = 9,
+    XpTarget = 10,
+    Xp = 11,
+    Speed = 12,
+    Rigidbody2D = 13,
+    InputHandler = 14,
+    InputActions = 15,
+    CanMove = 16,
+    MovementInputAction = 17,
+    Flipped = 18,
      }
 }
