@@ -577,7 +577,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Global.WalletModel.CoinsInstaller,
@@ -596,6 +596,20 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.InteractionModel.InteractionActionEventInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _interactionActionEvent
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -603,7 +617,7 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12

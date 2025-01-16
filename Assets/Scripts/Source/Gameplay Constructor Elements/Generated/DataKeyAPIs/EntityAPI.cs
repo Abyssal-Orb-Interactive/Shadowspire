@@ -328,6 +328,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InteractionInputAction);
           }
 
+        public static bool TryGetInteractionActionEventData(this IEntity entity, out AtomicEvent<IEntity> interactionActionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InteractionActionEvent, out interactionActionEvent);
+         }
+
+         public static bool TryAddInteractionActionEventData(this IEntity entity, AtomicEvent<IEntity> interactionActionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InteractionActionEvent, interactionActionEvent);
+          }
+
+         public static bool TryRemoveInteractionActionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InteractionActionEvent);
+          }
+
          #endregion
 
          #region behavioursAPI

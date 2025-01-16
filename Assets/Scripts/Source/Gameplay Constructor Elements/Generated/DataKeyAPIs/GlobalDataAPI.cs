@@ -23,5 +23,6 @@ namespace GameplayConstructorFrameworkAPIs
     Coins = 18,
     InteractionInputAction = 19,
     Flipped = 20,
+    InteractionActionEvent = 21,
      }
 }

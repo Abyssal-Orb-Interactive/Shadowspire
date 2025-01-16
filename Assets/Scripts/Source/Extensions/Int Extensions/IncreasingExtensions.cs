@@ -25,5 +25,11 @@ namespace IntExtensions
         {
             value.Value = value.CalculateIncreasedValueWithZeroLowerBoundBy(amount);
         }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void IncreaseValueBy(this IAtomicVariable<int> value, in IAtomicValue<int> amount)
+        {
+            value.CalculateIncreasedValueWithZeroLowerBoundBy(amount.CurrentValue);
+        }
     }
 }

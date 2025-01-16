@@ -1,8 +1,11 @@
 using System;
+using System.Runtime.CompilerServices;
+using GameplayConstructorElements.EntityExtensions;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
 using UnityEngine;
+using UseCases;
 
 namespace GameplayConstructorElements.UnityIntegration
 {
@@ -13,22 +16,20 @@ namespace GameplayConstructorElements.UnityIntegration
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            other.TryGetEntity(out var entity);
-            entity.TryGetInputHandlerData(out var inputHandler);
-            inputHandler.CurrentValue.TryGetInteractionInputActionData(out var interactionInputAction);
-            _subscription = interactionInputAction.Subscribe( () => OnInteraction(entity));
+            if(!this.TryGetEntity(out var entity)) return;
+
+            
+            if(!other.TryGetEntity(out var otherEntity)) return;
+            if(!otherEntity.TryGetInputHandlerData(out var inputHandler)) return;
+            if(!inputHandler.CurrentValue.TryGetInteractionInputActionData(out var interactionInputAction)) return;
+            
+            _subscription = interactionInputAction.Subscribe( () => OnInteraction(entity, otherEntity));
         }
 
-        private void OnInteraction(IEntity otherEntity)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static void OnInteraction(in IEntity entity, in IEntity otherEntity)
         {
-            this.TryGetEntity(out var entity);
-            entity.TryGetCoinsData(out var coins);
-            otherEntity.TryGetCoinsData(out var wallet);
-            
-            wallet.Value += coins.CurrentValue;
-            coins.Value = 0;
-            
-            Destroy(gameObject);
+            entity.TryInvokeInteractionWith(otherEntity);
         }
 
         private void OnTriggerExit2D(Collider2D other)
