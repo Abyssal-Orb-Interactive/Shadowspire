@@ -24,5 +24,8 @@ namespace GameplayConstructorFrameworkAPIs
     InteractionInputAction = 19,
     Flipped = 20,
     InteractionActionEvent = 21,
+    ItemsRegister = 22,
+    ItemsRegisterHolder = 23,
+    Inventory = 24,
      }
 }

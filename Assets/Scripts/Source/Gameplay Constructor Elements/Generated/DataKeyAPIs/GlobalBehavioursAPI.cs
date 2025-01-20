@@ -9,5 +9,7 @@ namespace GameplayConstructorFrameworkAPIs
     MovementBehaviour = 4,
     SpriteFlippingBehaviour = 5,
     InteractionInputHandlingBehaviour = 6,
+    InteractionCoinPickUppingBehaviour = 7,
+    ItemsDroppingBehaviour = 8,
      }
 }

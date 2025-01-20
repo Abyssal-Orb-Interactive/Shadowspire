@@ -41,7 +41,7 @@ namespace AtomicFramework.AtomicStructures
         public void Dispose()
         {
             _onEvent = null;
-            _subscribers.Clear();
+            _subscribers?.Clear();
         }
     }
 

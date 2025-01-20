@@ -3,7 +3,11 @@ using UnityEngine;
 using Unity.Mathematics;
 using InputActions;
 using GameplayConstructorFramework.Entity;
+using ObservableCollections;
+using System.Collections.Generic;
 using GameplayConstructorElements.Behaviours;
+using GameplayConstructorElements.Behaviours.InventoryModel;
+using GameplayConstructorElements.Behaviours.Interaction_Model;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
 
 namespace GameplayConstructorFrameworkAPIs
@@ -343,6 +347,51 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InteractionActionEvent);
           }
 
+        public static bool TryGetInventoryData(this IEntity entity, out ObservableDictionary<string, int> inventory)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Inventory, out inventory);
+         }
+
+         public static bool TryAddInventoryData(this IEntity entity, ObservableDictionary<string, int> inventory)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Inventory, inventory);
+          }
+
+         public static bool TryRemoveInventoryData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Inventory);
+          }
+
+        public static bool TryGetItemsRegisterData(this IEntity entity, out Dictionary<string, IEntity> itemsRegister)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.ItemsRegister, out itemsRegister);
+         }
+
+         public static bool TryAddItemsRegisterData(this IEntity entity, Dictionary<string, IEntity> itemsRegister)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.ItemsRegister, itemsRegister);
+          }
+
+         public static bool TryRemoveItemsRegisterData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.ItemsRegister);
+          }
+
+        public static bool TryGetItemsRegisterHolderData(this IEntity entity, out AtomicReactiveProperty<IEntity> itemsRegisterHolder)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.ItemsRegisterHolder, out itemsRegisterHolder);
+         }
+
+         public static bool TryAddItemsRegisterHolderData(this IEntity entity, AtomicReactiveProperty<IEntity> itemsRegisterHolder)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.ItemsRegisterHolder, itemsRegisterHolder);
+          }
+
+         public static bool TryRemoveItemsRegisterHolderData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.ItemsRegisterHolder);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -420,6 +469,36 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveSpriteSetUpBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<SpriteSetUpBehaviour>((int)GlobalBehavioursAPI.SpriteSetUpBehaviour);
+          }
+
+        public static bool TryGetItemsDroppingBehaviourBehaviour(this IEntity entity, out ItemsDroppingBehaviour itemsDroppingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.ItemsDroppingBehaviour, out itemsDroppingBehaviour);
+         }
+
+         public static bool TryAddItemsDroppingBehaviourBehaviour(this IEntity entity, ItemsDroppingBehaviour itemsDroppingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.ItemsDroppingBehaviour, itemsDroppingBehaviour);
+          }
+
+         public static bool TryRemoveItemsDroppingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<ItemsDroppingBehaviour>((int)GlobalBehavioursAPI.ItemsDroppingBehaviour);
+          }
+
+        public static bool TryGetInteractionCoinPickUppingBehaviourBehaviour(this IEntity entity, out InteractionCoinPickUppingBehaviour interactionCoinPickUppingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InteractionCoinPickUppingBehaviour, out interactionCoinPickUppingBehaviour);
+         }
+
+         public static bool TryAddInteractionCoinPickUppingBehaviourBehaviour(this IEntity entity, InteractionCoinPickUppingBehaviour interactionCoinPickUppingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.InteractionCoinPickUppingBehaviour, interactionCoinPickUppingBehaviour);
+          }
+
+         public static bool TryRemoveInteractionCoinPickUppingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<InteractionCoinPickUppingBehaviour>((int)GlobalBehavioursAPI.InteractionCoinPickUppingBehaviour);
           }
 
         public static bool TryGetInteractionInputHandlingBehaviourBehaviour(this IEntity entity, out InteractionInputHandlingBehaviour interactionInputHandlingBehaviour)
