@@ -4,41 +4,42 @@ using GameplayConstructor.Enitity.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
 using InputActions;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace GameplayConstructorElements.Behaviours.InputHandlerModel
 {
     [Serializable]
-    public sealed class InteractionInputHandlingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class UseInputHandlingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
     {
         private readonly IEntity _entity = null;
-
-        private AtomicEvent _interactionInputAction = null;
+        
         private IReadonlyAtomicReactiveProperty<PlayerActions> _inputActions = null;
+        private IAtomicAction _useInputAction = null;
 
-        public InteractionInputHandlingBehaviour()
+        public UseInputHandlingBehaviour()
         {
             _entity = new Entity();
         }
-        
-        public InteractionInputHandlingBehaviour(IEntity entity)
+
+        public UseInputHandlingBehaviour(IEntity entity)
         {
             _entity = entity;
         }
+
 
         public void Init()
         {
             _entity.TryGetInputActionsData(out var inputActions);
             _inputActions = inputActions;
 
-            _entity.TryGetInteractionInputActionData(out _interactionInputAction);
+            _entity.TryGetUseInputActionData(out var useInputAction);
+            _useInputAction = useInputAction;
             
             OnInit();
         }
 
-        public void OnInit()
-        {
-        }
+        public void OnInit() {}
         
         public void Awake()
         {
@@ -48,24 +49,24 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         
         public void OnAwake()
         {
-            _inputActions.CurrentValue.BaseMap.Interaction.performed += OnInteractionInput;
+            _inputActions.CurrentValue.BaseMap.Use.performed += OnUseInput;
         }
-
-        private void OnInteractionInput(InputAction.CallbackContext context)
+        
+        private void OnUseInput(InputAction.CallbackContext context)
         {
-            _interactionInputAction.Invoke();
+            _useInputAction.Invoke();
         }
-
+        
         public void Sleep()
         {
             OnSleep();
         }
-        
+
         public void OnSleep()
         {
             Dispose();
         }
-        
+
         public void Destroy()
         {
             OnDestroy();
@@ -75,10 +76,10 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         {
             Dispose();
         }
-        
+
         public void Dispose()
         {
-            _inputActions.CurrentValue.BaseMap.Interaction.performed -= OnInteractionInput;
+            _inputActions.CurrentValue.BaseMap.Use.performed -= OnUseInput;
         }
     }
 }

@@ -14,11 +14,13 @@ namespace GameplayConstructorElements.Installers.Models
     {
         [SerializeField] private AtomicEvent<float2> _movementInputAction = new();
         [SerializeField] private AtomicEvent _interactionInputAction = new();
+        [SerializeField] private AtomicEvent _useInputAction = new();
         public void InstallTo(IEntity entity)
         {
             entity.TryAddInputActionsData(new AtomicReactiveProperty<PlayerActions>(new PlayerActions()));
             entity.TryAddMovementInputActionData(_movementInputAction);
             entity.TryAddInteractionInputActionData(_interactionInputAction);
+            entity.TryAddUseInputActionData(_useInputAction);
         }
     }
 }

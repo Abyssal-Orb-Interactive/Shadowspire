@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 403697918}
   - component: {fileID: 403697919}
   - component: {fileID: 403697920}
+  - component: {fileID: 403697922}
+  - component: {fileID: 403697921}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -453,6 +455,64 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &403697921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac67e22e8b8145c5a90e6ef2c3e93e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &403697922
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.3897105, y: -0.003042072}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.40952957, y: 0.45855588}
+  m_EdgeRadius: 0
 --- !u!1 &468170481
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +613,7 @@ MonoBehaviour:
   - {fileID: 2022747808}
   - {fileID: 1262784664}
   - {fileID: 1215446141}
+  - {fileID: 1775444663}
 --- !u!1 &759895960
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +693,137 @@ Transform:
   m_Children: []
   m_Father: {fileID: 468170482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &821984820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821984821}
+  - component: {fileID: 821984822}
+  m_Layer: 0
+  m_Name: ---Sword Logical---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &821984821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821984820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1775444662}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &821984822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821984820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 403697918}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.UserInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _user
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Models.Data.DamageModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _damage
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _damageType
+      Entry: 7
+      Data: 5|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameData.DamageType,
+        GameData]], AtomicStructures
+    - Name: _value
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 7|GameplayConstructorElements.Installers.Atomic.Global.UseModel.UseSwordAttackBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &989224179
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1215446140}
   - component: {fileID: 1215446141}
+  - component: {fileID: 1215446142}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -836,7 +1029,7 @@ Transform:
   m_GameObject: {fileID: 1215446139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.791, y: -2.654, z: 0}
+  m_LocalPosition: {x: -1.41, y: -3.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -862,6 +1055,52 @@ MonoBehaviour:
     <IsActive>k__BackingField:
       _value: 1
     <ID>k__BackingField: 0
+--- !u!61 &1215446142
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215446139}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1262784661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1290,8 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 2022747808}
     - {fileID: 403697919}
+    - {fileID: 1262784664}
+    - {fileID: 1775444663}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1062,7 +1303,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 10
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Global.NameInstaller,
@@ -1271,6 +1512,111 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 24|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.InventoryInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _inventory
+      Entry: 7
+      Data: 25|ObservableCollections.ObservableDictionary`2[[System.String, mscorlib],[System.Int32,
+        mscorlib]], ObservableCollections
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.ItemsRegisterHolderInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _itemsRegisterHolder
+      Entry: 7
+      Data: 27|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|GameplayConstructorElements.Installers.Models.Data.ArmsModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _rightArm
+      Entry: 7
+      Data: 29|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _leftArm
+      Entry: 7
+      Data: 30|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _rightHandEquipActionEvent
+      Entry: 7
+      Data: 31|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _leftHandEquipActionEvent
+      Entry: 7
+      Data: 32|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 33|Source.GameplayConstructorElements.Installers.Models.Data.MeleeAttackModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _targets
+      Entry: 7
+      Data: 34|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _meleeAttackActionEvent
+      Entry: 7
+      Data: 35|AtomicFramework.AtomicStructures.AtomicEvent`2[[System.Single, mscorlib],[GameData.DamageType,
+        GameData]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -1278,28 +1624,42 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 36|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 25|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
+      Data: 37|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
+      Data: 38|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
+      Data: 39|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 40|GameplayConstructorElements.Installers.Models.Behaviour.ArmsModelBehavioursInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 41|GameplayConstructorElements.Installers.Models.Behaviour.MeleeAttackModelBehavioursInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
@@ -1739,6 +2099,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1775444661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775444662}
+  - component: {fileID: 1775444663}
+  m_Layer: 0
+  m_Name: Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1775444662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775444661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 821984821}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775444663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775444661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLoopComponent: {fileID: 1701329704}
+  _entityInitializers:
+  - {fileID: 821984822}
+  _entity:
+    <IsActive>k__BackingField:
+      _value: 1
+    <ID>k__BackingField: 0
 --- !u!1 &1886345792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,7 +2381,7 @@ Transform:
   m_GameObject: {fileID: 2006882320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -3.18, z: 0}
+  m_LocalPosition: {x: 2.183, y: -3.216, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2133,6 +2545,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _useInputAction
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2144,14 +2562,14 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 5|GameplayConstructorElements.Installers.Models.Behaviour.InputHandlerModelBehaviourInstaller,
+      Data: 6|GameplayConstructorElements.Installers.Models.Behaviour.InputHandlerModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
@@ -2405,3 +2823,4 @@ SceneRoots:
   - {fileID: 2022747806}
   - {fileID: 1262784662}
   - {fileID: 1215446140}
+  - {fileID: 1775444662}

@@ -11,5 +11,9 @@ namespace GameplayConstructorFrameworkAPIs
     InteractionInputHandlingBehaviour = 6,
     InteractionCoinPickUppingBehaviour = 7,
     ItemsDroppingBehaviour = 8,
+    UseInputHandlingBehaviour = 9,
+    EquipBehaviour = 10,
+    UseSwordAttackBehaviour = 11,
+    SplashMeleeAttackBehaviour = 12,
      }
 }

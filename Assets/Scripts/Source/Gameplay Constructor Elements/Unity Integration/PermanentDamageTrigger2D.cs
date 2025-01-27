@@ -5,7 +5,7 @@ using UnityEngine;
 namespace GameplayConstructorElements.UnityIntegration
 {
     [Serializable]
-    public sealed class DamageTrigger2D : MonoBehaviour
+    public sealed class PermanentDamageTrigger2D : MonoBehaviour
     {
         private void OnTriggerStay2D(Collider2D otherEntityCollider)
         {

@@ -70,7 +70,8 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         }
 
         public void Awake()
-        {
+        { 
+            Dispose();
             OnAwake();
         }
 
@@ -136,7 +137,6 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         public void Dispose()
         {
             UnsubscribeFromMovementInput(_inputActions.CurrentValue);
-            DisableBaseMapIn(_inputActions.CurrentValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
