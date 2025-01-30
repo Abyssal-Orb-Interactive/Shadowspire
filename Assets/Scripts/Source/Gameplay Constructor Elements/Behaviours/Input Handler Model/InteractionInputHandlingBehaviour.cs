@@ -9,29 +9,31 @@ using UnityEngine.InputSystem;
 namespace GameplayConstructorElements.Behaviours.InputHandlerModel
 {
     [Serializable]
-    public sealed class InteractionInputHandlingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class InteractionInputHandlingBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
+        #region Cache Variables
 
-        private AtomicEvent _interactionInputAction = null;
+        private IAtomicAction _interactionInputAction = null;
         private IReadonlyAtomicReactiveProperty<PlayerActions> _inputActions = null;
 
-        public InteractionInputHandlingBehaviour()
-        {
-            _entity = new Entity();
-        }
-        
-        public InteractionInputHandlingBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
+        #endregion
 
+        #region Constructors
+        
+        public InteractionInputHandlingBehaviour() {}
+        public InteractionInputHandlingBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
+
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetInputActionsData(out var inputActions);
             _inputActions = inputActions;
 
-            _entity.TryGetInteractionInputActionData(out _interactionInputAction);
+            _entity.TryGetInteractionInputActionData(out var interactionInputAction);
+            _interactionInputAction = interactionInputAction;
             
             OnInit();
         }
@@ -78,6 +80,9 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         
         public void Dispose()
         {
+            _inputActions.CurrentValue.BaseMap.Interaction.performed -= OnInteractionInput;
         }
+        
+        #endregion
     }
 }

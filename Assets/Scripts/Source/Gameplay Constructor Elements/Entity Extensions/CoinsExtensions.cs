@@ -9,7 +9,7 @@ namespace GameplayConstructorElements.EntityExtensions
     public static class CoinsExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool TryAddCoins(this IEntity otherEntity, int coins)
+        public static bool TryAddCoins(this IEntity otherEntity, in int coins)
         {
             if(!otherEntity.TryGetCoinsData(out var wallet)) return true;
             wallet.IncreaseValueBy(coins);
@@ -17,7 +17,7 @@ namespace GameplayConstructorElements.EntityExtensions
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool TryAddCoins(this IEntity otherEntity, IAtomicValue<int> coins)
+        public static bool TryAddCoins(this IEntity otherEntity, in IAtomicValue<int> coins)
         {
             return otherEntity.TryAddCoins(coins.CurrentValue);
         }

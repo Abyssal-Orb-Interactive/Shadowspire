@@ -9,5 +9,8 @@ namespace GameplayConstructorFrameworkAPIs
     MovementBehaviour = 4,
     SpriteFlippingBehaviour = 5,
     InteractionInputHandlingBehaviour = 6,
+    UseInputHandlingBehaviour = 7,
+    DeathBehaviour = 8,
+    FollowTargetWithDistanceAndLerpBehaviour = 9,
      }
 }

@@ -15,6 +15,7 @@ namespace GameplayConstructorElements.Installers.Models.Data
         [SerializeReference] private IEntityConditionFabric[] _canTakeDamageConditionFabrics = Array.Empty<IEntityConditionFabric>();
         [SerializeField] private AtomicReactiveProperty<bool> _invincibility = new();
         [SerializeField] private AtomicReactiveProperty<float> _invincibilitySecondsDuration = new();
+        
         public void InstallTo(IEntity entity)
         {
             entity.TryAddMaxHealthData(_maxHealth);

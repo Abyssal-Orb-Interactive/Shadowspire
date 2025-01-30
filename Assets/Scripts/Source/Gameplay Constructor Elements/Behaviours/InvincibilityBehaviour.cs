@@ -1,34 +1,33 @@
 using System;
-using System.Runtime.CompilerServices;
 using AtomicFramework.AtomicStructures;
 using GameplayConstructor.Enitity.Behaviours;
-using GameplayConstructorElements.EntityExtensions;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
-using UnityEngine;
 using UseCases;
 
 namespace GameplayConstructorElements.Behaviours
 {
     [Serializable]
-    public sealed class InvincibilityBehaviour : IInitBehaviour, IFrameRunBehaviour
+    public sealed class InvincibilityBehaviour : BehaviourBase, IInitBehaviour, IFrameRunBehaviour
     {
-        private IEntity _entity = null;
+        private float _elapsedInvincibilitySeconds = 0f;
         
+        #region Cache Varaibles
+
         private IAtomicValue<float> _invincibilitySecondsDuration = null;
         private IAtomicVariable<bool> _invincibility = null;
 
-        private float _elapsedInvincibilitySeconds = 0f;
-        public InvincibilityBehaviour()
-        {
-            _entity = new Entity();
-        }
+        #endregion
+        
+        #region Constructors
+        
+        public InvincibilityBehaviour() {}
+        public InvincibilityBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
 
-        public InvincibilityBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
-
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetInvincibilitySecondsDurationData(out var invincibilitySecondsDuration);
@@ -64,5 +63,7 @@ namespace GameplayConstructorElements.Behaviours
         public void OnDestroy()
         {
         }
+        
+        #endregion
     }
 }

@@ -5,7 +5,6 @@ using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
 using UnityEngine;
-using UseCases;
 
 namespace GameplayConstructorElements.UnityIntegration
 {
@@ -16,8 +15,9 @@ namespace GameplayConstructorElements.UnityIntegration
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Dispose();
+            
             if(!this.TryGetEntity(out var entity)) return;
-
             
             if(!other.TryGetEntity(out var otherEntity)) return;
             if(!otherEntity.TryGetInputHandlerData(out var inputHandler)) return;

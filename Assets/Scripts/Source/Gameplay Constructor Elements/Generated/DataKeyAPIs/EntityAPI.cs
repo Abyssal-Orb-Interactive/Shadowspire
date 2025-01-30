@@ -3,8 +3,13 @@ using UnityEngine;
 using Unity.Mathematics;
 using InputActions;
 using GameplayConstructorFramework.Entity;
+using ObservableCollections;
+using System.Collections.Generic;
+using GameData;
 using GameplayConstructorElements.Behaviours;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
+using GameplayConstructorElements.Behaviours.Following_Model;
+using GameplayConstructorElements.Behaviours.DeathModel;
 
 namespace GameplayConstructorFrameworkAPIs
 {
@@ -88,19 +93,19 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.Health);
           }
 
-        public static bool TryGetDamageData(this IEntity entity, out AtomicReactiveProperty<float> damage)
+        public static bool TryGetCanTakeDamageData(this IEntity entity, out AtomicExpression<bool> canTakeDamage)
          {
-            return entity.TryGetData((int)GlobalDataAPI.Damage, out damage);
+            return entity.TryGetData((int)GlobalDataAPI.CanTakeDamage, out canTakeDamage);
          }
 
-         public static bool TryAddDamageData(this IEntity entity, AtomicReactiveProperty<float> damage)
+         public static bool TryAddCanTakeDamageData(this IEntity entity, AtomicExpression<bool> canTakeDamage)
           {
-            return entity.TryAddData((int)GlobalDataAPI.Damage, damage);
+            return entity.TryAddData((int)GlobalDataAPI.CanTakeDamage, canTakeDamage);
           }
 
-         public static bool TryRemoveDamageData(this IEntity entity)
+         public static bool TryRemoveCanTakeDamageData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.Damage);
+            return entity.TryRemoveData((int)GlobalDataAPI.CanTakeDamage);
           }
 
         public static bool TryGetInvincibilitySecondsDurationData(this IEntity entity, out AtomicReactiveProperty<float> invincibilitySecondsDuration)
@@ -118,19 +123,19 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InvincibilitySecondsDuration);
           }
 
-        public static bool TryGetCanTakeDamageData(this IEntity entity, out AtomicExpression<bool> canTakeDamage)
+        public static bool TryGetDamageData(this IEntity entity, out AtomicReactiveProperty<float> damage)
          {
-            return entity.TryGetData((int)GlobalDataAPI.CanTakeDamage, out canTakeDamage);
+            return entity.TryGetData((int)GlobalDataAPI.Damage, out damage);
          }
 
-         public static bool TryAddCanTakeDamageData(this IEntity entity, AtomicExpression<bool> canTakeDamage)
+         public static bool TryAddDamageData(this IEntity entity, AtomicReactiveProperty<float> damage)
           {
-            return entity.TryAddData((int)GlobalDataAPI.CanTakeDamage, canTakeDamage);
+            return entity.TryAddData((int)GlobalDataAPI.Damage, damage);
           }
 
-         public static bool TryRemoveCanTakeDamageData(this IEntity entity)
+         public static bool TryRemoveDamageData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.CanTakeDamage);
+            return entity.TryRemoveData((int)GlobalDataAPI.Damage);
           }
 
         public static bool TryGetInvincibilityData(this IEntity entity, out AtomicReactiveProperty<bool> invincibility)
@@ -343,6 +348,276 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InteractionActionEvent);
           }
 
+        public static bool TryGetInventoryData(this IEntity entity, out ObservableDictionary<string, int> inventory)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Inventory, out inventory);
+         }
+
+         public static bool TryAddInventoryData(this IEntity entity, ObservableDictionary<string, int> inventory)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Inventory, inventory);
+          }
+
+         public static bool TryRemoveInventoryData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Inventory);
+          }
+
+        public static bool TryGetItemsRegisterData(this IEntity entity, out Dictionary<string, IEntity> itemsRegister)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.ItemsRegister, out itemsRegister);
+         }
+
+         public static bool TryAddItemsRegisterData(this IEntity entity, Dictionary<string, IEntity> itemsRegister)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.ItemsRegister, itemsRegister);
+          }
+
+         public static bool TryRemoveItemsRegisterData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.ItemsRegister);
+          }
+
+        public static bool TryGetItemsRegisterHolderData(this IEntity entity, out AtomicReactiveProperty<IEntity> itemsRegisterHolder)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.ItemsRegisterHolder, out itemsRegisterHolder);
+         }
+
+         public static bool TryAddItemsRegisterHolderData(this IEntity entity, AtomicReactiveProperty<IEntity> itemsRegisterHolder)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.ItemsRegisterHolder, itemsRegisterHolder);
+          }
+
+         public static bool TryRemoveItemsRegisterHolderData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.ItemsRegisterHolder);
+          }
+
+        public static bool TryGetUseInputActionData(this IEntity entity, out AtomicEvent useInputAction)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.UseInputAction, out useInputAction);
+         }
+
+         public static bool TryAddUseInputActionData(this IEntity entity, AtomicEvent useInputAction)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.UseInputAction, useInputAction);
+          }
+
+         public static bool TryRemoveUseInputActionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.UseInputAction);
+          }
+
+        public static bool TryGetLeftHandData(this IEntity entity, out AtomicReactiveProperty<IEntity> leftHand)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.LeftHand, out leftHand);
+         }
+
+         public static bool TryAddLeftHandData(this IEntity entity, AtomicReactiveProperty<IEntity> leftHand)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.LeftHand, leftHand);
+          }
+
+         public static bool TryRemoveLeftHandData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.LeftHand);
+          }
+
+        public static bool TryGetRightHandData(this IEntity entity, out AtomicReactiveProperty<IEntity> rightHand)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.RightHand, out rightHand);
+         }
+
+         public static bool TryAddRightHandData(this IEntity entity, AtomicReactiveProperty<IEntity> rightHand)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.RightHand, rightHand);
+          }
+
+         public static bool TryRemoveRightHandData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.RightHand);
+          }
+
+        public static bool TryGetUserData(this IEntity entity, out AtomicReactiveProperty<IEntity> user)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.User, out user);
+         }
+
+         public static bool TryAddUserData(this IEntity entity, AtomicReactiveProperty<IEntity> user)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.User, user);
+          }
+
+         public static bool TryRemoveUserData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.User);
+          }
+
+        public static bool TryGetLeftHandEquipActionEventData(this IEntity entity, out AtomicEvent<IEntity> leftHandEquipActionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.LeftHandEquipActionEvent, out leftHandEquipActionEvent);
+         }
+
+         public static bool TryAddLeftHandEquipActionEventData(this IEntity entity, AtomicEvent<IEntity> leftHandEquipActionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.LeftHandEquipActionEvent, leftHandEquipActionEvent);
+          }
+
+         public static bool TryRemoveLeftHandEquipActionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.LeftHandEquipActionEvent);
+          }
+
+        public static bool TryGetRightHandEquipActionEventData(this IEntity entity, out AtomicEvent<IEntity> rightHandEquipActionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.RightHandEquipActionEvent, out rightHandEquipActionEvent);
+         }
+
+         public static bool TryAddRightHandEquipActionEventData(this IEntity entity, AtomicEvent<IEntity> rightHandEquipActionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.RightHandEquipActionEvent, rightHandEquipActionEvent);
+          }
+
+         public static bool TryRemoveRightHandEquipActionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.RightHandEquipActionEvent);
+          }
+
+        public static bool TryGetTargetsInDamageZoneData(this IEntity entity, out List<IEntity> targetsInDamageZone)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TargetsInDamageZone, out targetsInDamageZone);
+         }
+
+         public static bool TryAddTargetsInDamageZoneData(this IEntity entity, List<IEntity> targetsInDamageZone)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TargetsInDamageZone, targetsInDamageZone);
+          }
+
+         public static bool TryRemoveTargetsInDamageZoneData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TargetsInDamageZone);
+          }
+
+        public static bool TryGetMeleeAttackActionEventData(this IEntity entity, out AtomicEvent<float, DamageType> meleeAttackActionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MeleeAttackActionEvent, out meleeAttackActionEvent);
+         }
+
+         public static bool TryAddMeleeAttackActionEventData(this IEntity entity, AtomicEvent<float, DamageType> meleeAttackActionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MeleeAttackActionEvent, meleeAttackActionEvent);
+          }
+
+         public static bool TryRemoveMeleeAttackActionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MeleeAttackActionEvent);
+          }
+
+        public static bool TryGetDamageTypeData(this IEntity entity, out AtomicReactiveProperty<DamageType> damageType)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.DamageType, out damageType);
+         }
+
+         public static bool TryAddDamageTypeData(this IEntity entity, AtomicReactiveProperty<DamageType> damageType)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.DamageType, damageType);
+          }
+
+         public static bool TryRemoveDamageTypeData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.DamageType);
+          }
+
+        public static bool TryGetDamageModifiersData(this IEntity entity, out ObservableDictionary<int, float> damageModifiers)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.DamageModifiers, out damageModifiers);
+         }
+
+         public static bool TryAddDamageModifiersData(this IEntity entity, ObservableDictionary<int, float> damageModifiers)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.DamageModifiers, damageModifiers);
+          }
+
+         public static bool TryRemoveDamageModifiersData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.DamageModifiers);
+          }
+
+        public static bool TryGetQuantityData(this IEntity entity, out AtomicReactiveProperty<int> quantity)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Quantity, out quantity);
+         }
+
+         public static bool TryAddQuantityData(this IEntity entity, AtomicReactiveProperty<int> quantity)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Quantity, quantity);
+          }
+
+         public static bool TryRemoveQuantityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Quantity);
+          }
+
+        public static bool TryGetDeathEventData(this IEntity entity, out AtomicEvent deathEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.DeathEvent, out deathEvent);
+         }
+
+         public static bool TryAddDeathEventData(this IEntity entity, AtomicEvent deathEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.DeathEvent, deathEvent);
+          }
+
+         public static bool TryRemoveDeathEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.DeathEvent);
+          }
+
+        public static bool TryGetTransformData(this IEntity entity, out AtomicReactiveProperty<Transform> transform)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Transform, out transform);
+         }
+
+         public static bool TryAddTransformData(this IEntity entity, AtomicReactiveProperty<Transform> transform)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Transform, transform);
+          }
+
+         public static bool TryRemoveTransformData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Transform);
+          }
+
+        public static bool TryGetTargetForFollowingData(this IEntity entity, out AtomicReactiveProperty<IEntity> targetForFollowing)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TargetForFollowing, out targetForFollowing);
+         }
+
+         public static bool TryAddTargetForFollowingData(this IEntity entity, AtomicReactiveProperty<IEntity> targetForFollowing)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TargetForFollowing, targetForFollowing);
+          }
+
+         public static bool TryRemoveTargetForFollowingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TargetForFollowing);
+          }
+
+        public static bool TryGetFollowingDistanceData(this IEntity entity, out AtomicReactiveProperty<float3> followingDistance)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.FollowingDistance, out followingDistance);
+         }
+
+         public static bool TryAddFollowingDistanceData(this IEntity entity, AtomicReactiveProperty<float3> followingDistance)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.FollowingDistance, followingDistance);
+          }
+
+         public static bool TryRemoveFollowingDistanceData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.FollowingDistance);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -450,6 +725,51 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveMovementInputHandlingBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<MovementInputHandlingBehaviour>((int)GlobalBehavioursAPI.MovementInputHandlingBehaviour);
+          }
+
+        public static bool TryGetUseInputHandlingBehaviourBehaviour(this IEntity entity, out UseInputHandlingBehaviour useInputHandlingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.UseInputHandlingBehaviour, out useInputHandlingBehaviour);
+         }
+
+         public static bool TryAddUseInputHandlingBehaviourBehaviour(this IEntity entity, UseInputHandlingBehaviour useInputHandlingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.UseInputHandlingBehaviour, useInputHandlingBehaviour);
+          }
+
+         public static bool TryRemoveUseInputHandlingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<UseInputHandlingBehaviour>((int)GlobalBehavioursAPI.UseInputHandlingBehaviour);
+          }
+
+        public static bool TryGetFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity, out FollowTargetWithDistanceAndLerpBehaviour followTargetWithDistanceAndLerpBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour, out followTargetWithDistanceAndLerpBehaviour);
+         }
+
+         public static bool TryAddFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity, FollowTargetWithDistanceAndLerpBehaviour followTargetWithDistanceAndLerpBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour, followTargetWithDistanceAndLerpBehaviour);
+          }
+
+         public static bool TryRemoveFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<FollowTargetWithDistanceAndLerpBehaviour>((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour);
+          }
+
+        public static bool TryGetDeathBehaviourBehaviour(this IEntity entity, out DeathBehaviour deathBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.DeathBehaviour, out deathBehaviour);
+         }
+
+         public static bool TryAddDeathBehaviourBehaviour(this IEntity entity, DeathBehaviour deathBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.DeathBehaviour, deathBehaviour);
+          }
+
+         public static bool TryRemoveDeathBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<DeathBehaviour>((int)GlobalBehavioursAPI.DeathBehaviour);
           }
 
          #endregion

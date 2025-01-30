@@ -13,32 +13,38 @@ using UnityEngine.InputSystem;
 namespace GameplayConstructorElements.Behaviours.InputHandlerModel
 {
     [Serializable]
-    public sealed class MovementInputHandlingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class MovementInputHandlingBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
+        #region Cache Varaibles
         
         private IReadonlyAtomicReactiveProperty<PlayerActions> _inputActions = null;
-        private AtomicEvent<float2> _movementInputAction = null;
-        
+        private IAtomicAction<float2> _movementInputAction = null;
         private PlayerActions _cache = null;
+        
+        #endregion
+        
+        #region Subscriptions
+        
         private IDisposable _subscribe = null;
+        
+        #endregion
 
-        public MovementInputHandlingBehaviour()
-        {
-            _entity = new Entity();
-        }
+        #region Constructors
+        
+        public MovementInputHandlingBehaviour() {}
+        public MovementInputHandlingBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
 
-        public MovementInputHandlingBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
-
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetInputActionsData(out var inputActions);
             _inputActions = inputActions;
 
-            _entity.TryGetMovementInputActionData(out _movementInputAction);
+            _entity.TryGetMovementInputActionData(out var movementInputAction);
+            _movementInputAction = movementInputAction;
             
             OnInit();
         }
@@ -70,7 +76,8 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         }
 
         public void Awake()
-        {
+        { 
+            Dispose();
             OnAwake();
         }
 
@@ -136,13 +143,13 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         public void Dispose()
         {
             UnsubscribeFromMovementInput(_inputActions.CurrentValue);
-            DisableBaseMapIn(_inputActions.CurrentValue);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void UnsubscribeFromMovementInput(PlayerActions inputActions)
         {
             inputActions.BaseMap.Movement.performed -= InvokeMovementInputAction;
+            inputActions.BaseMap.Movement.canceled -= CancelMovementInputAction;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -156,5 +163,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         {
             inputActions.Dispose();
         }
+        
+        #endregion
     }
 }
