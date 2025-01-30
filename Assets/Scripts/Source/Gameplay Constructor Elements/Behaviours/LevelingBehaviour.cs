@@ -3,33 +3,37 @@ using AtomicFramework.AtomicStructures;
 using GameplayConstructor.Enitity.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
-using IntExtensions;
 using UseCases;
 
 namespace GameplayConstructorElements.Behaviours
 {
     [Serializable]
-    public sealed class LevelingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class LevelingBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
+        #region Cache Varables
 
         private IAtomicVariable<int> _level = null;
         private IReadonlyAtomicReactiveProperty<float> _xpTarget = null;
         private AtomicReactiveProperty<float> _xp = null;
+
+        #endregion
+       
+        #region Subcriptions
         
         private IDisposable _xpSubscription = null;
         private IDisposable _xpTargetSubscription = null;
+        
+        #endregion
 
-        public LevelingBehaviour()
-        {
-            _entity = new Entity();
-        }
+        #region Constructors 
+        
+        public LevelingBehaviour() {}
+        public LevelingBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
 
-        public LevelingBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
-
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetLevelData(out var level);
@@ -99,5 +103,7 @@ namespace GameplayConstructorElements.Behaviours
             _xpSubscription?.Dispose();
             _xpTargetSubscription?.Dispose();
         }
+        
+        #endregion
     }
 }

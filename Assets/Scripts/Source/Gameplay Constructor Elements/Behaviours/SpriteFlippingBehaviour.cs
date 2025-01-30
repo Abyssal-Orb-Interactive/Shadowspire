@@ -10,26 +10,30 @@ using UnityEngine;
 namespace GameplayConstructorElements.Behaviours
 {
     [Serializable]
-    public sealed class SpriteFlippingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class SpriteFlippingBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
-
+        #region Cache Varables
+        
         private IAtomicValue<SpriteRenderer> _spriteRenderer = null;
         private AtomicReactiveProperty<bool> _flipped = null;
         private IReadonlyAtomicReactiveProperty<IEntity> _inputHandler = null;
         private ReactiveLibraryFacade.IObservable<float2> _movementInputAction = null;
+
+        #endregion
+        
+        #region Subscriptions
         
         private IDisposable _subscriptions = null;
         
-        public SpriteFlippingBehaviour()
-        {
-            _entity = new Entity();
-        }
-
-        public SpriteFlippingBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
+        #endregion
+        
+        #region Constructors
+        public SpriteFlippingBehaviour() {}
+        public SpriteFlippingBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
+        
+        #region Life Cycle Methods
         public void Init()
         {
             _entity.TryGetSpriteRendererData(out var spriteRenderer);
@@ -104,5 +108,7 @@ namespace GameplayConstructorElements.Behaviours
         {
             _subscriptions?.Dispose();
         }
+        
+        #endregion
     }
 }

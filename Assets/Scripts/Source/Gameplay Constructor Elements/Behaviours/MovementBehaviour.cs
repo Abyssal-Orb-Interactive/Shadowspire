@@ -10,30 +10,34 @@ using UseCases;
 namespace GameplayConstructorElements.Behaviours
 {
     [Serializable]
-    public sealed class MovementBehaviour : IInitBehaviour, ISleepingBehaviour, IFrameRunBehaviour, IDisposable
+    public sealed class MovementBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IPhysicsRunBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
-        
+        private float2 _direction = float2.zero;
+
+        #region Cache Variables
+
         private IReadonlyAtomicReactiveProperty<IEntity> _inputHandler = null;
         private IAtomicValue<float> _speed = null;
         private IAtomicValue<Rigidbody2D> _rigidbody2D = null;
         private ReactiveLibraryFacade.IObservable<float2> _movementInputAction = null;
         private IAtomicValue<bool> _canMove = null;
+
+        #endregion
         
-        private float2 _direction = float2.zero;
+        #region Subscriptions
+        
         private IDisposable _movementInputActionSubscription = null;
 
-        public MovementBehaviour()
-        {
-            _entity = new Entity();
-        }
-
-        public MovementBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
-
-
+        #endregion
+        
+        #region Constructors
+        public MovementBehaviour() {}
+        public MovementBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
+        
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetInputHandlerData(out var inputHandler);
@@ -73,7 +77,7 @@ namespace GameplayConstructorElements.Behaviours
             _direction = newDirection;
         }
         
-        public void OnFrameRun()
+        public void OnPhysicsFrameRun()
         {
             if(!_canMove.CurrentValue) return;
             
@@ -106,5 +110,7 @@ namespace GameplayConstructorElements.Behaviours
         {
             _movementInputActionSubscription?.Dispose();
         }
+        
+        #endregion
     }
 }

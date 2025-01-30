@@ -61,6 +61,20 @@ namespace Tests.UseCasesTests.DamageModelTests
             // Assert
             new {Health = result}.Should().Be(new {Health = HEALTH});
         }
+        
+        [Test]
+        public void WhenCalculateHealthAfterDamageAndDamageIsTwoAndHealthIsOneThenResultShouldBeZero()
+        {
+            // Arrange
+            const float HEALTH = 1f;
+            const float DAMAGE = 2f;
+
+            // Act
+            var result = DamageCases.CalculateHealthAfterDamage(HEALTH, DAMAGE);
+
+            // Assert
+            new { Health = result }.Should().Be(new { Health = 0f });
+        }
 
         [Test]
         public void WhenCalculateHealthAfterDamageAndDamageIsOneAndHealthIsTenThenResultShouldBeNine()

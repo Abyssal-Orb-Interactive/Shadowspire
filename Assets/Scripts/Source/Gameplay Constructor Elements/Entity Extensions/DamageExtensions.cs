@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using AtomicFramework.AtomicStructures;
+using GameData;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
 using UnityEngine;
@@ -55,16 +56,28 @@ namespace GameplayConstructorElements.EntityExtensions
             entity.SetUpHealthAfterDamageAndInvincibility(health, damage);
             return true;
         }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryTakeDamage(this IEntity entity, in float damage, in DamageType damageType)
+        {
+            if(!entity.TryGetDamageModifiersData(out var damageModifiers) || !damageModifiers.ContainsKey((int) damageType)) return entity.TryTakeDamage(damage);
+            
+            var correctedDamage = damage * (1 - damageModifiers[(int) damageType]);
+            if(correctedDamage < 0) correctedDamage = 0;
+            
+            return entity.TryTakeDamage(correctedDamage);
+        }
+
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetUpHealthAfterDamageAndInvincibility(this IEntity entity, in AtomicReactiveProperty<float> health, in float damage)
+        public static void SetUpHealthAfterDamageAndInvincibility(this IEntity entity, in IAtomicVariable<float> health, in float damage)
         {
             health.SetUpHealthAfterDamage(damage);
             if (entity.TryGetInvincibilityData(out var invincibility)) invincibility.Value = true;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetUpHealthAfterDamage(this AtomicReactiveProperty<float> health, in float damage)
+        public static void SetUpHealthAfterDamage(this IAtomicVariable<float> health, in float damage)
         {
             health.Value = DamageCases.CalculateHealthAfterDamage(health, damage);
         }

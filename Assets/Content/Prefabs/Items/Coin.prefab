@@ -105,6 +105,26 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _interactionActions
+      Entry: 7
+      Data: 7|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|Source.Gameplay_Constructor_Elements.Actions.Interaction_Event.OnInteractionEventPickUpAction,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -116,7 +136,7 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 9|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12

@@ -7,11 +7,9 @@ using ObservableCollections;
 using System.Collections.Generic;
 using GameData;
 using GameplayConstructorElements.Behaviours;
-using GameplayConstructorElements.Behaviours.Use_Model;
-using GameplayConstructorElements.Behaviours.InventoryModel;
-using GameplayConstructorElements.Behaviours.Interaction_Model;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
-using GameplayConstructorElements.Behaviours.AttackModel;
+using GameplayConstructorElements.Behaviours.Following_Model;
+using GameplayConstructorElements.Behaviours.DeathModel;
 
 namespace GameplayConstructorFrameworkAPIs
 {
@@ -530,6 +528,96 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.DamageType);
           }
 
+        public static bool TryGetDamageModifiersData(this IEntity entity, out ObservableDictionary<int, float> damageModifiers)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.DamageModifiers, out damageModifiers);
+         }
+
+         public static bool TryAddDamageModifiersData(this IEntity entity, ObservableDictionary<int, float> damageModifiers)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.DamageModifiers, damageModifiers);
+          }
+
+         public static bool TryRemoveDamageModifiersData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.DamageModifiers);
+          }
+
+        public static bool TryGetQuantityData(this IEntity entity, out AtomicReactiveProperty<int> quantity)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Quantity, out quantity);
+         }
+
+         public static bool TryAddQuantityData(this IEntity entity, AtomicReactiveProperty<int> quantity)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Quantity, quantity);
+          }
+
+         public static bool TryRemoveQuantityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Quantity);
+          }
+
+        public static bool TryGetDeathEventData(this IEntity entity, out AtomicEvent deathEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.DeathEvent, out deathEvent);
+         }
+
+         public static bool TryAddDeathEventData(this IEntity entity, AtomicEvent deathEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.DeathEvent, deathEvent);
+          }
+
+         public static bool TryRemoveDeathEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.DeathEvent);
+          }
+
+        public static bool TryGetTransformData(this IEntity entity, out AtomicReactiveProperty<Transform> transform)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Transform, out transform);
+         }
+
+         public static bool TryAddTransformData(this IEntity entity, AtomicReactiveProperty<Transform> transform)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Transform, transform);
+          }
+
+         public static bool TryRemoveTransformData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Transform);
+          }
+
+        public static bool TryGetTargetForFollowingData(this IEntity entity, out AtomicReactiveProperty<IEntity> targetForFollowing)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TargetForFollowing, out targetForFollowing);
+         }
+
+         public static bool TryAddTargetForFollowingData(this IEntity entity, AtomicReactiveProperty<IEntity> targetForFollowing)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TargetForFollowing, targetForFollowing);
+          }
+
+         public static bool TryRemoveTargetForFollowingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TargetForFollowing);
+          }
+
+        public static bool TryGetFollowingDistanceData(this IEntity entity, out AtomicReactiveProperty<float3> followingDistance)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.FollowingDistance, out followingDistance);
+         }
+
+         public static bool TryAddFollowingDistanceData(this IEntity entity, AtomicReactiveProperty<float3> followingDistance)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.FollowingDistance, followingDistance);
+          }
+
+         public static bool TryRemoveFollowingDistanceData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.FollowingDistance);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -609,66 +697,6 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<SpriteSetUpBehaviour>((int)GlobalBehavioursAPI.SpriteSetUpBehaviour);
           }
 
-        public static bool TryGetUseSwordAttackBehaviourBehaviour(this IEntity entity, out UseSwordAttackBehaviour useSwordAttackBehaviour)
-         {
-            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.UseSwordAttackBehaviour, out useSwordAttackBehaviour);
-         }
-
-         public static bool TryAddUseSwordAttackBehaviourBehaviour(this IEntity entity, UseSwordAttackBehaviour useSwordAttackBehaviour)
-          {
-            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.UseSwordAttackBehaviour, useSwordAttackBehaviour);
-          }
-
-         public static bool TryRemoveUseSwordAttackBehaviourBehaviour(this IEntity entity)
-          {
-            return entity.TryRemoveBehaviour<UseSwordAttackBehaviour>((int)GlobalBehavioursAPI.UseSwordAttackBehaviour);
-          }
-
-        public static bool TryGetEquipBehaviourBehaviour(this IEntity entity, out EquipBehaviour equipBehaviour)
-         {
-            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.EquipBehaviour, out equipBehaviour);
-         }
-
-         public static bool TryAddEquipBehaviourBehaviour(this IEntity entity, EquipBehaviour equipBehaviour)
-          {
-            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.EquipBehaviour, equipBehaviour);
-          }
-
-         public static bool TryRemoveEquipBehaviourBehaviour(this IEntity entity)
-          {
-            return entity.TryRemoveBehaviour<EquipBehaviour>((int)GlobalBehavioursAPI.EquipBehaviour);
-          }
-
-        public static bool TryGetItemsDroppingBehaviourBehaviour(this IEntity entity, out ItemsDroppingBehaviour itemsDroppingBehaviour)
-         {
-            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.ItemsDroppingBehaviour, out itemsDroppingBehaviour);
-         }
-
-         public static bool TryAddItemsDroppingBehaviourBehaviour(this IEntity entity, ItemsDroppingBehaviour itemsDroppingBehaviour)
-          {
-            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.ItemsDroppingBehaviour, itemsDroppingBehaviour);
-          }
-
-         public static bool TryRemoveItemsDroppingBehaviourBehaviour(this IEntity entity)
-          {
-            return entity.TryRemoveBehaviour<ItemsDroppingBehaviour>((int)GlobalBehavioursAPI.ItemsDroppingBehaviour);
-          }
-
-        public static bool TryGetInteractionCoinPickUppingBehaviourBehaviour(this IEntity entity, out InteractionCoinPickUppingBehaviour interactionCoinPickUppingBehaviour)
-         {
-            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InteractionCoinPickUppingBehaviour, out interactionCoinPickUppingBehaviour);
-         }
-
-         public static bool TryAddInteractionCoinPickUppingBehaviourBehaviour(this IEntity entity, InteractionCoinPickUppingBehaviour interactionCoinPickUppingBehaviour)
-          {
-            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.InteractionCoinPickUppingBehaviour, interactionCoinPickUppingBehaviour);
-          }
-
-         public static bool TryRemoveInteractionCoinPickUppingBehaviourBehaviour(this IEntity entity)
-          {
-            return entity.TryRemoveBehaviour<InteractionCoinPickUppingBehaviour>((int)GlobalBehavioursAPI.InteractionCoinPickUppingBehaviour);
-          }
-
         public static bool TryGetInteractionInputHandlingBehaviourBehaviour(this IEntity entity, out InteractionInputHandlingBehaviour interactionInputHandlingBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InteractionInputHandlingBehaviour, out interactionInputHandlingBehaviour);
@@ -714,19 +742,34 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<UseInputHandlingBehaviour>((int)GlobalBehavioursAPI.UseInputHandlingBehaviour);
           }
 
-        public static bool TryGetSplashMeleeAttackBehaviourBehaviour(this IEntity entity, out SplashMeleeAttackBehaviour splashMeleeAttackBehaviour)
+        public static bool TryGetFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity, out FollowTargetWithDistanceAndLerpBehaviour followTargetWithDistanceAndLerpBehaviour)
          {
-            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.SplashMeleeAttackBehaviour, out splashMeleeAttackBehaviour);
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour, out followTargetWithDistanceAndLerpBehaviour);
          }
 
-         public static bool TryAddSplashMeleeAttackBehaviourBehaviour(this IEntity entity, SplashMeleeAttackBehaviour splashMeleeAttackBehaviour)
+         public static bool TryAddFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity, FollowTargetWithDistanceAndLerpBehaviour followTargetWithDistanceAndLerpBehaviour)
           {
-            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.SplashMeleeAttackBehaviour, splashMeleeAttackBehaviour);
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour, followTargetWithDistanceAndLerpBehaviour);
           }
 
-         public static bool TryRemoveSplashMeleeAttackBehaviourBehaviour(this IEntity entity)
+         public static bool TryRemoveFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity)
           {
-            return entity.TryRemoveBehaviour<SplashMeleeAttackBehaviour>((int)GlobalBehavioursAPI.SplashMeleeAttackBehaviour);
+            return entity.TryRemoveBehaviour<FollowTargetWithDistanceAndLerpBehaviour>((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour);
+          }
+
+        public static bool TryGetDeathBehaviourBehaviour(this IEntity entity, out DeathBehaviour deathBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.DeathBehaviour, out deathBehaviour);
+         }
+
+         public static bool TryAddDeathBehaviourBehaviour(this IEntity entity, DeathBehaviour deathBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.DeathBehaviour, deathBehaviour);
+          }
+
+         public static bool TryRemoveDeathBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<DeathBehaviour>((int)GlobalBehavioursAPI.DeathBehaviour);
           }
 
          #endregion

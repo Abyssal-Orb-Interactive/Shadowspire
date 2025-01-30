@@ -8,8 +8,9 @@ namespace UseCases
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float CalculateHealthAfterDamage(in float health, in float damage)
         {
-            if(health <= 0) return 0;
-            if(damage <= 0) return health;
+            if(health <= 0f) return 0f;
+            if(damage <= 0f) return health;
+            if (damage >= health) return 0f;
             
             return health - damage;
         }

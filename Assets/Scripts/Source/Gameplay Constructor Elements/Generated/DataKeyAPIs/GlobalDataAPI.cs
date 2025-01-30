@@ -36,5 +36,11 @@ namespace GameplayConstructorFrameworkAPIs
     TargetsInDamageZone = 31,
     MeleeAttackActionEvent = 32,
     DamageType = 33,
+    DamageModifiers = 34,
+    Quantity = 35,
+    DeathEvent = 36,
+    Transform = 37,
+    TargetForFollowing = 38,
+    FollowingDistance = 39,
      }
 }

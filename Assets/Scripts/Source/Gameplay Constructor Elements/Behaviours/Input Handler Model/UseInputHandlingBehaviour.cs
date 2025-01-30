@@ -10,24 +10,24 @@ using UnityEngine.InputSystem;
 namespace GameplayConstructorElements.Behaviours.InputHandlerModel
 {
     [Serializable]
-    public sealed class UseInputHandlingBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class UseInputHandlingBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
-        
+        #region Cache Variables
+
         private IReadonlyAtomicReactiveProperty<PlayerActions> _inputActions = null;
         private IAtomicAction _useInputAction = null;
 
-        public UseInputHandlingBehaviour()
-        {
-            _entity = new Entity();
-        }
+        #endregion
+        
+        #region Constructors
+        
+        public UseInputHandlingBehaviour() {}
+        public UseInputHandlingBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
 
-        public UseInputHandlingBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
-
-
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetInputActionsData(out var inputActions);
@@ -81,5 +81,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         {
             _inputActions.CurrentValue.BaseMap.Use.performed -= OnUseInput;
         }
+        
+        #endregion
     }
 }

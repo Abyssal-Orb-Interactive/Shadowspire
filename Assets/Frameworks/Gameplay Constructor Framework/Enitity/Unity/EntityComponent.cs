@@ -93,7 +93,7 @@ namespace GameplayConstructorFramework.Entity.Unity
 
             foreach (var initializer in _entityInitializers)
             {
-                initializer.InitializeData(_entity);
+                initializer.InitializeData(this);
             }        
         }
         
@@ -119,7 +119,7 @@ namespace GameplayConstructorFramework.Entity.Unity
         {
             foreach (var initializer in _entityInitializers)
             {
-                initializer.InitializeBehaviours(_entity);
+                initializer.InitializeBehaviours(this);
             }
         }
 
@@ -135,7 +135,7 @@ namespace GameplayConstructorFramework.Entity.Unity
         
         public void Dispose()
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         private void OnDestroy()
