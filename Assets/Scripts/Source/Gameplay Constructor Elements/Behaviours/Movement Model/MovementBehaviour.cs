@@ -5,6 +5,7 @@ using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityExtensions;
 using UseCases;
 
 namespace GameplayConstructorElements.Behaviours.MovementModel
@@ -86,11 +87,11 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
             
             if (_direction.x == 0f)
             {
-                rb.velocity = new float2(0f, rb.velocity.y);
+                rb.SetVelocityXTo(0f);
                 return;
             }
-            
-            rb.velocity = new float2(_direction.x * _speed.CurrentValue, rb.velocity.y);
+
+            rb.SetVelocityXTo(_direction.x * _speed.CurrentValue);
         }
 
         public void Sleep()

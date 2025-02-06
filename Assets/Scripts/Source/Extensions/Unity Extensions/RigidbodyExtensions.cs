@@ -20,5 +20,12 @@ namespace UnityExtensions
         {
             rb.SetVelocityTo(new float2 (rb.velocity.x, newVelocityY));
         }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Obsolete("Obsolete")]
+        public static void SetVelocityXTo(this Rigidbody2D rb, float newVelocityX)
+        {
+            rb.SetVelocityTo(new float2 (newVelocityX, rb.velocity.y));
+        }
     }
 }
