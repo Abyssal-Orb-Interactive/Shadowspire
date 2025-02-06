@@ -1,17 +1,22 @@
 using System;
+using System.Runtime.CompilerServices;
 using AtomicFramework.AtomicStructures;
 using GameplayConstructor.Enitity.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.UnityExtensions;
 using GameplayConstructorFrameworkAPIs;
+using TimeFramework.Core;
 using Unity.Mathematics;
 using UnityEngine;
+using UseCases;
 
 namespace GameplayConstructorElements.Behaviours.Following_Model
 {
     [Serializable]
     public sealed class FollowTargetWithDistanceAndLerpBehaviour : BehaviourBase, IInitBehaviour, IFrameRunBehaviour
     {
+        private TimeInvoker _timeInvoker = null;
+        
         #region Cache Variables
 
         private IReadonlyAtomicReactiveProperty<IEntity> _target = null;
@@ -33,6 +38,8 @@ namespace GameplayConstructorElements.Behaviours.Following_Model
         
         public void Init()
         {
+            _timeInvoker = TimeInvoker.Instance;
+            
             _entity.TryGetTargetForFollowingData(out var target);
             _target = target;
             
@@ -56,13 +63,13 @@ namespace GameplayConstructorElements.Behaviours.Following_Model
         
         public void OnFrameRun()
         {
-            var targetPosition = _targetTransform.CurrentValue.position.ToFloat3() - _distance.CurrentValue;
+            var targetPosition = MovementCases.CalculateTargetPositionWithDistance(_targetTransform, _distance);
             var currentPosition = _transform.CurrentValue.position.ToFloat3();
             
-            var maxStep = _speed.CurrentValue * Time.deltaTime;
+            var maxStep = MovementCases.CalculateSpeedStepByDeltaTime(_speed, _timeInvoker);
             var distance = math.distance(currentPosition, targetPosition);
             
-            var step = distance > maxStep ? maxStep / distance : 1f;  
+            var step = LerpCases.CalculateStepRatio(distance, maxStep);  
             
             _transform.CurrentValue.position = math.lerp(currentPosition, targetPosition, step);
         }

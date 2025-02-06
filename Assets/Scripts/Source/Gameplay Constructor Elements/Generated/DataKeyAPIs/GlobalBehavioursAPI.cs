@@ -12,5 +12,9 @@ namespace GameplayConstructorFrameworkAPIs
     UseInputHandlingBehaviour = 7,
     DeathBehaviour = 8,
     FollowTargetWithDistanceAndLerpBehaviour = 9,
+    JumpInputHandlingBehaviour = 10,
+    JumpBehaviour = 11,
+    FreeFallingBehaviour = 12,
+    JumpHangingBehaviour = 13,
      }
 }

@@ -7,7 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UseCases;
 
-namespace GameplayConstructorElements.Behaviours
+namespace GameplayConstructorElements.Behaviours.MovementModel
 {
     [Serializable]
     public sealed class MovementBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IPhysicsRunBehaviour, IDisposable
@@ -77,13 +77,20 @@ namespace GameplayConstructorElements.Behaviours
             _direction = newDirection;
         }
         
+        [Obsolete("Obsolete")]
         public void OnPhysicsFrameRun()
         {
             if(!_canMove.CurrentValue) return;
             
-            var targetPosition = MovementCases.CalculateTargetPosition(_rigidbody2D, _direction, _speed, Time.fixedDeltaTime);
+            var rb = _rigidbody2D.CurrentValue;
             
-            _rigidbody2D.CurrentValue.MovePosition(targetPosition);        
+            if (_direction.x == 0f)
+            {
+                rb.velocity = new float2(0f, rb.velocity.y);
+                return;
+            }
+            
+            rb.velocity = new float2(_direction.x * _speed.CurrentValue, rb.velocity.y);
         }
 
         public void Sleep()

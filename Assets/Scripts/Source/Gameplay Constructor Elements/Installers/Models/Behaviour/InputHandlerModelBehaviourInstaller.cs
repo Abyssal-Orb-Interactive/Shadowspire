@@ -14,6 +14,7 @@ namespace GameplayConstructorElements.Installers.Models.Behaviour
             entity.TryAddMovementInputHandlingBehaviourBehaviour(new MovementInputHandlingBehaviour(entity));
             entity.TryAddInteractionInputHandlingBehaviourBehaviour(new InteractionInputHandlingBehaviour(entity));
             entity.TryAddUseInputHandlingBehaviourBehaviour(new UseInputHandlingBehaviour(entity));
+            entity.TryAddJumpInputHandlingBehaviourBehaviour(new JumpInputHandlingBehaviour(entity));
         }
     }
 }

@@ -1,22 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using TimeFramework.Core;
+using UnityEngine;
 
 namespace Base.UnityIntegration
 {
-    public class GameLoopComponent : MonoBehaviour
+    [Serializable]
+    public sealed class GameLoopComponent : MonoBehaviour
     {
         [SerializeField] private float _tickDelta = 0f;
+        
+        private TimeInvoker _timeInvoker = null;
         
         private float _tickTimer = 0f;
 
         public EntityBehaviourGameLoopService GameLoop = new();
         private void Start()
         {
+            _timeInvoker = TimeInvoker.Instance;
             GameLoop.Awake();
         }
 
         private void Awake()
         {
-
             DontDestroyOnLoad(gameObject);
             
             GameLoop.Init();
@@ -29,9 +34,10 @@ namespace Base.UnityIntegration
 
         private void Update()
         {
+            _timeInvoker.UpdateTime();
             GameLoop.FrameUpdate();
             
-            _tickTimer += Time.deltaTime;
+            _tickTimer += _timeInvoker.DeltaTime;
 
             if (_tickTimer < _tickDelta) return;
             

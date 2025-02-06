@@ -55,6 +55,15 @@ namespace InputActions
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""41e2b710-d9d3-414d-a721-d73158341a61"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -145,6 +154,39 @@ namespace InputActions
                     ""action"": ""Use"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9218e841-5733-4740-9d69-fa09b6aec1bb"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard+Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23cf0849-9131-45e0-971e-d4227cb56978"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard+Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61c21a4d-5f7d-4ca2-a0fb-43703bfc98f7"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard+Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -173,6 +215,7 @@ namespace InputActions
             m_BaseMap_Movement = m_BaseMap.FindAction("Movement", throwIfNotFound: true);
             m_BaseMap_Interaction = m_BaseMap.FindAction("Interaction", throwIfNotFound: true);
             m_BaseMap_Use = m_BaseMap.FindAction("Use", throwIfNotFound: true);
+            m_BaseMap_Jump = m_BaseMap.FindAction("Jump", throwIfNotFound: true);
         }
 
         ~@PlayerActions()
@@ -242,6 +285,7 @@ namespace InputActions
         private readonly InputAction m_BaseMap_Movement;
         private readonly InputAction m_BaseMap_Interaction;
         private readonly InputAction m_BaseMap_Use;
+        private readonly InputAction m_BaseMap_Jump;
         public struct BaseMapActions
         {
             private @PlayerActions m_Wrapper;
@@ -249,6 +293,7 @@ namespace InputActions
             public InputAction @Movement => m_Wrapper.m_BaseMap_Movement;
             public InputAction @Interaction => m_Wrapper.m_BaseMap_Interaction;
             public InputAction @Use => m_Wrapper.m_BaseMap_Use;
+            public InputAction @Jump => m_Wrapper.m_BaseMap_Jump;
             public InputActionMap Get() { return m_Wrapper.m_BaseMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -267,6 +312,9 @@ namespace InputActions
                 @Use.started += instance.OnUse;
                 @Use.performed += instance.OnUse;
                 @Use.canceled += instance.OnUse;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
 
             private void UnregisterCallbacks(IBaseMapActions instance)
@@ -280,6 +328,9 @@ namespace InputActions
                 @Use.started -= instance.OnUse;
                 @Use.performed -= instance.OnUse;
                 @Use.canceled -= instance.OnUse;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
             }
 
             public void RemoveCallbacks(IBaseMapActions instance)
@@ -311,6 +362,7 @@ namespace InputActions
             void OnMovement(InputAction.CallbackContext context);
             void OnInteraction(InputAction.CallbackContext context);
             void OnUse(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
         }
     }
 }

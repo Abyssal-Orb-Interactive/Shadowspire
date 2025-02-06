@@ -1,12 +1,13 @@
 using AtomicFramework.AtomicStructures;
 using UnityEngine;
+using GameplayConstructorFramework.Entity;
 using Unity.Mathematics;
 using InputActions;
-using GameplayConstructorFramework.Entity;
 using ObservableCollections;
 using System.Collections.Generic;
 using GameData;
 using GameplayConstructorElements.Behaviours;
+using GameplayConstructorElements.Behaviours.MovementModel;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
 using GameplayConstructorElements.Behaviours.Following_Model;
 using GameplayConstructorElements.Behaviours.DeathModel;
@@ -108,49 +109,34 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.CanTakeDamage);
           }
 
-        public static bool TryGetInvincibilitySecondsDurationData(this IEntity entity, out AtomicReactiveProperty<float> invincibilitySecondsDuration)
+        public static bool TryGetLeftHandData(this IEntity entity, out AtomicReactiveProperty<IEntity> leftHand)
          {
-            return entity.TryGetData((int)GlobalDataAPI.InvincibilitySecondsDuration, out invincibilitySecondsDuration);
+            return entity.TryGetData((int)GlobalDataAPI.LeftHand, out leftHand);
          }
 
-         public static bool TryAddInvincibilitySecondsDurationData(this IEntity entity, AtomicReactiveProperty<float> invincibilitySecondsDuration)
+         public static bool TryAddLeftHandData(this IEntity entity, AtomicReactiveProperty<IEntity> leftHand)
           {
-            return entity.TryAddData((int)GlobalDataAPI.InvincibilitySecondsDuration, invincibilitySecondsDuration);
+            return entity.TryAddData((int)GlobalDataAPI.LeftHand, leftHand);
           }
 
-         public static bool TryRemoveInvincibilitySecondsDurationData(this IEntity entity)
+         public static bool TryRemoveLeftHandData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.InvincibilitySecondsDuration);
+            return entity.TryRemoveData((int)GlobalDataAPI.LeftHand);
           }
 
-        public static bool TryGetDamageData(this IEntity entity, out AtomicReactiveProperty<float> damage)
+        public static bool TryGetCanFreeFallingData(this IEntity entity, out AtomicExpression<bool> canFreeFalling)
          {
-            return entity.TryGetData((int)GlobalDataAPI.Damage, out damage);
+            return entity.TryGetData((int)GlobalDataAPI.CanFreeFalling, out canFreeFalling);
          }
 
-         public static bool TryAddDamageData(this IEntity entity, AtomicReactiveProperty<float> damage)
+         public static bool TryAddCanFreeFallingData(this IEntity entity, AtomicExpression<bool> canFreeFalling)
           {
-            return entity.TryAddData((int)GlobalDataAPI.Damage, damage);
+            return entity.TryAddData((int)GlobalDataAPI.CanFreeFalling, canFreeFalling);
           }
 
-         public static bool TryRemoveDamageData(this IEntity entity)
+         public static bool TryRemoveCanFreeFallingData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.Damage);
-          }
-
-        public static bool TryGetInvincibilityData(this IEntity entity, out AtomicReactiveProperty<bool> invincibility)
-         {
-            return entity.TryGetData((int)GlobalDataAPI.Invincibility, out invincibility);
-         }
-
-         public static bool TryAddInvincibilityData(this IEntity entity, AtomicReactiveProperty<bool> invincibility)
-          {
-            return entity.TryAddData((int)GlobalDataAPI.Invincibility, invincibility);
-          }
-
-         public static bool TryRemoveInvincibilityData(this IEntity entity)
-          {
-            return entity.TryRemoveData((int)GlobalDataAPI.Invincibility);
+            return entity.TryRemoveData((int)GlobalDataAPI.CanFreeFalling);
           }
 
         public static bool TryGetLevelData(this IEntity entity, out AtomicReactiveProperty<int> level)
@@ -168,19 +154,19 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.Level);
           }
 
-        public static bool TryGetXpTargetData(this IEntity entity, out AtomicReactiveProperty<float> xpTarget)
+        public static bool TryGetVelocityThresholdToJumpHangingData(this IEntity entity, out AtomicReactiveProperty<float> velocityThresholdToJumpHanging)
          {
-            return entity.TryGetData((int)GlobalDataAPI.XpTarget, out xpTarget);
+            return entity.TryGetData((int)GlobalDataAPI.VelocityThresholdToJumpHanging, out velocityThresholdToJumpHanging);
          }
 
-         public static bool TryAddXpTargetData(this IEntity entity, AtomicReactiveProperty<float> xpTarget)
+         public static bool TryAddVelocityThresholdToJumpHangingData(this IEntity entity, AtomicReactiveProperty<float> velocityThresholdToJumpHanging)
           {
-            return entity.TryAddData((int)GlobalDataAPI.XpTarget, xpTarget);
+            return entity.TryAddData((int)GlobalDataAPI.VelocityThresholdToJumpHanging, velocityThresholdToJumpHanging);
           }
 
-         public static bool TryRemoveXpTargetData(this IEntity entity)
+         public static bool TryRemoveVelocityThresholdToJumpHangingData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.XpTarget);
+            return entity.TryRemoveData((int)GlobalDataAPI.VelocityThresholdToJumpHanging);
           }
 
         public static bool TryGetXpData(this IEntity entity, out AtomicReactiveProperty<float> xp)
@@ -393,34 +379,34 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.ItemsRegisterHolder);
           }
 
-        public static bool TryGetUseInputActionData(this IEntity entity, out AtomicEvent useInputAction)
+        public static bool TryGetJumpInputActionData(this IEntity entity, out AtomicEvent<float> jumpInputAction)
          {
-            return entity.TryGetData((int)GlobalDataAPI.UseInputAction, out useInputAction);
+            return entity.TryGetData((int)GlobalDataAPI.JumpInputAction, out jumpInputAction);
          }
 
-         public static bool TryAddUseInputActionData(this IEntity entity, AtomicEvent useInputAction)
+         public static bool TryAddJumpInputActionData(this IEntity entity, AtomicEvent<float> jumpInputAction)
           {
-            return entity.TryAddData((int)GlobalDataAPI.UseInputAction, useInputAction);
+            return entity.TryAddData((int)GlobalDataAPI.JumpInputAction, jumpInputAction);
           }
 
-         public static bool TryRemoveUseInputActionData(this IEntity entity)
+         public static bool TryRemoveJumpInputActionData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.UseInputAction);
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpInputAction);
           }
 
-        public static bool TryGetLeftHandData(this IEntity entity, out AtomicReactiveProperty<IEntity> leftHand)
+        public static bool TryGetDamageData(this IEntity entity, out AtomicReactiveProperty<float> damage)
          {
-            return entity.TryGetData((int)GlobalDataAPI.LeftHand, out leftHand);
+            return entity.TryGetData((int)GlobalDataAPI.Damage, out damage);
          }
 
-         public static bool TryAddLeftHandData(this IEntity entity, AtomicReactiveProperty<IEntity> leftHand)
+         public static bool TryAddDamageData(this IEntity entity, AtomicReactiveProperty<float> damage)
           {
-            return entity.TryAddData((int)GlobalDataAPI.LeftHand, leftHand);
+            return entity.TryAddData((int)GlobalDataAPI.Damage, damage);
           }
 
-         public static bool TryRemoveLeftHandData(this IEntity entity)
+         public static bool TryRemoveDamageData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.LeftHand);
+            return entity.TryRemoveData((int)GlobalDataAPI.Damage);
           }
 
         public static bool TryGetRightHandData(this IEntity entity, out AtomicReactiveProperty<IEntity> rightHand)
@@ -498,19 +484,19 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.TargetsInDamageZone);
           }
 
-        public static bool TryGetMeleeAttackActionEventData(this IEntity entity, out AtomicEvent<float, DamageType> meleeAttackActionEvent)
+        public static bool TryGetXpTargetData(this IEntity entity, out AtomicReactiveProperty<float> xpTarget)
          {
-            return entity.TryGetData((int)GlobalDataAPI.MeleeAttackActionEvent, out meleeAttackActionEvent);
+            return entity.TryGetData((int)GlobalDataAPI.XpTarget, out xpTarget);
          }
 
-         public static bool TryAddMeleeAttackActionEventData(this IEntity entity, AtomicEvent<float, DamageType> meleeAttackActionEvent)
+         public static bool TryAddXpTargetData(this IEntity entity, AtomicReactiveProperty<float> xpTarget)
           {
-            return entity.TryAddData((int)GlobalDataAPI.MeleeAttackActionEvent, meleeAttackActionEvent);
+            return entity.TryAddData((int)GlobalDataAPI.XpTarget, xpTarget);
           }
 
-         public static bool TryRemoveMeleeAttackActionEventData(this IEntity entity)
+         public static bool TryRemoveXpTargetData(this IEntity entity)
           {
-            return entity.TryRemoveData((int)GlobalDataAPI.MeleeAttackActionEvent);
+            return entity.TryRemoveData((int)GlobalDataAPI.XpTarget);
           }
 
         public static bool TryGetDamageTypeData(this IEntity entity, out AtomicReactiveProperty<DamageType> damageType)
@@ -618,6 +604,291 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.FollowingDistance);
           }
 
+        public static bool TryGetJumpHeightData(this IEntity entity, out AtomicReactiveProperty<float> jumpHeight)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpHeight, out jumpHeight);
+         }
+
+         public static bool TryAddJumpHeightData(this IEntity entity, AtomicReactiveProperty<float> jumpHeight)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpHeight, jumpHeight);
+          }
+
+         public static bool TryRemoveJumpHeightData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpHeight);
+          }
+
+        public static bool TryGetCanJumpData(this IEntity entity, out AtomicExpression<bool> canJump)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanJump, out canJump);
+         }
+
+         public static bool TryAddCanJumpData(this IEntity entity, AtomicExpression<bool> canJump)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanJump, canJump);
+          }
+
+         public static bool TryRemoveCanJumpData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanJump);
+          }
+
+        public static bool TryGetIsGroundedData(this IEntity entity, out AtomicReactiveProperty<bool> isGrounded)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsGrounded, out isGrounded);
+         }
+
+         public static bool TryAddIsGroundedData(this IEntity entity, AtomicReactiveProperty<bool> isGrounded)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsGrounded, isGrounded);
+          }
+
+         public static bool TryRemoveIsGroundedData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsGrounded);
+          }
+
+        public static bool TryGetFallingGravityModifierData(this IEntity entity, out AtomicReactiveProperty<float> fallingGravityModifier)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.FallingGravityModifier, out fallingGravityModifier);
+         }
+
+         public static bool TryAddFallingGravityModifierData(this IEntity entity, AtomicReactiveProperty<float> fallingGravityModifier)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.FallingGravityModifier, fallingGravityModifier);
+          }
+
+         public static bool TryRemoveFallingGravityModifierData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.FallingGravityModifier);
+          }
+
+        public static bool TryGetMaxFreeFallingSpeedData(this IEntity entity, out AtomicReactiveProperty<float> maxFreeFallingSpeed)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MaxFreeFallingSpeed, out maxFreeFallingSpeed);
+         }
+
+         public static bool TryAddMaxFreeFallingSpeedData(this IEntity entity, AtomicReactiveProperty<float> maxFreeFallingSpeed)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MaxFreeFallingSpeed, maxFreeFallingSpeed);
+          }
+
+         public static bool TryRemoveMaxFreeFallingSpeedData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MaxFreeFallingSpeed);
+          }
+
+        public static bool TryGetInvincibilitySecondsDurationData(this IEntity entity, out AtomicReactiveProperty<float> invincibilitySecondsDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InvincibilitySecondsDuration, out invincibilitySecondsDuration);
+         }
+
+         public static bool TryAddInvincibilitySecondsDurationData(this IEntity entity, AtomicReactiveProperty<float> invincibilitySecondsDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InvincibilitySecondsDuration, invincibilitySecondsDuration);
+          }
+
+         public static bool TryRemoveInvincibilitySecondsDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InvincibilitySecondsDuration);
+          }
+
+        public static bool TryGetInvincibilityData(this IEntity entity, out AtomicReactiveProperty<bool> invincibility)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Invincibility, out invincibility);
+         }
+
+         public static bool TryAddInvincibilityData(this IEntity entity, AtomicReactiveProperty<bool> invincibility)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Invincibility, invincibility);
+          }
+
+         public static bool TryRemoveInvincibilityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Invincibility);
+          }
+
+        public static bool TryGetUseInputActionData(this IEntity entity, out AtomicEvent useInputAction)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.UseInputAction, out useInputAction);
+         }
+
+         public static bool TryAddUseInputActionData(this IEntity entity, AtomicEvent useInputAction)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.UseInputAction, useInputAction);
+          }
+
+         public static bool TryRemoveUseInputActionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.UseInputAction);
+          }
+
+        public static bool TryGetFreeFallingAccelerationData(this IEntity entity, out AtomicReactiveProperty<float> freeFallingAcceleration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.FreeFallingAcceleration, out freeFallingAcceleration);
+         }
+
+         public static bool TryAddFreeFallingAccelerationData(this IEntity entity, AtomicReactiveProperty<float> freeFallingAcceleration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.FreeFallingAcceleration, freeFallingAcceleration);
+          }
+
+         public static bool TryRemoveFreeFallingAccelerationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.FreeFallingAcceleration);
+          }
+
+        public static bool TryGetCanIncreaseGravityData(this IEntity entity, out AtomicExpression<bool> canIncreaseGravity)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanIncreaseGravity, out canIncreaseGravity);
+         }
+
+         public static bool TryAddCanIncreaseGravityData(this IEntity entity, AtomicExpression<bool> canIncreaseGravity)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanIncreaseGravity, canIncreaseGravity);
+          }
+
+         public static bool TryRemoveCanIncreaseGravityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanIncreaseGravity);
+          }
+
+        public static bool TryGetMeleeAttackActionEventData(this IEntity entity, out AtomicEvent<float, DamageType> meleeAttackActionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MeleeAttackActionEvent, out meleeAttackActionEvent);
+         }
+
+         public static bool TryAddMeleeAttackActionEventData(this IEntity entity, AtomicEvent<float, DamageType> meleeAttackActionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MeleeAttackActionEvent, meleeAttackActionEvent);
+          }
+
+         public static bool TryRemoveMeleeAttackActionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MeleeAttackActionEvent);
+          }
+
+        public static bool TryGetJumpInputKeyMaxPressingTimeData(this IEntity entity, out AtomicReactiveProperty<float> jumpInputKeyMaxPressingTime)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpInputKeyMaxPressingTime, out jumpInputKeyMaxPressingTime);
+         }
+
+         public static bool TryAddJumpInputKeyMaxPressingTimeData(this IEntity entity, AtomicReactiveProperty<float> jumpInputKeyMaxPressingTime)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpInputKeyMaxPressingTime, jumpInputKeyMaxPressingTime);
+          }
+
+         public static bool TryRemoveJumpInputKeyMaxPressingTimeData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpInputKeyMaxPressingTime);
+          }
+
+        public static bool TryGetIsJumpingData(this IEntity entity, out AtomicReactiveProperty<bool> isJumping)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsJumping, out isJumping);
+         }
+
+         public static bool TryAddIsJumpingData(this IEntity entity, AtomicReactiveProperty<bool> isJumping)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsJumping, isJumping);
+          }
+
+         public static bool TryRemoveIsJumpingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsJumping);
+          }
+
+        public static bool TryGetJumpInputKeyMaxPresingTimeData(this IEntity entity, out AtomicReactiveProperty<float> jumpInputKeyMaxPresingTime)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpInputKeyMaxPresingTime, out jumpInputKeyMaxPresingTime);
+         }
+
+         public static bool TryAddJumpInputKeyMaxPresingTimeData(this IEntity entity, AtomicReactiveProperty<float> jumpInputKeyMaxPresingTime)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpInputKeyMaxPresingTime, jumpInputKeyMaxPresingTime);
+          }
+
+         public static bool TryRemoveJumpInputKeyMaxPresingTimeData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpInputKeyMaxPresingTime);
+          }
+
+        public static bool TryGetJumpSpeedupModifierData(this IEntity entity, out AtomicReactiveProperty<float> jumpSpeedupModifier)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpSpeedupModifier, out jumpSpeedupModifier);
+         }
+
+         public static bool TryAddJumpSpeedupModifierData(this IEntity entity, AtomicReactiveProperty<float> jumpSpeedupModifier)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpSpeedupModifier, jumpSpeedupModifier);
+          }
+
+         public static bool TryRemoveJumpSpeedupModifierData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpSpeedupModifier);
+          }
+
+        public static bool TryGetJumpSlowModifierData(this IEntity entity, out AtomicReactiveProperty<float> jumpSlowModifier)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpSlowModifier, out jumpSlowModifier);
+         }
+
+         public static bool TryAddJumpSlowModifierData(this IEntity entity, AtomicReactiveProperty<float> jumpSlowModifier)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpSlowModifier, jumpSlowModifier);
+          }
+
+         public static bool TryRemoveJumpSlowModifierData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpSlowModifier);
+          }
+
+        public static bool TryGetJumpHangingDurationData(this IEntity entity, out AtomicReactiveProperty<float> jumpHangingDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpHangingDuration, out jumpHangingDuration);
+         }
+
+         public static bool TryAddJumpHangingDurationData(this IEntity entity, AtomicReactiveProperty<float> jumpHangingDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpHangingDuration, jumpHangingDuration);
+          }
+
+         public static bool TryRemoveJumpHangingDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpHangingDuration);
+          }
+
+        public static bool TryGetCanJumpHangingData(this IEntity entity, out AtomicExpression<bool> canJumpHanging)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanJumpHanging, out canJumpHanging);
+         }
+
+         public static bool TryAddCanJumpHangingData(this IEntity entity, AtomicExpression<bool> canJumpHanging)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanJumpHanging, canJumpHanging);
+          }
+
+         public static bool TryRemoveCanJumpHangingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanJumpHanging);
+          }
+
+        public static bool TryGetIsJumpHangingData(this IEntity entity, out AtomicReactiveProperty<bool> isJumpHanging)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsJumpHanging, out isJumpHanging);
+         }
+
+         public static bool TryAddIsJumpHangingData(this IEntity entity, AtomicReactiveProperty<bool> isJumpHanging)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsJumpHanging, isJumpHanging);
+          }
+
+         public static bool TryRemoveIsJumpHangingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsJumpHanging);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -652,21 +923,6 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<LevelingBehaviour>((int)GlobalBehavioursAPI.LevelingBehaviour);
           }
 
-        public static bool TryGetMovementBehaviourBehaviour(this IEntity entity, out MovementBehaviour movementBehaviour)
-         {
-            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.MovementBehaviour, out movementBehaviour);
-         }
-
-         public static bool TryAddMovementBehaviourBehaviour(this IEntity entity, MovementBehaviour movementBehaviour)
-          {
-            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.MovementBehaviour, movementBehaviour);
-          }
-
-         public static bool TryRemoveMovementBehaviourBehaviour(this IEntity entity)
-          {
-            return entity.TryRemoveBehaviour<MovementBehaviour>((int)GlobalBehavioursAPI.MovementBehaviour);
-          }
-
         public static bool TryGetSpriteFlippingBehaviourBehaviour(this IEntity entity, out SpriteFlippingBehaviour spriteFlippingBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.SpriteFlippingBehaviour, out spriteFlippingBehaviour);
@@ -697,6 +953,66 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<SpriteSetUpBehaviour>((int)GlobalBehavioursAPI.SpriteSetUpBehaviour);
           }
 
+        public static bool TryGetFreeFallingBehaviourBehaviour(this IEntity entity, out FreeFallingBehaviour freeFallingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.FreeFallingBehaviour, out freeFallingBehaviour);
+         }
+
+         public static bool TryAddFreeFallingBehaviourBehaviour(this IEntity entity, FreeFallingBehaviour freeFallingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.FreeFallingBehaviour, freeFallingBehaviour);
+          }
+
+         public static bool TryRemoveFreeFallingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<FreeFallingBehaviour>((int)GlobalBehavioursAPI.FreeFallingBehaviour);
+          }
+
+        public static bool TryGetJumpBehaviourBehaviour(this IEntity entity, out JumpBehaviour jumpBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.JumpBehaviour, out jumpBehaviour);
+         }
+
+         public static bool TryAddJumpBehaviourBehaviour(this IEntity entity, JumpBehaviour jumpBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.JumpBehaviour, jumpBehaviour);
+          }
+
+         public static bool TryRemoveJumpBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<JumpBehaviour>((int)GlobalBehavioursAPI.JumpBehaviour);
+          }
+
+        public static bool TryGetJumpHangingBehaviourBehaviour(this IEntity entity, out JumpHangingBehaviour jumpHangingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.JumpHangingBehaviour, out jumpHangingBehaviour);
+         }
+
+         public static bool TryAddJumpHangingBehaviourBehaviour(this IEntity entity, JumpHangingBehaviour jumpHangingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.JumpHangingBehaviour, jumpHangingBehaviour);
+          }
+
+         public static bool TryRemoveJumpHangingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<JumpHangingBehaviour>((int)GlobalBehavioursAPI.JumpHangingBehaviour);
+          }
+
+        public static bool TryGetMovementBehaviourBehaviour(this IEntity entity, out MovementBehaviour movementBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.MovementBehaviour, out movementBehaviour);
+         }
+
+         public static bool TryAddMovementBehaviourBehaviour(this IEntity entity, MovementBehaviour movementBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.MovementBehaviour, movementBehaviour);
+          }
+
+         public static bool TryRemoveMovementBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<MovementBehaviour>((int)GlobalBehavioursAPI.MovementBehaviour);
+          }
+
         public static bool TryGetInteractionInputHandlingBehaviourBehaviour(this IEntity entity, out InteractionInputHandlingBehaviour interactionInputHandlingBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InteractionInputHandlingBehaviour, out interactionInputHandlingBehaviour);
@@ -710,6 +1026,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveInteractionInputHandlingBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<InteractionInputHandlingBehaviour>((int)GlobalBehavioursAPI.InteractionInputHandlingBehaviour);
+          }
+
+        public static bool TryGetJumpInputHandlingBehaviourBehaviour(this IEntity entity, out JumpInputHandlingBehaviour jumpInputHandlingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.JumpInputHandlingBehaviour, out jumpInputHandlingBehaviour);
+         }
+
+         public static bool TryAddJumpInputHandlingBehaviourBehaviour(this IEntity entity, JumpInputHandlingBehaviour jumpInputHandlingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.JumpInputHandlingBehaviour, jumpInputHandlingBehaviour);
+          }
+
+         public static bool TryRemoveJumpInputHandlingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<JumpInputHandlingBehaviour>((int)GlobalBehavioursAPI.JumpInputHandlingBehaviour);
           }
 
         public static bool TryGetMovementInputHandlingBehaviourBehaviour(this IEntity entity, out MovementInputHandlingBehaviour movementInputHandlingBehaviour)

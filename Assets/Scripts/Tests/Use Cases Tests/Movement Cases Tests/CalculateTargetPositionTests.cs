@@ -1,10 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
-using Tests.EntityExtensionsTests.TestsScriptLanguage;
 using Unity.Mathematics;
-using UnityEngine;
 using UseCases;
-using Create = UseCasesTests.MovementModelTests.TestsScriptLanguage.Create;
 using SetUp = UseCasesTests.MovementModelTests.TestsScriptLanguage.SetUp;
 
 namespace UseCasesTests.MovementModelTests

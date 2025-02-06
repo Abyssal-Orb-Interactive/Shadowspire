@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      high-res paladin sword_0: 2111292926845855490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
