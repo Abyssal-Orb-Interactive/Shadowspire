@@ -3,19 +3,29 @@ using AtomicFramework.AtomicStructures;
 using GameplayConstructor.Enitity.Behaviours;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
+using ReactiveLibraryFacade.DataStructures;
+using TimeFramework.Core;
+using TimeFramework.Timers;
 using UseCases;
 
 namespace GameplayConstructorElements.Behaviours
 {
     [Serializable]
-    public sealed class InvincibilityBehaviour : BehaviourBase, IInitBehaviour, IFrameRunBehaviour
+    public sealed class InvincibilityBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private float _elapsedInvincibilitySeconds = 0f;
+        private TimeInvoker _timeInvoker = null;
+        private Timer _timer = null;
         
         #region Cache Varaibles
 
         private IAtomicValue<float> _invincibilitySecondsDuration = null;
-        private IAtomicVariable<bool> _invincibility = null;
+        private AtomicReactiveProperty<bool> _invincibility = null;
+
+        #endregion
+
+        #region Subscriptions
+
+        private IDisposable _subscription = null;
 
         #endregion
         
@@ -30,6 +40,8 @@ namespace GameplayConstructorElements.Behaviours
         
         public void Init()
         {
+            _timeInvoker = TimeInvoker.Instance;
+            
             _entity.TryGetInvincibilitySecondsDurationData(out var invincibilitySecondsDuration);
             _invincibilitySecondsDuration = invincibilitySecondsDuration;
 
@@ -41,18 +53,49 @@ namespace GameplayConstructorElements.Behaviours
 
         public void OnInit()
         {
+            _timer = new Timer(_invincibilitySecondsDuration, _timeInvoker, TimerType.ScaledFrame);
+        }
+        
+        public void Awake()
+        {
+            Dispose();
+            OnAwake();
         }
 
-        public void OnFrameRun()
+        public void OnAwake()
         {
-            if (!_invincibility.CurrentValue) return;
+            var subscriptionBuilder = new DisposableBuilder();
             
-            TimeCases.SetUpElapsedTimeByDeltaTime(ref _elapsedInvincibilitySeconds);
+            subscriptionBuilder.Add(_invincibility.Subscribe(OnInvincibilityChange));
+            subscriptionBuilder.Add(_timer.TimerFinished.Subscribe(OnTimerFinished));
             
-            if (_invincibilitySecondsDuration.CurrentValue > _elapsedInvincibilitySeconds) return;
+            _subscription = subscriptionBuilder.Build();
+        }
+
+        private void OnInvincibilityChange(bool invincibility)
+        {
+            if (!invincibility)
+            {
+                _timer.Stop();
+                return;
+            }
             
+            _timer.Restart();
+        }
+        
+        private void OnTimerFinished()
+        {
             _invincibility.Value = false;
-            _elapsedInvincibilitySeconds = 0f;
+        }
+        
+        public void Sleep()
+        {
+            OnSleep();
+        }
+
+        public void OnSleep()
+        {
+            Dispose();
         }
 
         public void Destroy()
@@ -62,6 +105,13 @@ namespace GameplayConstructorElements.Behaviours
 
         public void OnDestroy()
         {
+            Dispose();
+            _timer?.Dispose();
+        }
+        
+        public void Dispose()
+        {
+            _subscription?.Dispose();
         }
         
         #endregion

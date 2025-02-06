@@ -50,6 +50,17 @@ namespace TimeFramework.Timers
             DelayTimeInSeconds = delayTimeInSeconds;
             _elapsedTimeInSeconds.Value = 0f;
         }
+        
+        public Timer(IAtomicValue<float> delayTimeInSeconds, TimeInvoker invoker, TimerType type)
+        {
+            if(invoker == null) throw new ArgumentNullException(nameof(invoker), "TimeInvoker cannot be null.");;
+            
+            _invoker = invoker;
+            _type = type;
+            
+            DelayTimeInSeconds = delayTimeInSeconds.CurrentValue;
+            _elapsedTimeInSeconds.Value = 0f;
+        }
 
         public void Start()
         {
