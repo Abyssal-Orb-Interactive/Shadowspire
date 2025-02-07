@@ -1747,15 +1747,45 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: _canMoveConditionsFabtics
+    - Name: _isMoving
       Entry: 7
-      Data: 22|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+      Data: 22|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _speedExpressionElementsFabrics
+      Entry: 7
+      Data: 23|AtomicFramework.AtomicStructures.IEntityFloatExpressionElementFabric[],
+        AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 23|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+      Data: 24|Source.Gameplay_Constructor_Elements.Expressions.SpeedExpressionBaseSpeedElementFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canMoveConditionsFabtics
+      Entry: 7
+      Data: 25|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 26|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
@@ -1768,7 +1798,7 @@ MonoBehaviour:
       Data: 
     - Name: _jumpHeight
       Entry: 7
-      Data: 24|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 27|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1778,7 +1808,7 @@ MonoBehaviour:
       Data: 
     - Name: _isGrounded
       Entry: 7
-      Data: 25|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+      Data: 28|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 5
@@ -1788,7 +1818,7 @@ MonoBehaviour:
       Data: 
     - Name: _isJumping
       Entry: 7
-      Data: 26|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+      Data: 29|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 5
@@ -1798,27 +1828,27 @@ MonoBehaviour:
       Data: 
     - Name: _canJumpConditionsFabtics
       Entry: 7
-      Data: 27|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+      Data: 30|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 28|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+      Data: 31|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 29|GameplayConstructorElements.Expressions.Conditions.IsGroundedConditionFabric,
+      Data: 32|GameplayConstructorElements.Expressions.Conditions.IsGroundedConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 30|GameplayConstructorElements.Expressions.Conditions.IsNotJumpingConditionFabric,
+      Data: 33|GameplayConstructorElements.Expressions.Conditions.IsNotJumpingConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
@@ -1831,7 +1861,7 @@ MonoBehaviour:
       Data: 
     - Name: _maxFreeFallingSpeed
       Entry: 7
-      Data: 31|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 34|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1841,7 +1871,7 @@ MonoBehaviour:
       Data: 
     - Name: _freeFallingAcceleration
       Entry: 7
-      Data: 32|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 35|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1851,27 +1881,27 @@ MonoBehaviour:
       Data: 
     - Name: _canFreeFallingConditionsFabtics
       Entry: 7
-      Data: 33|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+      Data: 36|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 34|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedConditionFabric,
+      Data: 37|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 35|GameplayConstructorElements.Expressions.Conditions.IsFreeFallingConditionFabric,
+      Data: 38|GameplayConstructorElements.Expressions.Conditions.IsFreeFallingConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 36|GameplayConstructorElements.Expressions.Conditions.IsNotJumpHangingConditionFabric,
+      Data: 39|GameplayConstructorElements.Expressions.Conditions.IsNotJumpHangingConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
@@ -1884,7 +1914,7 @@ MonoBehaviour:
       Data: 
     - Name: _isJumpHanging
       Entry: 7
-      Data: 37|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+      Data: 40|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 5
@@ -1894,7 +1924,7 @@ MonoBehaviour:
       Data: 
     - Name: _velocityThresholdForJumpHanging
       Entry: 7
-      Data: 38|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 41|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1904,7 +1934,7 @@ MonoBehaviour:
       Data: 
     - Name: _jumpHangingDuration
       Entry: 7
-      Data: 39|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 42|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1914,7 +1944,7 @@ MonoBehaviour:
       Data: 
     - Name: _jumpHangingSpeedupModifier
       Entry: 7
-      Data: 40|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 43|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1924,7 +1954,7 @@ MonoBehaviour:
       Data: 
     - Name: _jumpHangingSlowModifier
       Entry: 7
-      Data: 41|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 44|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -1934,34 +1964,34 @@ MonoBehaviour:
       Data: 
     - Name: _canJumpHangingConditionsFabtics
       Entry: 7
-      Data: 42|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+      Data: 45|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 4
     - Name: 
       Entry: 7
-      Data: 43|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+      Data: 46|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 44|GameplayConstructorElements.Expressions.Conditions.IsJumpingConditionFabric,
+      Data: 47|GameplayConstructorElements.Expressions.Conditions.IsJumpingConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 45|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedConditionFabric,
+      Data: 48|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 46|GameplayConstructorElements.Expressions.Conditions.IsNotJumpHangingConditionFabric,
+      Data: 49|GameplayConstructorElements.Expressions.Conditions.IsNotJumpHangingConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
@@ -1972,16 +2002,36 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _jumpHangingMovementSpeedupModifier
+      Entry: 7
+      Data: 50|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHangingMovementSpeedupBonusDuration
+      Entry: 7
+      Data: 51|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 47|GameplayConstructorElements.Installers.Atomic.Global.WalletModel.CoinsInstaller,
+      Data: 52|GameplayConstructorElements.Installers.Atomic.Global.WalletModel.CoinsInstaller,
         GameplayConstructorElements.Installers
     - Name: _coins
       Entry: 7
-      Data: 48|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Int32,
+      Data: 53|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Int32,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 3
@@ -1994,11 +2044,11 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 49|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.InventoryInstaller,
+      Data: 54|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.InventoryInstaller,
         GameplayConstructorElements.Installers
     - Name: _inventory
       Entry: 7
-      Data: 50|ObservableCollections.ObservableDictionary`2[[System.String, mscorlib],[System.Int32,
+      Data: 55|ObservableCollections.ObservableDictionary`2[[System.String, mscorlib],[System.Int32,
         mscorlib]], ObservableCollections
     - Name: 
       Entry: 12
@@ -2014,11 +2064,11 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 51|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.ItemsRegisterHolderInstaller,
+      Data: 56|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.ItemsRegisterHolderInstaller,
         GameplayConstructorElements.Installers
     - Name: _itemsRegisterHolder
       Entry: 7
-      Data: 52|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 57|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], AtomicStructures
     - Name: _value
       Entry: 10
@@ -2031,11 +2081,11 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 53|GameplayConstructorElements.Installers.Models.Data.ArmsModelDataInstaller,
+      Data: 58|GameplayConstructorElements.Installers.Models.Data.ArmsModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _rightArm
       Entry: 7
-      Data: 54|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 59|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], AtomicStructures
     - Name: _value
       Entry: 10
@@ -2045,7 +2095,7 @@ MonoBehaviour:
       Data: 
     - Name: _leftArm
       Entry: 7
-      Data: 55|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 60|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], AtomicStructures
     - Name: _value
       Entry: 6
@@ -2055,21 +2105,21 @@ MonoBehaviour:
       Data: 
     - Name: _rightHandEquipActionEvent
       Entry: 7
-      Data: 56|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 61|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], AtomicStructures
     - Name: 
       Entry: 8
       Data: 
     - Name: _rightHandEquipActions
       Entry: 7
-      Data: 57|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 62|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 58|GameplayConstructorElements.Actions.EquipActionsEvents.OnRightHandEquipActionEventSwitchRightHandItem,
+      Data: 63|GameplayConstructorElements.Actions.EquipActionsEvents.OnRightHandEquipActionEventSwitchRightHandItem,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -2082,21 +2132,21 @@ MonoBehaviour:
       Data: 
     - Name: _leftHandEquipActionEvent
       Entry: 7
-      Data: 59|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 64|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], AtomicStructures
     - Name: 
       Entry: 8
       Data: 
     - Name: _leftHandEquipActions
       Entry: 7
-      Data: 60|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 65|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 61|GameplayConstructorElements.Actions.EquipActionsEvents.OnRightHandEquipActionEventSwitchRightHandItem,
+      Data: 66|GameplayConstructorElements.Actions.EquipActionsEvents.OnRightHandEquipActionEventSwitchRightHandItem,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -2112,11 +2162,11 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 62|Source.GameplayConstructorElements.Installers.Models.Data.MeleeAttackModelDataInstaller,
+      Data: 67|Source.GameplayConstructorElements.Installers.Models.Data.MeleeAttackModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _targets
       Entry: 7
-      Data: 63|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 68|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], mscorlib
     - Name: 
       Entry: 12
@@ -2129,14 +2179,14 @@ MonoBehaviour:
       Data: 
     - Name: _meleeAttackActionEvent
       Entry: 7
-      Data: 64|AtomicFramework.AtomicStructures.AtomicEvent`2[[System.Single, mscorlib],[GameData.DamageType,
+      Data: 69|AtomicFramework.AtomicStructures.AtomicEvent`2[[System.Single, mscorlib],[GameData.DamageType,
         GameData]], AtomicStructures
     - Name: 
       Entry: 8
       Data: 
     - Name: _meleeAttackActionEventActionsFabrics
       Entry: 7
-      Data: 65|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`2[[System.Single,
+      Data: 70|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`2[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[GameData.DamageType,
         GameData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
     - Name: 
@@ -2144,7 +2194,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 66|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventSplashAction,
+      Data: 71|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventSplashAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -2160,30 +2210,30 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 67|Source.Gameplay_Constructor_Elements.Installers.Models.Data.DeathModelDataInstaller,
+      Data: 72|Source.Gameplay_Constructor_Elements.Installers.Models.Data.DeathModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _deathEvent
       Entry: 7
-      Data: 68|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+      Data: 73|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
     - Name: 
       Entry: 8
       Data: 
     - Name: _deathActionFabrics
       Entry: 7
-      Data: 69|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
+      Data: 74|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 70|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDroppingInventoryAction,
+      Data: 75|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDroppingInventoryAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 71|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDestroyGameObjectAction,
+      Data: 76|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDestroyGameObjectAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -2205,35 +2255,35 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 72|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 77|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
       Data: 4
     - Name: 
       Entry: 7
-      Data: 73|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
+      Data: 78|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 74|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
+      Data: 79|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 75|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
+      Data: 80|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 76|GameplayConstructorElements.Installers.Models.Behaviour.DeathModelBehavioursInstaller,
+      Data: 81|GameplayConstructorElements.Installers.Models.Behaviour.DeathModelBehavioursInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8

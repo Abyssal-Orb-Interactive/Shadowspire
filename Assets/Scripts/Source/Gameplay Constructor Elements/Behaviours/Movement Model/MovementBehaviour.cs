@@ -22,13 +22,14 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         private IAtomicValue<Rigidbody2D> _rigidbody2D = null;
         private ReactiveLibraryFacade.IObservable<float2> _movementInputAction = null;
         private IAtomicValue<bool> _canMove = null;
+        private IAtomicVariable<bool> _isMoving = null;
 
         #endregion
         
         #region Subscriptions
         
         private IDisposable _movementInputActionSubscription = null;
-
+        
         #endregion
         
         #region Constructors
@@ -44,7 +45,7 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
             _entity.TryGetInputHandlerData(out var inputHandler);
             _inputHandler = inputHandler;
             
-            _entity.TryGetSpeedData(out var speed);
+            _entity.TryGetSpeedExpressionData(out var speed);
             _speed = speed;
             
             _entity.TryGetRigidbody2DData(out var rigidbody2D);
@@ -52,6 +53,9 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
             
             _entity.TryGetCanMoveData(out var canMove);
             _canMove = canMove;
+            
+            _entity.TryGetIsMovingData(out var isMoving);
+            _isMoving = isMoving;
             
             OnInit();
         }
@@ -81,17 +85,23 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         [Obsolete("Obsolete")]
         public void OnPhysicsFrameRun()
         {
-            if(!_canMove.CurrentValue) return;
+            if (!_canMove.CurrentValue)
+            {
+                _isMoving.Value = false;
+                return;
+            }
             
             var rb = _rigidbody2D.CurrentValue;
             
             if (_direction.x == 0f)
             {
                 rb.SetVelocityXTo(0f);
+                _isMoving.Value = false;
                 return;
             }
 
             rb.SetVelocityXTo(_direction.x * _speed.CurrentValue);
+            _isMoving.Value = true;
         }
 
         public void Sleep()

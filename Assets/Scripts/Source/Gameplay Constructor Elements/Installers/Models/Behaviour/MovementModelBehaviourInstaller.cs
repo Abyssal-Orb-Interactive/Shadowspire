@@ -15,6 +15,7 @@ namespace GameplayConstructorElements.Installers.Models.Behaviour
             entity.TryAddJumpBehaviourBehaviour(new JumpBehaviour(entity));
             entity.TryAddFreeFallingBehaviourBehaviour(new FreeFallingBehaviour(entity));
             entity.TryAddJumpHangingBehaviourBehaviour(new JumpHangingBehaviour(entity));
+            entity.TryAddMoveSpeedupOnJumpHangingBehaviourBehaviour(new MoveSpeedupOnJumpHangingBehaviour(entity));
         }
     }
 }

@@ -16,5 +16,6 @@ namespace GameplayConstructorFrameworkAPIs
     JumpBehaviour = 11,
     FreeFallingBehaviour = 12,
     JumpHangingBehaviour = 13,
+    MoveSpeedupOnJumpHangingBehaviour = 14,
      }
 }

@@ -169,21 +169,6 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.VelocityThresholdToJumpHanging);
           }
 
-        public static bool TryGetXpData(this IEntity entity, out AtomicReactiveProperty<float> xp)
-         {
-            return entity.TryGetData((int)GlobalDataAPI.Xp, out xp);
-         }
-
-         public static bool TryAddXpData(this IEntity entity, AtomicReactiveProperty<float> xp)
-          {
-            return entity.TryAddData((int)GlobalDataAPI.Xp, xp);
-          }
-
-         public static bool TryRemoveXpData(this IEntity entity)
-          {
-            return entity.TryRemoveData((int)GlobalDataAPI.Xp);
-          }
-
         public static bool TryGetMovementInputActionData(this IEntity entity, out AtomicEvent<float2> movementInputAction)
          {
             return entity.TryGetData((int)GlobalDataAPI.MovementInputAction, out movementInputAction);
@@ -889,6 +874,81 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.IsJumpHanging);
           }
 
+        public static bool TryGetSpeedExpressionData(this IEntity entity, out AtomicExpression<float> speedExpression)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.SpeedExpression, out speedExpression);
+         }
+
+         public static bool TryAddSpeedExpressionData(this IEntity entity, AtomicExpression<float> speedExpression)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.SpeedExpression, speedExpression);
+          }
+
+         public static bool TryRemoveSpeedExpressionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.SpeedExpression);
+          }
+
+        public static bool TryGetJumpHangingMovementSpeedupModifierData(this IEntity entity, out AtomicReactiveProperty<float> jumpHangingMovementSpeedupModifier)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpHangingMovementSpeedupModifier, out jumpHangingMovementSpeedupModifier);
+         }
+
+         public static bool TryAddJumpHangingMovementSpeedupModifierData(this IEntity entity, AtomicReactiveProperty<float> jumpHangingMovementSpeedupModifier)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpHangingMovementSpeedupModifier, jumpHangingMovementSpeedupModifier);
+          }
+
+         public static bool TryRemoveJumpHangingMovementSpeedupModifierData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpHangingMovementSpeedupModifier);
+          }
+
+        public static bool TryGetIsMovingData(this IEntity entity, out AtomicReactiveProperty<bool> isMoving)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsMoving, out isMoving);
+         }
+
+         public static bool TryAddIsMovingData(this IEntity entity, AtomicReactiveProperty<bool> isMoving)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsMoving, isMoving);
+          }
+
+         public static bool TryRemoveIsMovingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsMoving);
+          }
+
+        public static bool TryGetJumpHangingMovementSpeedupBonusDurationData(this IEntity entity, out AtomicReactiveProperty<float> jumpHangingMovementSpeedupBonusDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpHangingMovementSpeedupBonusDuration, out jumpHangingMovementSpeedupBonusDuration);
+         }
+
+         public static bool TryAddJumpHangingMovementSpeedupBonusDurationData(this IEntity entity, AtomicReactiveProperty<float> jumpHangingMovementSpeedupBonusDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpHangingMovementSpeedupBonusDuration, jumpHangingMovementSpeedupBonusDuration);
+          }
+
+         public static bool TryRemoveJumpHangingMovementSpeedupBonusDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpHangingMovementSpeedupBonusDuration);
+          }
+
+        public static bool TryGetXpData(this IEntity entity, out AtomicReactiveProperty<float> xp)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Xp, out xp);
+         }
+
+         public static bool TryAddXpData(this IEntity entity, AtomicReactiveProperty<float> xp)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Xp, xp);
+          }
+
+         public static bool TryRemoveXpData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Xp);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1011,6 +1071,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveMovementBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<MovementBehaviour>((int)GlobalBehavioursAPI.MovementBehaviour);
+          }
+
+        public static bool TryGetMoveSpeedupOnJumpHangingBehaviourBehaviour(this IEntity entity, out MoveSpeedupOnJumpHangingBehaviour moveSpeedupOnJumpHangingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.MoveSpeedupOnJumpHangingBehaviour, out moveSpeedupOnJumpHangingBehaviour);
+         }
+
+         public static bool TryAddMoveSpeedupOnJumpHangingBehaviourBehaviour(this IEntity entity, MoveSpeedupOnJumpHangingBehaviour moveSpeedupOnJumpHangingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.MoveSpeedupOnJumpHangingBehaviour, moveSpeedupOnJumpHangingBehaviour);
+          }
+
+         public static bool TryRemoveMoveSpeedupOnJumpHangingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<MoveSpeedupOnJumpHangingBehaviour>((int)GlobalBehavioursAPI.MoveSpeedupOnJumpHangingBehaviour);
           }
 
         public static bool TryGetInteractionInputHandlingBehaviourBehaviour(this IEntity entity, out InteractionInputHandlingBehaviour interactionInputHandlingBehaviour)
