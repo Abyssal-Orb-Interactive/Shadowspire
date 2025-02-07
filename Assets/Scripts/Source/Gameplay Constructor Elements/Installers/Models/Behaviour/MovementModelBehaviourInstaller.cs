@@ -17,6 +17,7 @@ namespace GameplayConstructorElements.Installers.Models.Behaviour
             entity.TryAddJumpHangingBehaviourBehaviour(new JumpHangingBehaviour(entity));
             entity.TryAddMoveSpeedupOnJumpHangingBehaviourBehaviour(new MoveSpeedupOnJumpHangingBehaviour(entity));
             entity.TryAddCoyoteTimeBehaviourBehaviour(new CoyoteTimeBehaviour(entity));
+            entity.TryAddJumpBufferBehaviourBehaviour(new JumpBufferBehaviour(entity));
         }
     }
 }

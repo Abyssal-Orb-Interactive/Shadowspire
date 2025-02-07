@@ -113,7 +113,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         public void OnDestroy()
         {
             Dispose();
-            _timer.Stop();
+            _timer?.Stop();
             _timer?.Dispose();
             _timer = null;
         }

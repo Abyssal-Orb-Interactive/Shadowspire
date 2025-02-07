@@ -164,7 +164,7 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         public void OnDestroy()
         {
             Dispose();
-            _jumpHangingTimer.Stop();
+            _jumpHangingTimer?.Stop();
             _jumpHangingTimer?.Dispose();
             _jumpHangingTimer = null;
         }

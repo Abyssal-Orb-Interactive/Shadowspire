@@ -137,8 +137,8 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
             Dispose();
             
             _timerIsActive = false;
-            _timer.Stop();
-            _timer.Dispose();
+            _timer?.Stop();
+            _timer?.Dispose();
             _timer = null;
         }
 

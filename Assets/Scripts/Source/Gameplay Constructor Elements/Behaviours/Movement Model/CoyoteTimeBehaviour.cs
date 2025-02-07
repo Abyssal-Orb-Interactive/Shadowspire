@@ -56,7 +56,7 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
 
         public void OnInit()
         {
-            _timer = new Timer(_coyoteTimeDuration, _timeInvoker, TimerType.ScaledFrame);
+            _timer = new Timer(_coyoteTimeDuration, _timeInvoker, TimerType.UnscaledFrame);
         }
         
         public void Awake()
@@ -113,8 +113,8 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         public void OnDestroy()
         {
             Dispose();
-            _timer.Stop();
-            _timer.Dispose();
+            _timer?.Stop();
+            _timer?.Dispose();
             _timer = null;
         }
 

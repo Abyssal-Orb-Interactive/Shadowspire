@@ -994,6 +994,36 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.IsInCoyoteTime);
           }
 
+        public static bool TryGetJumpBufferingDurationData(this IEntity entity, out AtomicReactiveProperty<float> jumpBufferingDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpBufferingDuration, out jumpBufferingDuration);
+         }
+
+         public static bool TryAddJumpBufferingDurationData(this IEntity entity, AtomicReactiveProperty<float> jumpBufferingDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpBufferingDuration, jumpBufferingDuration);
+          }
+
+         public static bool TryRemoveJumpBufferingDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpBufferingDuration);
+          }
+
+        public static bool TryGetCanBufferingJumpData(this IEntity entity, out AtomicExpression<bool> canBufferingJump)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanBufferingJump, out canBufferingJump);
+         }
+
+         public static bool TryAddCanBufferingJumpData(this IEntity entity, AtomicExpression<bool> canBufferingJump)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanBufferingJump, canBufferingJump);
+          }
+
+         public static bool TryRemoveCanBufferingJumpData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanBufferingJump);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1101,6 +1131,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveJumpBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<JumpBehaviour>((int)GlobalBehavioursAPI.JumpBehaviour);
+          }
+
+        public static bool TryGetJumpBufferBehaviourBehaviour(this IEntity entity, out JumpBufferBehaviour jumpBufferBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.JumpBufferBehaviour, out jumpBufferBehaviour);
+         }
+
+         public static bool TryAddJumpBufferBehaviourBehaviour(this IEntity entity, JumpBufferBehaviour jumpBufferBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.JumpBufferBehaviour, jumpBufferBehaviour);
+          }
+
+         public static bool TryRemoveJumpBufferBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<JumpBufferBehaviour>((int)GlobalBehavioursAPI.JumpBufferBehaviour);
           }
 
         public static bool TryGetJumpHangingBehaviourBehaviour(this IEntity entity, out JumpHangingBehaviour jumpHangingBehaviour)

@@ -67,5 +67,7 @@ namespace GameplayConstructorFrameworkAPIs
     JumpHangingMovementSpeedupDuration = 62,
     CoyoteTimeDuration = 63,
     IsInCoyoteTime = 64,
+    JumpBufferingDuration = 65,
+    CanBufferingJump = 66,
      }
 }
