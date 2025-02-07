@@ -102,6 +102,8 @@ namespace GameplayConstructorElements.Behaviours
         {
             _xpSubscription?.Dispose();
             _xpTargetSubscription?.Dispose();
+            _xpSubscription = null;
+            _xpTargetSubscription = null;
         }
         
         #endregion

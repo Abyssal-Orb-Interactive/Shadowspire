@@ -135,14 +135,17 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         public void OnDestroy()
         {
             Dispose();
+            
+            _timerIsActive = false;
+            _timer.Stop();
             _timer.Dispose();
+            _timer = null;
         }
 
         public void Dispose()
         {
-            _timer.Stop();
-            _timerIsActive = false;
             _subscription?.Dispose();
+            _subscription = null;
         }
         
         #endregion

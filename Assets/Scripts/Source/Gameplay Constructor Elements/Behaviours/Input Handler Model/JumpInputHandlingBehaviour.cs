@@ -113,7 +113,9 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         public void OnDestroy()
         {
             Dispose();
+            _timer.Stop();
             _timer?.Dispose();
+            _timer = null;
         }
         
         public void Dispose()
@@ -121,6 +123,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
             _subscription?.Dispose();
             _inputActions.CurrentValue.BaseMap.Jump.started -= OnStartJumpInput;
             _inputActions.CurrentValue.BaseMap.Jump.canceled -= OnCancelJumpInput;
+            _subscription = null;
         }
         
         #endregion

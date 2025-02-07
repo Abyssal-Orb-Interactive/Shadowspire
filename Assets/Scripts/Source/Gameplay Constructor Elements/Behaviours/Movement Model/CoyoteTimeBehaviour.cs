@@ -6,33 +6,33 @@ using GameplayConstructorFrameworkAPIs;
 using ReactiveLibraryFacade.DataStructures;
 using TimeFramework.Core;
 using TimeFramework.Timers;
-using UseCases;
 
-namespace GameplayConstructorElements.Behaviours
+namespace GameplayConstructorElements.Behaviours.MovementModel
 {
     [Serializable]
-    public sealed class InvincibilityBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class CoyoteTimeBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
         private TimeInvoker _timeInvoker = null;
         private Timer _timer = null;
         
-        #region Cache Varaibles
-
-        private IAtomicValue<float> _invincibilitySecondsDuration = null;
-        private AtomicReactiveProperty<bool> _invincibility = null;
+        #region Cache Variables
+        
+        private ReactiveLibraryFacade.IObservable<bool> _isGrounded = null;
+        private IAtomicValue<float> _coyoteTimeDuration = null;
+        private IAtomicVariable<bool> _inCoyoteTime = null;
 
         #endregion
-
+        
         #region Subscriptions
-
+        
         private IDisposable _subscription = null;
-
+        
         #endregion
         
         #region Constructors
-        
-        public InvincibilityBehaviour() {}
-        public InvincibilityBehaviour(IEntity entity) : base(entity) {}
+
+        public CoyoteTimeBehaviour() {}
+        public CoyoteTimeBehaviour(IEntity entity) : base(entity) {}
         
         #endregion
 
@@ -42,18 +42,21 @@ namespace GameplayConstructorElements.Behaviours
         {
             _timeInvoker = TimeInvoker.Instance;
             
-            _entity.TryGetInvincibilitySecondsDurationData(out var invincibilitySecondsDuration);
-            _invincibilitySecondsDuration = invincibilitySecondsDuration;
-
-            _entity.TryGetInvincibilityData(out var invincibility);
-            _invincibility = invincibility;
+            _entity.TryGetIsGroundedData(out var isGrounded);
+            _isGrounded = isGrounded;
+            
+            _entity.TryGetCoyoteTimeDurationData(out var coyoteTimeDuration);
+            _coyoteTimeDuration = coyoteTimeDuration;
+            
+            _entity.TryGetIsInCoyoteTimeData(out var inCoyoteTime);
+            _inCoyoteTime = inCoyoteTime;
             
             OnInit();
         }
 
         public void OnInit()
         {
-            _timer = new Timer(_invincibilitySecondsDuration, _timeInvoker, TimerType.ScaledFrame);
+            _timer = new Timer(_coyoteTimeDuration, _timeInvoker, TimerType.ScaledFrame);
         }
         
         public void Awake()
@@ -66,26 +69,30 @@ namespace GameplayConstructorElements.Behaviours
         {
             var subscriptionBuilder = new DisposableBuilder();
             
-            subscriptionBuilder.Add(_invincibility.Subscribe(OnInvincibilityChange));
+            subscriptionBuilder.Add(_isGrounded.Subscribe(OnIsGroundedChange));
             subscriptionBuilder.Add(_timer.TimerFinished.Subscribe(OnTimerFinished));
             
             _subscription = subscriptionBuilder.Build();
         }
 
-        private void OnInvincibilityChange(bool invincibility)
+        private void OnTimerFinished()
         {
-            if (!invincibility)
+            _timer.Stop();
+            _inCoyoteTime.Value = false;
+        }
+
+        private void OnIsGroundedChange(bool isGrounded)
+        {
+            if (isGrounded)
             {
-                _timer.Stop();
+                _inCoyoteTime.Value = false;
                 return;
             }
             
+            if (_inCoyoteTime.CurrentValue) return;
+
             _timer.Restart();
-        }
-        
-        private void OnTimerFinished()
-        {
-            _invincibility.Value = false;
+            _inCoyoteTime.Value = true;
         }
         
         public void Sleep()
@@ -106,9 +113,11 @@ namespace GameplayConstructorElements.Behaviours
         public void OnDestroy()
         {
             Dispose();
-            _timer?.Dispose();
+            _timer.Stop();
+            _timer.Dispose();
+            _timer = null;
         }
-        
+
         public void Dispose()
         {
             _subscription?.Dispose();

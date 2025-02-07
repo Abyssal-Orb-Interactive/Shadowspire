@@ -87,6 +87,7 @@ namespace GameplayConstructorElements.Behaviours.DeathModel
         public void Dispose()
         {
             _subscription?.Dispose();
+            _subscription = null;
         }
         
         #endregion

@@ -17,5 +17,6 @@ namespace GameplayConstructorFrameworkAPIs
     FreeFallingBehaviour = 12,
     JumpHangingBehaviour = 13,
     MoveSpeedupOnJumpHangingBehaviour = 14,
+    CoyoteTimeBehaviour = 15,
      }
 }

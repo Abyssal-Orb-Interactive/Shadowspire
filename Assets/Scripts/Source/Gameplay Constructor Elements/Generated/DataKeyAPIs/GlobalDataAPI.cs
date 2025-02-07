@@ -64,5 +64,8 @@ namespace GameplayConstructorFrameworkAPIs
     JumpHangingMovementSpeedupBonusDuration = 59,
     Xp = 60,
     DamageModifiers = 61,
+    JumpHangingMovementSpeedupDuration = 62,
+    CoyoteTimeDuration = 63,
+    IsInCoyoteTime = 64,
      }
 }

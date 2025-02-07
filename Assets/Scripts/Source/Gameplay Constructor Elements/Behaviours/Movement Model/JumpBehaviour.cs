@@ -137,6 +137,7 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         public void Dispose()
         {
             _subscription?.Dispose();
+            _subscription = null;
         }
         
         #endregion

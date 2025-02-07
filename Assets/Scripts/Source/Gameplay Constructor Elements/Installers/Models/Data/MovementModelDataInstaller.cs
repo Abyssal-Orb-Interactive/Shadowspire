@@ -25,6 +25,10 @@ namespace GameplayConstructorElements.Installers.Models
         [SerializeField] private AtomicReactiveProperty<bool> _isJumping = new();
         [SerializeReference] private IEntityConditionFabric[] _canJumpConditionsFabtics = Array.Empty<IEntityConditionFabric>();
         
+        [Space(10f), Header("Coyote Time")]
+        [SerializeField] private AtomicReactiveProperty<float> _coyoteTimeDuration = new();
+        [SerializeField] private AtomicReactiveProperty<bool> _isInCoyoteTime = new();
+        
         [Space(10f), Header("Free Falling")]
         [SerializeField] private AtomicReactiveProperty<float> _maxFreeFallingSpeed = new();
         [SerializeField] private AtomicReactiveProperty<float> _freeFallingAcceleration = new();
@@ -59,6 +63,8 @@ namespace GameplayConstructorElements.Installers.Models
             entity.TryAddJumpHangingMovementSpeedupModifierData(_jumpHangingMovementSpeedupModifier);
             entity.TryAddJumpHangingMovementSpeedupBonusDurationData(_jumpHangingMovementSpeedupBonusDuration);
             entity.TryAddIsMovingData(_isMoving);
+            entity.TryAddIsInCoyoteTimeData(_isInCoyoteTime);
+            entity.TryAddCoyoteTimeDurationData(_coyoteTimeDuration);
 
             var speedExpression = new AtomicFloatMultiplication();
             speedExpression.AppendBy(_speedExpressionElementsFabrics, entity);

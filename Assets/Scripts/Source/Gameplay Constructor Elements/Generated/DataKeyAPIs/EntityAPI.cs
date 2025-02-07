@@ -949,6 +949,51 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.Xp);
           }
 
+        public static bool TryGetJumpHangingMovementSpeedupDurationData(this IEntity entity, out AtomicExpression<float> jumpHangingMovementSpeedupDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.JumpHangingMovementSpeedupDuration, out jumpHangingMovementSpeedupDuration);
+         }
+
+         public static bool TryAddJumpHangingMovementSpeedupDurationData(this IEntity entity, AtomicExpression<float> jumpHangingMovementSpeedupDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.JumpHangingMovementSpeedupDuration, jumpHangingMovementSpeedupDuration);
+          }
+
+         public static bool TryRemoveJumpHangingMovementSpeedupDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.JumpHangingMovementSpeedupDuration);
+          }
+
+        public static bool TryGetCoyoteTimeDurationData(this IEntity entity, out AtomicReactiveProperty<float> coyoteTimeDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CoyoteTimeDuration, out coyoteTimeDuration);
+         }
+
+         public static bool TryAddCoyoteTimeDurationData(this IEntity entity, AtomicReactiveProperty<float> coyoteTimeDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CoyoteTimeDuration, coyoteTimeDuration);
+          }
+
+         public static bool TryRemoveCoyoteTimeDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CoyoteTimeDuration);
+          }
+
+        public static bool TryGetIsInCoyoteTimeData(this IEntity entity, out AtomicReactiveProperty<bool> isInCoyoteTime)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsInCoyoteTime, out isInCoyoteTime);
+         }
+
+         public static bool TryAddIsInCoyoteTimeData(this IEntity entity, AtomicReactiveProperty<bool> isInCoyoteTime)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsInCoyoteTime, isInCoyoteTime);
+          }
+
+         public static bool TryRemoveIsInCoyoteTimeData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsInCoyoteTime);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1011,6 +1056,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveSpriteSetUpBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<SpriteSetUpBehaviour>((int)GlobalBehavioursAPI.SpriteSetUpBehaviour);
+          }
+
+        public static bool TryGetCoyoteTimeBehaviourBehaviour(this IEntity entity, out CoyoteTimeBehaviour coyoteTimeBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.CoyoteTimeBehaviour, out coyoteTimeBehaviour);
+         }
+
+         public static bool TryAddCoyoteTimeBehaviourBehaviour(this IEntity entity, CoyoteTimeBehaviour coyoteTimeBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.CoyoteTimeBehaviour, coyoteTimeBehaviour);
+          }
+
+         public static bool TryRemoveCoyoteTimeBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<CoyoteTimeBehaviour>((int)GlobalBehavioursAPI.CoyoteTimeBehaviour);
           }
 
         public static bool TryGetFreeFallingBehaviourBehaviour(this IEntity entity, out FreeFallingBehaviour freeFallingBehaviour)

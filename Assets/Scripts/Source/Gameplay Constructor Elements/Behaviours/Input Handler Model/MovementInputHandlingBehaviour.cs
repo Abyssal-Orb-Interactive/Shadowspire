@@ -65,9 +65,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void OnActionsChanged(PlayerActions newActions)
         {
-            DisableBaseMapIn(_cache);
             UnsubscribeFromMovementInput(_cache);
-            DisposeInputActions(_cache);
             
             _cache = newActions;
             
@@ -135,8 +133,8 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         public void OnDestroy()
         {
             Dispose();
-            DisposeInputActions(_inputActions.CurrentValue);
             _subscribe?.Dispose();
+            _subscribe = null;
             _cache = null;
         }
         
@@ -150,18 +148,6 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         {
             inputActions.BaseMap.Movement.performed -= InvokeMovementInputAction;
             inputActions.BaseMap.Movement.canceled -= CancelMovementInputAction;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void DisableBaseMapIn(PlayerActions inputActions)
-        {
-            inputActions.BaseMap.Disable();
-        }
-        
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void DisposeInputActions(PlayerActions inputActions)
-        {
-            inputActions.Dispose();
         }
         
         #endregion

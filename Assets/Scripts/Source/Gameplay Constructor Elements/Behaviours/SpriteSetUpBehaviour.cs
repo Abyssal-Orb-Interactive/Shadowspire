@@ -88,6 +88,7 @@ namespace GameplayConstructorElements.Behaviours
         public void Dispose()
         {
             _subscription?.Dispose();
+            _subscription = null;
         }
         
         #endregion
