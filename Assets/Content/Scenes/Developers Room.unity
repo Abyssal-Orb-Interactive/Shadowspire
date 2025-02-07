@@ -619,7 +619,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.3897105, y: -0.003042072}
+  m_Offset: {x: 0.3897105, y: -0.003042072}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1550,6 +1550,7 @@ MonoBehaviour:
     - {fileID: 403697919}
     - {fileID: 1262784664}
     - {fileID: 1775444663}
+    - {fileID: 403697922}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2268,35 +2269,45 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: _targetsTriggerCollider
+      Entry: 7
+      Data: 79|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Collider2D,
+        UnityEngine.Physics2DModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 79|Source.Gameplay_Constructor_Elements.Installers.Models.Data.DeathModelDataInstaller,
+      Data: 80|Source.Gameplay_Constructor_Elements.Installers.Models.Data.DeathModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _deathEvent
       Entry: 7
-      Data: 80|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+      Data: 81|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
     - Name: 
       Entry: 8
       Data: 
     - Name: _deathActionFabrics
       Entry: 7
-      Data: 81|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
+      Data: 82|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 82|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDroppingInventoryAction,
+      Data: 83|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDroppingInventoryAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 83|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDestroyGameObjectAction,
+      Data: 84|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDestroyGameObjectAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -2318,35 +2329,42 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 84|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 85|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
-      Data: 85|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
+      Data: 86|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 86|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
+      Data: 87|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 87|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
+      Data: 88|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 88|GameplayConstructorElements.Installers.Models.Behaviour.DeathModelBehavioursInstaller,
+      Data: 89|GameplayConstructorElements.Installers.Models.Behaviour.MeleeAttackModelBehavioursInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 90|GameplayConstructorElements.Installers.Models.Behaviour.DeathModelBehavioursInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8

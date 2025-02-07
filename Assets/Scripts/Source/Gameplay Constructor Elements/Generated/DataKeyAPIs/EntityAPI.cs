@@ -1024,6 +1024,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.CanBufferingJump);
           }
 
+        public static bool TryGetTargetTrigger2DColliderData(this IEntity entity, out AtomicReactiveProperty<Collider2D> targetTrigger2DCollider)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TargetTrigger2DCollider, out targetTrigger2DCollider);
+         }
+
+         public static bool TryAddTargetTrigger2DColliderData(this IEntity entity, AtomicReactiveProperty<Collider2D> targetTrigger2DCollider)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TargetTrigger2DCollider, targetTrigger2DCollider);
+          }
+
+         public static bool TryRemoveTargetTrigger2DColliderData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TargetTrigger2DCollider);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1086,6 +1101,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveSpriteSetUpBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<SpriteSetUpBehaviour>((int)GlobalBehavioursAPI.SpriteSetUpBehaviour);
+          }
+
+        public static bool TryGetTargetsTriggerFlippingBehaviourBehaviour(this IEntity entity, out TargetsTriggerFlippingBehaviour targetsTriggerFlippingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.TargetsTriggerFlippingBehaviour, out targetsTriggerFlippingBehaviour);
+         }
+
+         public static bool TryAddTargetsTriggerFlippingBehaviourBehaviour(this IEntity entity, TargetsTriggerFlippingBehaviour targetsTriggerFlippingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.TargetsTriggerFlippingBehaviour, targetsTriggerFlippingBehaviour);
+          }
+
+         public static bool TryRemoveTargetsTriggerFlippingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<TargetsTriggerFlippingBehaviour>((int)GlobalBehavioursAPI.TargetsTriggerFlippingBehaviour);
           }
 
         public static bool TryGetCoyoteTimeBehaviourBehaviour(this IEntity entity, out CoyoteTimeBehaviour coyoteTimeBehaviour)

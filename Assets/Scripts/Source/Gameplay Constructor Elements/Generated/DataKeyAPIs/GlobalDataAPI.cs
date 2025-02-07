@@ -69,5 +69,6 @@ namespace GameplayConstructorFrameworkAPIs
     IsInCoyoteTime = 64,
     JumpBufferingDuration = 65,
     CanBufferingJump = 66,
+    TargetTrigger2DCollider = 67,
      }
 }

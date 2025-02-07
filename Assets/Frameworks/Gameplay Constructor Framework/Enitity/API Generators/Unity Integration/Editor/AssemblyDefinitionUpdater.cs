@@ -57,8 +57,9 @@ namespace GameplayConstructorFramework.Unity
 
             var updatedAsmdefContent = UpdateReferencesInAsmdef(asmdefContent, existingReferences);
             File.WriteAllText(asmdefPath, updatedAsmdefContent);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            
+            //AssetDatabase.SaveAssets();
+            //AssetDatabase.Refresh();
         }
         
         private static bool IsGenericType(string typeName)
@@ -87,10 +88,7 @@ namespace GameplayConstructorFramework.Unity
 
             AssemblyReferenceCount[assemblyGUID]++;
             var referenceWithGUIDPrefix = $"GUID:{assemblyGUID}";
-            if (!existingReferences.Contains(referenceWithGUIDPrefix))
-            {
-                existingReferences.Add(referenceWithGUIDPrefix);
-            }
+            existingReferences.Add(referenceWithGUIDPrefix);
         }
         
         public static void UpdateForRemoving(string folderPath, string type)
@@ -123,8 +121,8 @@ namespace GameplayConstructorFramework.Unity
             
             var updatedAsmdefContent = UpdateReferencesInAsmdef(asmdefContent, existingReferences);
             File.WriteAllText(asmdefPath, updatedAsmdefContent);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            //AssetDatabase.SaveAssets();
+            //AssetDatabase.Refresh();
         }
         
         private static void RemoveAssemblyReference(string type, ICollection<string> existingReferences)
