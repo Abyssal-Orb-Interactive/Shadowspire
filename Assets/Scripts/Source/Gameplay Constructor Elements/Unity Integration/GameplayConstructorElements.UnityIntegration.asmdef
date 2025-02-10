@@ -1,0 +1,4 @@
+{
+  "name": "GameplayConstructorElements.UnityIntegration",
+  "references":[ "GUID:7779e053dc881db4d997ca5a1c38a4a4", "GUID:1f79e805b829a3049950aef471d15304", "GUID:930c1838c76e4e5993ff61534d908728", "GUID:204d28477e544a0ea17389c4991a40f9", "GUID:f372ce7dfa7440e883ad550d7d1ad683", "GUID:5a930ab2158dfcc4abd02020a0bf8e96", "GUID:87bb9a743fd843818b9d8cfa54941644" ]
+}

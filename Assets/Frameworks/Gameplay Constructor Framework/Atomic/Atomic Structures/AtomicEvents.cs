@@ -9,7 +9,7 @@ namespace AtomicFramework.AtomicStructures
     public class AtomicEvent : IAtomicEvent
     {
         private Action _onEvent = null;
-        private List<Action> _subscribers = null;
+        private List<Action> _subscribers = new();
 
         public AtomicEvent()
         {
@@ -18,6 +18,8 @@ namespace AtomicFramework.AtomicStructures
         
         public IDisposable Subscribe(Action subscriber)
         {
+            _subscribers ??= new List<Action>();
+            
             _onEvent += subscriber;
             _subscribers.Add(subscriber);
 
@@ -33,13 +35,13 @@ namespace AtomicFramework.AtomicStructures
         [Button]
         public virtual void Invoke()
         {
-            _onEvent.Invoke();
+            _onEvent?.Invoke();
         }
 
         public void Dispose()
         {
             _onEvent = null;
-            _subscribers.Clear();
+            _subscribers?.Clear();
         }
     }
 

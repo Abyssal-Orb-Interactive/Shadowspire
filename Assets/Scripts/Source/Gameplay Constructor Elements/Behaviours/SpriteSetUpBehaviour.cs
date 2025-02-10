@@ -8,25 +8,31 @@ using UnityEngine;
 namespace GameplayConstructorElements.Behaviours
 {
     [Serializable]
-    public sealed class SpriteSetUpBehaviour : IInitBehaviour, ISleepingBehaviour, IDisposable
+    public sealed class SpriteSetUpBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private readonly IEntity _entity = null;
+        #region Cache Variables
         
         private ReactiveLibraryFacade.IObservable<Sprite> _spriteObservable = null;
         private IAtomicValue<SpriteRenderer> _spriteRendererValue = null;
         
-        private IDisposable _subscribe = null;
+        #endregion
+        
+        #region Subscriptions
+        
+        private IDisposable _subscription = null;
+        
+        #endregion
 
-        public SpriteSetUpBehaviour()
-        {
-            _entity = null;
-        }
+        #region Constructors
+        
+        public SpriteSetUpBehaviour() {}
 
-        public SpriteSetUpBehaviour(IEntity entity)
-        {
-            _entity = entity;
-        }
+        public SpriteSetUpBehaviour(IEntity entity) : base(entity) {}
+        
+        #endregion
 
+        #region Life Cycle Methods
+        
         public void Init()
         {
             _entity.TryGetSpriteData(out var spriteData);
@@ -51,7 +57,7 @@ namespace GameplayConstructorElements.Behaviours
        
         public void OnAwake()
         {
-            _subscribe = _spriteObservable.Subscribe(OnSpriteChange);
+            _subscription = _spriteObservable.Subscribe(OnSpriteChange);
         }
 
         private void OnSpriteChange(Sprite newSprite)
@@ -81,7 +87,10 @@ namespace GameplayConstructorElements.Behaviours
         
         public void Dispose()
         {
-            _subscribe?.Dispose();
+            _subscription?.Dispose();
+            _subscription = null;
         }
+        
+        #endregion
     }
 }

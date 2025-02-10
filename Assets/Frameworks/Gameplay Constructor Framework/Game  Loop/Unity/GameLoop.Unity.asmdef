@@ -2,7 +2,8 @@
     "name": "GameLoop.Unity",
     "rootNamespace": "",
     "references": [
-        "GUID:826625fb5a408514cb9c2bdfaed12def"
+        "GUID:826625fb5a408514cb9c2bdfaed12def",
+        "GUID:dc3c1b1216544d9c9232623d4572816b"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -119,6 +119,336 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &109948848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109948849}
+  - component: {fileID: 109948850}
+  m_Layer: 0
+  m_Name: ---Barrel Logical---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &109948849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109948848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1215446140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109948850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109948848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1215446140}
+    - {fileID: 1262784664}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.InventoryInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _inventory
+      Entry: 7
+      Data: 2|ObservableCollections.ObservableDictionary`2[[System.String, mscorlib],[System.Int32,
+        mscorlib]], ObservableCollections
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 1
+      Data: Coin
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Global.Unity.TransformInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _transform
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|GameplayConstructorElements.Installers.Models.Data.HealthModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _maxHealth
+      Entry: 7
+      Data: 6|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _health
+      Entry: 7
+      Data: 7|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canTakeDamageConditionFabrics
+      Entry: 7
+      Data: 8|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 9|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _invincibility
+      Entry: 7
+      Data: 10|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _invincibilitySecondsDuration
+      Entry: 7
+      Data: 11|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.ItemsRegisterHolderInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _itemsRegisterHolder
+      Entry: 7
+      Data: 13|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|GameplayConstructorElements.Installers.Atomic.Global.DamageModel.Data.DamageModifiersInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _damageModifiers
+      Entry: 7
+      Data: 15|ObservableCollections.ObservableDictionary`2[[GameData.DamageType,
+        GameData],[System.Single, mscorlib]], ObservableCollections
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[GameData.DamageType, GameData],[System.Single,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[GameData.DamageType, GameData],[System.Single,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.75
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[GameData.DamageType, GameData],[System.Single,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 4
+      Data: -1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Source.Gameplay_Constructor_Elements.Installers.Models.Data.DeathModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _deathEvent
+      Entry: 7
+      Data: 17|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _deathActionFabrics
+      Entry: 7
+      Data: 18|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 19|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDroppingInventoryAction,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDestroyGameObjectAction,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 22|GameplayConstructorElements.Installers.Models.Behaviour.DeathModelBehavioursInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!114 &275956193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 21203765659473168, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+  m_PrefabInstance: {fileID: 3609125008524957375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &403697916
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +459,12 @@ GameObject:
   m_Component:
   - component: {fileID: 403697917}
   - component: {fileID: 403697918}
+  - component: {fileID: 403697919}
+  - component: {fileID: 403697920}
+  - component: {fileID: 403697922}
+  - component: {fileID: 403697921}
+  - component: {fileID: 403697923}
+  - component: {fileID: 403697924}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -144,8 +480,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403697916}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.396, y: -2.129, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,6 +509,388 @@ MonoBehaviour:
     <IsActive>k__BackingField:
       _value: 1
     <ID>k__BackingField: 0
+--- !u!50 &403697919
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 76
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &403697920
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0022132397, y: -0.0023109913}
+  m_Size: {x: 0.3362217, y: 0.4291849}
+  m_Direction: 0
+--- !u!114 &403697921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac67e22e8b8145c5a90e6ef2c3e93e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &403697922
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.3897105, y: -0.003042072}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.40952957, y: 0.45855588}
+  m_EdgeRadius: 0
+--- !u!70 &403697923
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.000117841424, y: -0.22459981}
+  m_Size: {x: 0.2365228, y: 0.010804177}
+  m_Direction: 1
+--- !u!114 &403697924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403697916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2533c077f843e4b358a323e2b40837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &468170481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468170482}
+  m_Layer: 0
+  m_Name: Scene SetUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &468170482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468170481}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1693750782}
+  - {fileID: 759895963}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &482593611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482593612}
+  - component: {fileID: 482593613}
+  - component: {fileID: 482593614}
+  m_Layer: 0
+  m_Name: ---Barrel Visual---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482593612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482593611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1215446140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &482593613
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482593611}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5511a64418c43b141ab53df6f5abfa22, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.5, y: 0.5}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &482593614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482593611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 5511a64418c43b141ab53df6f5abfa22, type: 3}
+    - {fileID: 482593613}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _sprite
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteRendererInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _spriteRenderer
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.SpriteRenderer,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &496591814
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +907,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &496591815
 Transform:
@@ -233,7 +951,552 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityComponents:
+  - {fileID: 2022747808}
   - {fileID: 403697918}
+  - {fileID: 2006882322}
+  - {fileID: 275956193}
+  - {fileID: 2022747808}
+  - {fileID: 1262784664}
+  - {fileID: 1215446141}
+  - {fileID: 1775444663}
+  - {fileID: 1693750784}
+--- !u!1 &759895960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759895963}
+  - component: {fileID: 759895962}
+  - component: {fileID: 759895961}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &759895961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759895960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
+--- !u!114 &759895962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759895960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &759895963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759895960}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 468170482}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &989224179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989224180}
+  - component: {fileID: 989224182}
+  - component: {fileID: 989224181}
+  m_Layer: 0
+  m_Name: ---Spikes Visual---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &989224180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989224179}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2006882321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989224181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989224179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 8089564368361181395, guid: f10892cb5c375cf4da9ef94c45dffdbd, type: 3}
+    - {fileID: 989224182}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _sprite
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteRendererInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _spriteRenderer
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.SpriteRenderer,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!212 &989224182
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989224179}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 8089564368361181395, guid: f10892cb5c375cf4da9ef94c45dffdbd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.12, y: 5.12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!212 &1201216645 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5515382880726975953, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+  m_PrefabInstance: {fileID: 2983373758302477092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1215446139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215446140}
+  - component: {fileID: 1215446141}
+  - component: {fileID: 1215446142}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1215446140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215446139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.153, y: -3.432, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 109948849}
+  - {fileID: 482593612}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1215446141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215446139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLoopComponent: {fileID: 1701329704}
+  _entityInitializers:
+  - {fileID: 109948850}
+  - {fileID: 482593614}
+  _entity:
+    <IsActive>k__BackingField:
+      _value: 1
+    <ID>k__BackingField: 0
+--- !u!58 &1215446142
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215446139}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.3
+--- !u!1 &1262784661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262784662}
+  - component: {fileID: 1262784664}
+  - component: {fileID: 1262784663}
+  m_Layer: 0
+  m_Name: Items Register
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1262784662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262784661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262784663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262784661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21203765659473168, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.ItemsRegisterInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _items
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Coin
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!114 &1262784664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262784661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLoopComponent: {fileID: 1701329704}
+  _entityInitializers:
+  - {fileID: 1262784663}
+  _entity:
+    <IsActive>k__BackingField:
+      _value: 1
+    <ID>k__BackingField: 0
+--- !u!1 &1352355574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352355576}
+  - component: {fileID: 1352355575}
+  m_Layer: 0
+  m_Name: Time Invoker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1352355575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352355574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614d9e2ff3b7485eb617ad3f75ba699d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ONE_SECOND>k__BackingField: 1
+--- !u!4 &1352355576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352355574}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625905618
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +1544,13 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 403697917}
+    - {fileID: 2022747808}
+    - {fileID: 403697919}
+    - {fileID: 1262784664}
+    - {fileID: 1775444663}
+    - {fileID: 403697922}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -293,7 +1562,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 12
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Global.NameInstaller,
@@ -312,6 +1581,747 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Global.Unity.TransformInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _transform
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|GameplayConstructorElements.Installers.Atomic.InputModel.InputHandlerInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _inputHandler
+      Entry: 7
+      Data: 6|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|GameplayConstructorElements.Installers.Models.Data.HealthModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _maxHealth
+      Entry: 7
+      Data: 8|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _health
+      Entry: 7
+      Data: 9|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canTakeDamageConditionFabrics
+      Entry: 7
+      Data: 10|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 11|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: "12|GameplayConstructorElements.Expressions.Conditions.IsNotInvincible\u0421onditionFabric,
+        GameplayConstructorElements.Expressions"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _invincibility
+      Entry: 7
+      Data: 13|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _invincibilitySecondsDuration
+      Entry: 7
+      Data: 14|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|GameplayConstructorElements.Installers.Models.LevelingModeDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _level
+      Entry: 7
+      Data: 16|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Int32,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _targetXp
+      Entry: 7
+      Data: 17|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _xp
+      Entry: 7
+      Data: 18|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|GameplayConstructorElements.Installers.Models.MovementModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _rigidbody2D
+      Entry: 7
+      Data: 20|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Rigidbody2D,
+        UnityEngine.Physics2DModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _speed
+      Entry: 7
+      Data: 21|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _isMoving
+      Entry: 7
+      Data: 22|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _speedExpressionElementsFabrics
+      Entry: 7
+      Data: 23|AtomicFramework.AtomicStructures.IEntityFloatExpressionElementFabric[],
+        AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 24|Source.Gameplay_Constructor_Elements.Expressions.SpeedExpressionBaseSpeedElementFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canMoveConditionsFabtics
+      Entry: 7
+      Data: 25|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 26|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHeight
+      Entry: 7
+      Data: 27|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _isGrounded
+      Entry: 7
+      Data: 28|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _isJumping
+      Entry: 7
+      Data: 29|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canJumpConditionsFabtics
+      Entry: 7
+      Data: 30|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 31|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|GameplayConstructorElements.Expressions.Conditions.IsGroundedOrInCoyoteTimeConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 33|GameplayConstructorElements.Expressions.Conditions.IsNotJumpingConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _coyoteTimeDuration
+      Entry: 7
+      Data: 34|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _isInCoyoteTime
+      Entry: 7
+      Data: 35|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpBufferingDuration
+      Entry: 7
+      Data: 36|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canJumpBufferingConditionsFabtics
+      Entry: 7
+      Data: 37|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 38|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 39|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedAndNotInCoyoteTimeConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _maxFreeFallingSpeed
+      Entry: 7
+      Data: 40|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 40
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _freeFallingAcceleration
+      Entry: 7
+      Data: 41|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canFreeFallingConditionsFabtics
+      Entry: 7
+      Data: 42|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 43|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedAndNotInCoyoteTimeConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 44|GameplayConstructorElements.Expressions.Conditions.IsNotJumpingConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 45|GameplayConstructorElements.Expressions.Conditions.IsFreeFallingConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 46|GameplayConstructorElements.Expressions.Conditions.IsNotJumpHangingConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _isJumpHanging
+      Entry: 7
+      Data: 47|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _velocityThresholdForJumpHanging
+      Entry: 7
+      Data: 48|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHangingDuration
+      Entry: 7
+      Data: 49|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHangingSpeedupModifier
+      Entry: 7
+      Data: 50|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHangingSlowModifier
+      Entry: 7
+      Data: 51|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _canJumpHangingConditionsFabtics
+      Entry: 7
+      Data: 52|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 53|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 54|GameplayConstructorElements.Expressions.Conditions.IsJumpingConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 55|GameplayConstructorElements.Expressions.Conditions.IsNotGroundedConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 56|GameplayConstructorElements.Expressions.Conditions.IsNotJumpHangingConditionFabric,
+        GameplayConstructorElements.Expressions
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHangingMovementSpeedupModifier
+      Entry: 7
+      Data: 57|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpHangingMovementSpeedupBonusDuration
+      Entry: 7
+      Data: 58|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 59|GameplayConstructorElements.Installers.Atomic.Global.WalletModel.CoinsInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _coins
+      Entry: 7
+      Data: 60|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Int32,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 61|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.InventoryInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _inventory
+      Entry: 7
+      Data: 62|ObservableCollections.ObservableDictionary`2[[System.String, mscorlib],[System.Int32,
+        mscorlib]], ObservableCollections
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 63|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.ItemsRegisterHolderInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _itemsRegisterHolder
+      Entry: 7
+      Data: 64|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 65|GameplayConstructorElements.Installers.Models.Data.ArmsModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _rightArm
+      Entry: 7
+      Data: 66|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _leftArm
+      Entry: 7
+      Data: 67|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _rightHandEquipActionEvent
+      Entry: 7
+      Data: 68|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _rightHandEquipActions
+      Entry: 7
+      Data: 69|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 70|GameplayConstructorElements.Actions.EquipActionsEvents.OnRightHandEquipActionEventSwitchRightHandItem,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _leftHandEquipActionEvent
+      Entry: 7
+      Data: 71|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _leftHandEquipActions
+      Entry: 7
+      Data: 72|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 73|GameplayConstructorElements.Actions.EquipActionsEvents.OnRightHandEquipActionEventSwitchRightHandItem,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 74|Source.GameplayConstructorElements.Installers.Models.Data.MeleeAttackModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _targets
+      Entry: 7
+      Data: 75|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _meleeAttackActionEvent
+      Entry: 7
+      Data: 76|AtomicFramework.AtomicStructures.AtomicEvent`2[[System.Single, mscorlib],[GameData.DamageType,
+        GameData]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _meleeAttackActionEventActionsFabrics
+      Entry: 7
+      Data: 77|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`2[[System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[GameData.DamageType,
+        GameData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 78|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventSplashAction,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _targetsTriggerCollider
+      Entry: 7
+      Data: 79|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Collider2D,
+        UnityEngine.Physics2DModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 80|Source.Gameplay_Constructor_Elements.Installers.Models.Data.DeathModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _deathEvent
+      Entry: 7
+      Data: 81|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _deathActionFabrics
+      Entry: 7
+      Data: 82|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 83|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDroppingInventoryAction,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 84|GameplayConstructorElements.Actions.DeathEvent.OnDeathEventDestroyGameObjectAction,
+        GameplayConstructorElements
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -319,7 +2329,289 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 85|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 86|GameplayConstructorElements.Installers.Models.Behaviour.HealthModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 87|GameplayConstructorElements.Installers.Models.Behaviour.LevelingModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 88|GameplayConstructorElements.Installers.Models.Behaviour.MovementModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 89|GameplayConstructorElements.Installers.Models.Behaviour.MeleeAttackModelBehavioursInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 90|GameplayConstructorElements.Installers.Models.Behaviour.DeathModelBehavioursInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!1 &1651965084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651965087}
+  - component: {fileID: 1651965086}
+  - component: {fileID: 1651965085}
+  m_Layer: 6
+  m_Name: Ramp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1651965085
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651965084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1651965086
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651965084}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1651965087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651965084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.14, y: -3.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1669933908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1669933909}
+  - component: {fileID: 1669933910}
+  m_Layer: 0
+  m_Name: ---Spikes Logical---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1669933909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669933908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2006882321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669933910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669933908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Global.NameInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _name
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.String,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 1
+      Data: Spikes
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Global.DamageModel.Data.DamageInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _damage
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
@@ -342,6 +2634,7 @@ GameObject:
   - component: {fileID: 1693750781}
   - component: {fileID: 1693750780}
   - component: {fileID: 1693750783}
+  - component: {fileID: 1693750784}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -416,12 +2709,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693750779}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Children:
+  - {fileID: 1952953124}
+  m_Father: {fileID: 468170482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1693750783
 MonoBehaviour:
@@ -467,6 +2761,25 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1693750784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693750779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLoopComponent: {fileID: 1701329704}
+  _entityInitializers:
+  - {fileID: 1952953125}
+  _entity:
+    <IsActive>k__BackingField:
+      _value: 1
+    <ID>k__BackingField: 0
 --- !u!1 &1701329703
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +2795,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1701329704
 MonoBehaviour:
@@ -505,13 +2818,158 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701329703}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.6228177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1763890347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1763890350}
+  - component: {fileID: 1763890349}
+  - component: {fileID: 1763890348}
+  m_Layer: 6
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!61 &1763890348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763890347}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!212 &1763890349
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763890347}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1763890350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763890347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.762, z: 0}
+  m_LocalScale: {x: 1000, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775444663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5581861115876712084, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+  m_PrefabInstance: {fileID: 2983373758302477092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1886345792
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +3047,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4131197244754889041, guid: 50e1603576b7ee9459d0edcf011db79b, type: 3}
+  m_Sprite: {fileID: 8793639957104055765, guid: 826e8671e008caf41b56e6d9de8a6d46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -616,7 +3074,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 21300000, guid: dd2a76027478bf540b7194d78248edf8, type: 3}
+    - {fileID: 8793639957104055765, guid: 826e8671e008caf41b56e6d9de8a6d46, type: 3}
     - {fileID: 1886345794}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -629,7 +3087,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteInstaller,
@@ -665,6 +3123,23 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 5|GameplayConstructorElements.Installers.Atomic.Visual.Data.FlippedInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _flipped
+      Entry: 7
+      Data: 6|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -672,14 +3147,21 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 7|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 6|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+      Data: 8|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteFlippingBehaviourInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8
@@ -690,11 +3172,682 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+--- !u!1 &1952953123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952953124}
+  - component: {fileID: 1952953125}
+  m_Layer: 0
+  m_Name: ---Camera Logical---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1952953124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952953123}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1693750782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1952953125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952953123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1693750782}
+    - {fileID: 403697918}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Global.Unity.TransformInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _transform
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Transform,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Global.Movement_Model.SpeedInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _speed
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 2.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|GameplayConstructorElements.Installers.Models.Data.FollowingModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _target
+      Entry: 7
+      Data: 6|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _distance
+      Entry: 7
+      Data: 7|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[Unity.Mathematics.float3,
+        Unity.Mathematics]], AtomicStructures
+    - Name: _value
+      Entry: 7
+      Data: Unity.Mathematics.float3, Unity.Mathematics
+    - Name: x
+      Entry: 4
+      Data: 0
+    - Name: y
+      Entry: 4
+      Data: 0
+    - Name: z
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 9|GameplayConstructorElements.Installers.Models.Behaviour.FollowingModelBehavioursInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!1 &2006882320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006882321}
+  - component: {fileID: 2006882322}
+  - component: {fileID: 2006882324}
+  - component: {fileID: 2006882323}
+  m_Layer: 0
+  m_Name: Spikes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2006882321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006882320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.183, y: -3.216, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1669933909}
+  - {fileID: 989224180}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2006882322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006882320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLoopComponent: {fileID: 1701329704}
+  _entityInitializers:
+  - {fileID: 1669933910}
+  - {fileID: 989224181}
+  _entity:
+    <IsActive>k__BackingField:
+      _value: 1
+    <ID>k__BackingField: 0
+--- !u!114 &2006882323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006882320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172de2ed12d94e939109b27106ca12e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &2006882324
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006882320}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &2022747805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022747806}
+  - component: {fileID: 2022747808}
+  - component: {fileID: 2022747807}
+  m_Layer: 0
+  m_Name: Input Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2022747806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022747805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022747807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022747805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Models.InputHandlerModelDataInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _movementInputAction
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicEvent`1[[Unity.Mathematics.float2,
+        Unity.Mathematics]], AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _interactionInputAction
+      Entry: 7
+      Data: 3|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _useInputAction
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicEvent, AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpInputAction
+      Entry: 7
+      Data: 5|AtomicFramework.AtomicStructures.AtomicEvent`1[[System.Single, mscorlib]],
+        AtomicStructures
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jumpInputKeyMaxPressingTime
+      Entry: 7
+      Data: 6|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+        mscorlib]], AtomicStructures
+    - Name: _value
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|GameplayConstructorElements.Installers.Models.Behaviour.InputHandlerModelBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+--- !u!114 &2022747808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022747805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3144d12e951c4e7e97fdd7d90a2107a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLoopComponent: {fileID: 1701329704}
+  _entityInitializers:
+  - {fileID: 2022747807}
+  _entity:
+    <IsActive>k__BackingField:
+      _value: 1
+    <ID>k__BackingField: 0
+--- !u!1001 &2983373758302477092
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[0]'
+      value: '"path":"_behaviourInstallers","length":1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[1]'
+      value: '"path":"_behaviourInstallers.[0]","value":{"$id":0,"$type":"GameplayConstructorElements.Installers.Atomic.Global.UseModel.Behaviour.UserWithUseActionInstaller,
+        GameplayConstructorElements.Installers","_user":{"$id":1,"$type":"AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures","_value":$eref:0},"_onUseActions":{"$id":2,"$type":"AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[],
+        AtomicStructures.Extensions","$rlength":1,"$rcontent":[{"$id":3,"$type":"GameplayConstructorElements.Actions.InputActionsEvents.UseInputActionEvent.OnUseInputActionEventMeleeAttackAction,
+        GameplayConstructorElements"}]}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[2]'
+      value: '"path":"_behaviourInstallers.[0]._onUseActions","value":{"$id":0,"$type":"AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[],
+        AtomicStructures.Extensions","$rlength":1,"$rcontent":[{"$id":1,"$type":"GameplayConstructorElements.Actions.InputActionsEvents.UseInputActionEvent.OnUseInputActionEventMeleeAttackAction,
+        GameplayConstructorElements"}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[3]'
+      value: '"path":"_behaviourInstallers.[0]._onUseActions.[0]","value":{"$id":0,"$type":"GameplayConstructorElements.Actions.InputActionsEvents.UseInputActionEvent.OnUseInputActionEventMeleeAttackAction,
+        GameplayConstructorElements"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[4]'
+      value: '"path":"_behaviourInstallers.[0]._user","value":{"$id":0,"$type":"AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures","_value":$eref:0}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[5]'
+      value: '"path":"_behaviourInstallers.[0]._user._value","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[6]'
+      value: '"path":"_dataInstallers","length":3'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[7]'
+      value: '"path":"_dataInstallers.[1]","value":{"$id":0,"$type":"GameplayConstructorElements.Installers.Atomic.InteractionModel.InteractionActionEventInstaller,
+        GameplayConstructorElements.Installers","_interactionActionEvent":{"$id":1,"$type":"AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures"},"_interactionActions":{"$id":2,"$type":"AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions","$rlength":1,"$rcontent":[{"$id":3,"$type":"Source.Gameplay_Constructor_Elements.Actions.Interaction_Event.OnInteractionEventPickUpAction,
+        GameplayConstructorElements"}]}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[8]'
+      value: '"path":"_dataInstallers.[1]._interactionActionEvent","value":{"$id":0,"$type":"AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[9]'
+      value: '"path":"_dataInstallers.[1]._interactionActions","value":{"$id":0,"$type":"AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions","$rlength":1,"$rcontent":[{"$id":1,"$type":"Source.Gameplay_Constructor_Elements.Actions.Interaction_Event.OnInteractionEventPickUpAction,
+        GameplayConstructorElements"}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[10]'
+      value: '"path":"_dataInstallers.[1]._interactionActions.[0]","value":{"$id":0,"$type":"Source.Gameplay_Constructor_Elements.Actions.Interaction_Event.OnInteractionEventPickUpAction,
+        GameplayConstructorElements"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 704450912289723596, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 403697918}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186352549941588490, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574284129513201022, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3574284129513201022, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+    - target: {fileID: 3574284129513201022, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574284129513201022, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[0]'
+      value: '"path":"_dataInstallers.[1]._spriteRenderer._value","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574284129513201022, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574284129513201022, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: 'serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1201216645}
+    - target: {fileID: 5581861115876712084, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: _gameLoopComponent
+      value: 
+      objectReference: {fileID: 1701329704}
+    - target: {fileID: 6618990845969638875, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa2dbf64e1739d446afd9314e15d347f, type: 3}
+--- !u!1001 &3609125008524957375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 21203765659473168, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: _gameLoopComponent
+      value: 
+      objectReference: {fileID: 1701329704}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407827142527378564, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674041505033635953, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2674041505033635953, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+    - target: {fileID: 2674041505033635953, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674041505033635953, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[0]'
+      value: '"path":"_behaviourInstallers","length":0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674041505033635953, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: 'serializationData.PrefabModifications.Array.data[1]'
+      value: '"path":"_dataInstallers.[2]._interactionActions","length":1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674041505033635953, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285001862389813973, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
+      propertyPath: m_Name
+      value: Coin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7911004644dd5164793eca7840d6fe49, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1693750782}
+  - {fileID: 468170482}
   - {fileID: 403697917}
-  - {fileID: 1701329705}
+  - {fileID: 2006882321}
+  - {fileID: 3609125008524957375}
+  - {fileID: 1763890350}
   - {fileID: 496591815}
+  - {fileID: 1701329705}
+  - {fileID: 2022747806}
+  - {fileID: 1262784662}
+  - {fileID: 1215446140}
+  - {fileID: 2983373758302477092}
+  - {fileID: 1352355576}
+  - {fileID: 1651965087}

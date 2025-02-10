@@ -39,6 +39,23 @@ namespace AtomicFramework.AtomicStructures.Actions
             return subscribes;
         }
         
+        public static IDisposable[] SubscribeBy<T1, T2>(this AtomicEvent<T1, T2> atomicEvent, IEntityActionFabric<T1, T2>[] actionFabrics,
+            IEntity entity)
+        {
+            var count = actionFabrics.Length;
+            var subscribes = new IDisposable[count];
+
+            if(count == 0) return subscribes;
+
+            
+            for (var i = 0; i < count; i++)
+            {
+                subscribes[i] = atomicEvent.Subscribe(actionFabrics[i].CreateFor(entity));
+            }
+
+            return subscribes;
+        }
+        
         public static IDisposable[] SubscribeBy<T1, T2, T3>(this AtomicEvent<T1, T2, T3> atomicEvent, IEntityActionFabric<T1, T2, T3>[] actionFabrics,
             IEntity entity)
         {

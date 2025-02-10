@@ -1,0 +1,4 @@
+{
+  "name": "TimeFramework.Core",
+  "references":[ "GUID:930c1838c76e4e5993ff61534d908728", "GUID:204d28477e544a0ea17389c4991a40f9" ]
+}

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace AtomicFramework.AtomicStructures
 {
     [Serializable]
     public abstract class AtomicExpression<T> : IAtomicExpression<T>
     {
-        private readonly List<Func<T>> _members = null;
+        [SerializeReference] private readonly List<Func<T>> _members = null;
 
         public T CurrentValue => Invoke();
 
