@@ -20,13 +20,14 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
         private ReactiveLibraryFacade.IObservable<bool> _isGrounded = null;
         private IAtomicValue<float> _coyoteTimeDuration = null;
         private IAtomicVariable<bool> _inCoyoteTime = null;
+        private IAtomicValue<bool> _isJumping;
 
         #endregion
         
         #region Subscriptions
         
         private IDisposable _subscription = null;
-        
+
         #endregion
         
         #region Constructors
@@ -50,6 +51,9 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
             
             _entity.TryGetIsInCoyoteTimeData(out var inCoyoteTime);
             _inCoyoteTime = inCoyoteTime;
+            
+            _entity.TryGetIsJumpingData(out var isJumping);
+            _isJumping = isJumping;
             
             OnInit();
         }
@@ -83,13 +87,13 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
 
         private void OnIsGroundedChange(bool isGrounded)
         {
-            if (isGrounded)
+            if (isGrounded || _isJumping.CurrentValue)
             {
                 _inCoyoteTime.Value = false;
                 return;
             }
             
-            if (_inCoyoteTime.CurrentValue) return;
+            if (_inCoyoteTime.CurrentValue || _isJumping.CurrentValue) return;
 
             _timer.Restart();
             _inCoyoteTime.Value = true;

@@ -13,6 +13,7 @@ namespace TimeFramework.Timers
         private readonly TimerType _type = TimerType.ScaledSecond;
         private AtomicReactiveProperty<bool> _isPaused = new();
         private AtomicReactiveProperty<float> _elapsedTimeInSeconds = new();
+        private AtomicReactiveProperty<float> _elapsedTimeInPercents = new();
         private AtomicReactiveProperty<float> _remainingTimeInSeconds = new();
         
         #region Events
@@ -26,6 +27,7 @@ namespace TimeFramework.Timers
         public IObservable TimerFinished => _timerFinished;
         public IReadonlyAtomicReactiveProperty<bool> IsPaused => _isPaused;
         public IReadonlyAtomicReactiveProperty<float> ElapsedTimeInSeconds => _elapsedTimeInSeconds;
+        public IReadonlyAtomicReactiveProperty<float> ElapsedTimeInPercents => _elapsedTimeInPercents;
         public IReadonlyAtomicReactiveProperty<float> RemainingTimeInSeconds => _remainingTimeInSeconds;
 
         #endregion
@@ -38,8 +40,6 @@ namespace TimeFramework.Timers
 
         public float DelayTimeInSeconds { get; private set; } = 0f;
         
-        public float ElapsedTimeInPercents => ElapsedTimeInSeconds.CurrentValue / DelayTimeInSeconds;
-
         public Timer(float delayTimeInSeconds, TimeInvoker invoker, TimerType type)
         {
             if(invoker == null) throw new ArgumentNullException(nameof(invoker), "TimeInvoker cannot be null.");;
@@ -60,6 +60,7 @@ namespace TimeFramework.Timers
             
             DelayTimeInSeconds = delayTimeInSeconds.CurrentValue;
             _elapsedTimeInSeconds.Value = 0f;
+            _elapsedTimeInPercents.Value = 0f;
         }
 
         public void Start()
@@ -91,33 +92,42 @@ namespace TimeFramework.Timers
         {
             _elapsedTimeInSeconds.Value += _invoker.ONE_SECOND;
             _remainingTimeInSeconds.Value -= _invoker.ONE_SECOND;
+            _elapsedTimeInPercents.Value = _elapsedTimeInSeconds.CurrentValue / DelayTimeInSeconds;
 
             if (_elapsedTimeInSeconds.CurrentValue < DelayTimeInSeconds) return;
             
-            _timerFinished.Invoke();
             Stop();
+            _timerFinished.Invoke();
+            _elapsedTimeInSeconds.Value = 0f;
+            _elapsedTimeInPercents.Value = 0f;
         }
 
         private void OnFrameTimerTick()
         {
             _elapsedTimeInSeconds.Value += _invoker.DeltaTime;
             _remainingTimeInSeconds.Value -= _invoker.DeltaTime;
+            _elapsedTimeInPercents.Value = _elapsedTimeInSeconds.CurrentValue / DelayTimeInSeconds;
 
             if (_elapsedTimeInSeconds.CurrentValue < DelayTimeInSeconds) return;
             
-            _timerFinished.Invoke();
             Stop();        
+            _timerFinished.Invoke();
+            _elapsedTimeInSeconds.Value = 0f;
+            _elapsedTimeInPercents.Value = 0f;
         }
         
         private void OnUnscaledFrameTimerTick()
         {
             _elapsedTimeInSeconds.Value += _invoker.UnscaledDeltaTime;
             _remainingTimeInSeconds.Value -= _invoker.UnscaledDeltaTime;
+            _elapsedTimeInPercents.Value = _elapsedTimeInSeconds.CurrentValue / DelayTimeInSeconds;
             
             if (_elapsedTimeInSeconds.CurrentValue < DelayTimeInSeconds) return;
-            
-            _timerFinished.Invoke();
+
             Stop();
+            _timerFinished.Invoke();
+            _elapsedTimeInSeconds.Value = 0f;
+            _elapsedTimeInPercents.Value = 0f;
         }
 
         public void Pause()
@@ -130,7 +140,6 @@ namespace TimeFramework.Timers
         public void Stop()
         {
             Pause();
-            _elapsedTimeInSeconds.Value = 0f;
         }
 
         public void Restart()

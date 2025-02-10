@@ -6,7 +6,9 @@ using InputActions;
 using ObservableCollections;
 using System.Collections.Generic;
 using GameData;
+using UnityEngine.Rendering.Universal;
 using GameplayConstructorElements.Behaviours;
+using GameplayConstructorElements.Behaviours.TorchModel;
 using GameplayConstructorElements.Behaviours.MovementModel;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
 using GameplayConstructorElements.Behaviours.Following_Model;
@@ -1039,6 +1041,141 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.TargetTrigger2DCollider);
           }
 
+        public static bool TryGetIsActiveData(this IEntity entity, out AtomicReactiveProperty<bool> isActive)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsActive, out isActive);
+         }
+
+         public static bool TryAddIsActiveData(this IEntity entity, AtomicReactiveProperty<bool> isActive)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsActive, isActive);
+          }
+
+         public static bool TryRemoveIsActiveData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsActive);
+          }
+
+        public static bool TryGetIgnitionDurationData(this IEntity entity, out AtomicReactiveProperty<float> ignitionDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IgnitionDuration, out ignitionDuration);
+         }
+
+         public static bool TryAddIgnitionDurationData(this IEntity entity, AtomicReactiveProperty<float> ignitionDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IgnitionDuration, ignitionDuration);
+          }
+
+         public static bool TryRemoveIgnitionDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IgnitionDuration);
+          }
+
+        public static bool TryGetTargetFalloffStrenghtData(this IEntity entity, out AtomicReactiveProperty<float> targetFalloffStrenght)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TargetFalloffStrenght, out targetFalloffStrenght);
+         }
+
+         public static bool TryAddTargetFalloffStrenghtData(this IEntity entity, AtomicReactiveProperty<float> targetFalloffStrenght)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TargetFalloffStrenght, targetFalloffStrenght);
+          }
+
+         public static bool TryRemoveTargetFalloffStrenghtData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TargetFalloffStrenght);
+          }
+
+        public static bool TryGetCurrentFalloffStrenghtData(this IEntity entity, out AtomicReactiveProperty<float> currentFalloffStrenght)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CurrentFalloffStrenght, out currentFalloffStrenght);
+         }
+
+         public static bool TryAddCurrentFalloffStrenghtData(this IEntity entity, AtomicReactiveProperty<float> currentFalloffStrenght)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CurrentFalloffStrenght, currentFalloffStrenght);
+          }
+
+         public static bool TryRemoveCurrentFalloffStrenghtData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CurrentFalloffStrenght);
+          }
+
+        public static bool TryGetFadeDurationData(this IEntity entity, out AtomicReactiveProperty<float> fadeDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.FadeDuration, out fadeDuration);
+         }
+
+         public static bool TryAddFadeDurationData(this IEntity entity, AtomicReactiveProperty<float> fadeDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.FadeDuration, fadeDuration);
+          }
+
+         public static bool TryRemoveFadeDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.FadeDuration);
+          }
+
+        public static bool TryGetMinFalloffStrenghtData(this IEntity entity, out AtomicReactiveProperty<float> minFalloffStrenght)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MinFalloffStrenght, out minFalloffStrenght);
+         }
+
+         public static bool TryAddMinFalloffStrenghtData(this IEntity entity, AtomicReactiveProperty<float> minFalloffStrenght)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MinFalloffStrenght, minFalloffStrenght);
+          }
+
+         public static bool TryRemoveMinFalloffStrenghtData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MinFalloffStrenght);
+          }
+
+        public static bool TryGetLight2DCompponentData(this IEntity entity, out AtomicReactiveProperty<Light2D> light2DCompponent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Light2DCompponent, out light2DCompponent);
+         }
+
+         public static bool TryAddLight2DCompponentData(this IEntity entity, AtomicReactiveProperty<Light2D> light2DCompponent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Light2DCompponent, light2DCompponent);
+          }
+
+         public static bool TryRemoveLight2DCompponentData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Light2DCompponent);
+          }
+
+        public static bool TryGetTargetIgnitionFalloffStrengthData(this IEntity entity, out AtomicReactiveProperty<float> targetIgnitionFalloffStrength)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TargetIgnitionFalloffStrength, out targetIgnitionFalloffStrength);
+         }
+
+         public static bool TryAddTargetIgnitionFalloffStrengthData(this IEntity entity, AtomicReactiveProperty<float> targetIgnitionFalloffStrength)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TargetIgnitionFalloffStrength, targetIgnitionFalloffStrength);
+          }
+
+         public static bool TryRemoveTargetIgnitionFalloffStrengthData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TargetIgnitionFalloffStrength);
+          }
+
+        public static bool TryGetMaxIgnitionFalloffStrengthData(this IEntity entity, out AtomicReactiveProperty<float> maxIgnitionFalloffStrength)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MaxIgnitionFalloffStrength, out maxIgnitionFalloffStrength);
+         }
+
+         public static bool TryAddMaxIgnitionFalloffStrengthData(this IEntity entity, AtomicReactiveProperty<float> maxIgnitionFalloffStrength)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MaxIgnitionFalloffStrength, maxIgnitionFalloffStrength);
+          }
+
+         public static bool TryRemoveMaxIgnitionFalloffStrengthData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MaxIgnitionFalloffStrength);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1116,6 +1253,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveTargetsTriggerFlippingBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<TargetsTriggerFlippingBehaviour>((int)GlobalBehavioursAPI.TargetsTriggerFlippingBehaviour);
+          }
+
+        public static bool TryGetTorchFadeBehaviourBehaviour(this IEntity entity, out TorchFadeBehaviour torchFadeBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.TorchFadeBehaviour, out torchFadeBehaviour);
+         }
+
+         public static bool TryAddTorchFadeBehaviourBehaviour(this IEntity entity, TorchFadeBehaviour torchFadeBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.TorchFadeBehaviour, torchFadeBehaviour);
+          }
+
+         public static bool TryRemoveTorchFadeBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<TorchFadeBehaviour>((int)GlobalBehavioursAPI.TorchFadeBehaviour);
           }
 
         public static bool TryGetCoyoteTimeBehaviourBehaviour(this IEntity entity, out CoyoteTimeBehaviour coyoteTimeBehaviour)

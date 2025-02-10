@@ -70,5 +70,14 @@ namespace GameplayConstructorFrameworkAPIs
     JumpBufferingDuration = 65,
     CanBufferingJump = 66,
     TargetTrigger2DCollider = 67,
+    IsActive = 68,
+    IgnitionDuration = 69,
+    TargetFalloffStrenght = 70,
+    CurrentFalloffStrenght = 71,
+    FadeDuration = 72,
+    MinFalloffStrenght = 73,
+    Light2DCompponent = 74,
+    TargetIgnitionFalloffStrength = 75,
+    MaxIgnitionFalloffStrength = 76,
      }
 }
