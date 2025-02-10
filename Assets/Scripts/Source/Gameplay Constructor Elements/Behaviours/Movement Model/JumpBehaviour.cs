@@ -102,7 +102,7 @@ namespace GameplayConstructorElements.Behaviours.MovementModel
             var jumpVelocity = MovementCases.CalculateJumpVelocity(gravity, correctedHeight);
 
             _isJumping.Value = true;
-            if(_isGrounded.CurrentValue == true) _isGrounded.Value = false;
+            if(_isGrounded.CurrentValue) _isGrounded.Value = false;
             
             rb.SetVelocityYTo(jumpVelocity);
         }

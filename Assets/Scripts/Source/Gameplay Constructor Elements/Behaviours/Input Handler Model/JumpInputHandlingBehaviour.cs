@@ -7,6 +7,7 @@ using GameplayConstructorFrameworkAPIs;
 using InputActions;
 using TimeFramework.Core;
 using TimeFramework.Timers;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace GameplayConstructorElements.Behaviours.InputHandlerModel
@@ -77,6 +78,7 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void OnStartJumpInput(InputAction.CallbackContext callbackContext)
         {
+            _subscription?.Dispose();
             _subscription = _timer.TimerFinished.Subscribe(InvokeJumpAction);
             _timer.Restart();
         }
@@ -90,9 +92,8 @@ namespace GameplayConstructorElements.Behaviours.InputHandlerModel
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void InvokeJumpAction()
         {
+            _jumpInputAction.Invoke(_timer.ElapsedTimeInPercents.CurrentValue);
             _subscription?.Dispose();
-            _jumpInputAction.Invoke(_timer.ElapsedTimeInPercents);
-            _timer.Stop();
         }
         
         public void Sleep()
