@@ -12,7 +12,7 @@ namespace GameplayConstructorElements.UnityIntegration
         {
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
-            if (!gameObject.TryGetEntity(out var entity)) return;
+            if (!gameObject.transform.parent.TryGetEntity(out var entity)) return;
             if (!entity.TryGetIsGroundedData(out var isGrounded)) return;
             
             isGrounded.Value = true;
@@ -23,7 +23,7 @@ namespace GameplayConstructorElements.UnityIntegration
             
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
-            if (!gameObject.TryGetEntity(out var entity)) return;
+            if (!gameObject.transform.parent.TryGetEntity(out var entity)) return;
             if (!entity.TryGetIsGroundedData(out var isGrounded)) return;
             
             isGrounded.Value = true;
@@ -33,7 +33,7 @@ namespace GameplayConstructorElements.UnityIntegration
         {
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
-            if (!gameObject.TryGetEntity(out var entity)) return;
+            if (!gameObject.transform.parent.TryGetEntity(out var entity)) return;
             if (!entity.TryGetIsGroundedData(out var isGrounded)) return;
             
             isGrounded.Value = false;
