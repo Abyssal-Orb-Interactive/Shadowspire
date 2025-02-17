@@ -11,9 +11,11 @@ namespace GameplayConstructorElements.EntityExtensions
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryUseInMeleeAttack(this IEntity attacker, in IEntity weapon)
         {
+            
             if(!attacker.TryGetMeleeAttackActionEventData(out var meleeAttackActionEvent)) return false;
             if(!weapon.TryGetDamageData(out var damage)) return false;
             if(!weapon.TryGetDamageTypeData(out var damageType)) return false;
+            if(attacker.TryGetCanAttackData(out var canAttack) && !canAttack.CurrentValue) return false;
             
             meleeAttackActionEvent.Invoke(damage.CurrentValue, damageType.CurrentValue);
             
@@ -39,6 +41,12 @@ namespace GameplayConstructorElements.EntityExtensions
             }
             
             return true;
+        }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryAttackAimInDamageZoneWith(this IEntity entity, in float damage, in DamageType damageType)
+        {
+            return entity.TryGetAimData(out var aim) && aim.CurrentValue.TryTakeDamage(damage, damageType);
         }
     }
 }

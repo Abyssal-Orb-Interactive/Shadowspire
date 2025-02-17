@@ -11,7 +11,7 @@ namespace TimeFramework.Timers
     {
         private TimeInvoker _invoker;
         private readonly TimerType _type = TimerType.ScaledSecond;
-        private AtomicReactiveProperty<bool> _isPaused = new();
+        private AtomicReactiveProperty<bool> _isPaused = new(true);
         private AtomicReactiveProperty<float> _elapsedTimeInSeconds = new();
         private AtomicReactiveProperty<float> _elapsedTimeInPercents = new();
         private AtomicReactiveProperty<float> _remainingTimeInSeconds = new();

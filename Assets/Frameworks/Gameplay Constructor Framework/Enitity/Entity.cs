@@ -36,13 +36,17 @@ namespace GameplayConstructorFramework.Entity
 
         public bool TryAddData<T>(int key, T data) where T : class
         {
+            TryRemoveData(key);
+            
             Data[key] = data;
             return true;
         }
 
         public bool TryRemoveData(int key)
         {
-            if(Data[key] is IDisposable disposable) disposable.Dispose();
+            if(!Data.TryGetValue(key, out var value)) return false;
+            
+            if(value is IDisposable disposable) disposable.Dispose();
             
             return Data.Remove(key);
         }
@@ -60,6 +64,8 @@ namespace GameplayConstructorFramework.Entity
 
         public bool TryAddBehaviour<T>(int key, T behaviour) where T : IGameLoopBehaviour
         {
+            TryRemoveBehaviour<T>(key);
+            
             Behaviours[key] = behaviour;
             _gameLoop.Add(Behaviours[key]);
             return true;
@@ -67,7 +73,9 @@ namespace GameplayConstructorFramework.Entity
 
         public bool TryRemoveBehaviour<T>(int key) where T : IGameLoopBehaviour
         {
-            _gameLoop.Remove(Behaviours[key]);
+            if(!Behaviours.TryGetValue(key, out var value)) return false;
+            
+            _gameLoop.Remove(value);
             return Behaviours.Remove(key);
         }
 

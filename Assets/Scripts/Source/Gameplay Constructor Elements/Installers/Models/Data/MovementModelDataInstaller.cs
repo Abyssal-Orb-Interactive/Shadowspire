@@ -1,9 +1,11 @@
 using System;
 using AtomicFramework.AtomicStructures;
+using GameData;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GameplayConstructorElements.Installers.Models
 {
@@ -12,6 +14,12 @@ namespace GameplayConstructorElements.Installers.Models
     {
         [Header("Base")]
         [SerializeField] private AtomicReactiveProperty<Rigidbody2D> _rigidbody2D = new();
+        [SerializeField] private AtomicReactiveProperty<Transform> _transform = new();
+        
+        [Space(10), Header("Facing")]
+        [SerializeField] private AtomicReactiveProperty<Facing> _currentFacing = new();
+        [SerializeField] private AtomicReactiveProperty<Facing> _originFacing = new();
+        [SerializeReference] private IEntityConditionFabric[] _canFacingConditionsFabrics = Array.Empty<IEntityConditionFabric>();
         
         [Space(10f), Header("Movement")]
         [SerializeField] private AtomicReactiveProperty<float> _speed = new();
@@ -52,6 +60,7 @@ namespace GameplayConstructorElements.Installers.Models
         
         public void InstallTo(IEntity entity)
         {
+            entity.TryAddTransformData(_transform);
             entity.TryAddRigidbody2DData(_rigidbody2D);
             entity.TryAddSpeedData(_speed);
             entity.TryAddJumpHeightData(_jumpHeight);
@@ -70,6 +79,8 @@ namespace GameplayConstructorElements.Installers.Models
             entity.TryAddIsInCoyoteTimeData(_isInCoyoteTime);
             entity.TryAddCoyoteTimeDurationData(_coyoteTimeDuration);
             entity.TryAddJumpBufferingDurationData(_jumpBufferingDuration);
+            entity.TryAddCurrentFacingData(_currentFacing);
+            entity.TryAddOriginFacingData(_originFacing);
 
             var speedExpression = new AtomicFloatMultiplication();
             speedExpression.AppendBy(_speedExpressionElementsFabrics, entity);
@@ -94,6 +105,10 @@ namespace GameplayConstructorElements.Installers.Models
             var canJumpBufferingCondition = new AtomicBoolMultiplication();
             canJumpBufferingCondition.AppendBy(_canJumpBufferingConditionsFabtics, entity);
             entity.TryAddCanBufferingJumpData(canJumpBufferingCondition);
+
+            var canFacing = new AtomicBoolMultiplication();
+            canFacing.AppendBy(_canFacingConditionsFabrics, entity);
+            entity.TryAddCanFaceData(canFacing);
             
         }
     }

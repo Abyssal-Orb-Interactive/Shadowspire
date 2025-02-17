@@ -10,7 +10,7 @@ namespace GameplayConstructorElements.Expressions.Conditions
     {
         public Func<bool> CreateFor(IEntity entity)
         {
-            return () => entity.TryGetHealthData(out var health) && health.CurrentValue > 0f;
+            return () => entity.TryGetHealthPercentData(out var healthPercent) && healthPercent.CurrentValue > 0f;
         }
     }
     
@@ -20,7 +20,7 @@ namespace GameplayConstructorElements.Expressions.Conditions
     {
         public Func<bool> CreateFor(IEntity entity)
         {
-            return () => !entity.TryGetHealthData(out var health) || health.CurrentValue <= 0f;
+            return () => !entity.TryGetHealthPercentData(out var healthPercent) || healthPercent.CurrentValue <= 0f;
         }
     }
 }

@@ -59,7 +59,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Global.NameInstaller,
@@ -79,27 +79,25 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Data.UserInstaller,
+      Data: 3|GameplayConstructorElements.Installers.Atomic.InteractionModel.InteractionActionEventInstaller,
         GameplayConstructorElements.Installers
-    - Name: _user
+    - Name: _interactionActionEvent
       Entry: 7
-      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+      Data: 4|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
         Entity]], AtomicStructures
-    - Name: _value
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
-    - Name: _onUseActions
+    - Name: _interactionActions
       Entry: 7
-      Data: 5|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
+      Data: 5|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 6|GameplayConstructorElements.Actions.InputActionsEvents.UseInputActionEvent.OnUseInputActionEventMeleeAttackAction,
+      Data: 6|Source.Gameplay_Constructor_Elements.Actions.Interaction_Event.OnInteractionEventPickUpAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -141,26 +139,41 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 10|GameplayConstructorElements.Installers.Atomic.InteractionModel.InteractionActionEventInstaller,
-        GameplayConstructorElements.Installers
-    - Name: _interactionActionEvent
-      Entry: 7
-      Data: 11|AtomicFramework.AtomicStructures.AtomicEvent`1[[GameplayConstructorFramework.Entity.IEntity,
-        Entity]], AtomicStructures
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
-    - Name: _interactionActions
+    - Name: _behaviourInstallers
       Entry: 7
-      Data: 12|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`1[[GameplayConstructorFramework.Entity.IEntity,
-        Entity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
+      Data: 10|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 13|Source.Gameplay_Constructor_Elements.Actions.Interaction_Event.OnInteractionEventPickUpAction,
+      Data: 11|GameplayConstructorElements.Installers.Atomic.Global.UseModel.Behaviour.UserWithUseActionInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _user
+      Entry: 7
+      Data: 12|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
+        Entity]], AtomicStructures
+    - Name: _value
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _onUseActions
+      Entry: 7
+      Data: 13|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric[], AtomicStructures.Extensions
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|GameplayConstructorElements.Actions.InputActionsEvents.UseInputActionEvent.OnUseInputActionEventMeleeAttackAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
@@ -174,19 +187,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: _behaviourInstallers
-      Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
-        Entity]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
     - Name: 
       Entry: 13
       Data: 

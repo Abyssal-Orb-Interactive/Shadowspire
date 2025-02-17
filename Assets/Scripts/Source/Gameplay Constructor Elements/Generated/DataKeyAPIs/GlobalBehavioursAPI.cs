@@ -21,5 +21,13 @@ namespace GameplayConstructorFrameworkAPIs
     JumpBufferBehaviour = 16,
     TargetsTriggerFlippingBehaviour = 17,
     TorchFadeBehaviour = 18,
+    ChangeFacingByMovementBehaviour = 19,
+    FacingFlipBehaviour = 20,
+    AimToNearestEnemyInVisionTriggerBehaviour = 21,
+    AttackCooldownBehaviour = 22,
+    StunBehaviour = 23,
+    AutoAttackAimBehaviour = 24,
+    HealthBarBehaviour = 25,
+    HealthPercentCalculationBehaviour = 26,
      }
 }

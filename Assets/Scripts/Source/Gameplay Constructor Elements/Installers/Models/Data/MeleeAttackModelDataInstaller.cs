@@ -17,6 +17,8 @@ namespace Source.GameplayConstructorElements.Installers.Models.Data
 	    [SerializeField] private AtomicEvent<float, DamageType> _meleeAttackActionEvent = new();
 	    [SerializeReference] private IEntityActionFabric<float, DamageType>[] _meleeAttackActionEventActionsFabrics = Array.Empty<IEntityActionFabric<float, DamageType>>();
 	    [SerializeReference] private AtomicReactiveProperty<Collider2D> _targetsTriggerCollider = new();
+	    [SerializeReference] private IEntityConditionFabric[] _canAttackConditionFabrics = Array.Empty<IEntityConditionFabric>();
+	    
 	    public void InstallTo(IEntity entity)
 	    {
 		    entity.TryAddTargetsInDamageZoneData(_targets);
@@ -26,6 +28,11 @@ namespace Source.GameplayConstructorElements.Installers.Models.Data
 		    entity.TryAddMeleeAttackActionEventData(_meleeAttackActionEvent);
 		    
 		    entity.TryAddTargetTrigger2DColliderData(_targetsTriggerCollider);
+		    
+		    var canAttack = new AtomicBoolMultiplication();
+		    canAttack.AppendBy(_canAttackConditionFabrics, entity);
+		    entity.TryAddCanAttackData(canAttack);
+		    
 	    }
     }
 }

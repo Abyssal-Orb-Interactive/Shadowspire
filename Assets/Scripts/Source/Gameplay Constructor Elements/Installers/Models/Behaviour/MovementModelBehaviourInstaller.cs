@@ -18,6 +18,8 @@ namespace GameplayConstructorElements.Installers.Models.Behaviour
             entity.TryAddMoveSpeedupOnJumpHangingBehaviourBehaviour(new MoveSpeedupOnJumpHangingBehaviour(entity));
             entity.TryAddCoyoteTimeBehaviourBehaviour(new CoyoteTimeBehaviour(entity));
             entity.TryAddJumpBufferBehaviourBehaviour(new JumpBufferBehaviour(entity));
+            entity.TryAddChangeFacingByMovementBehaviourBehaviour(new ChangeFacingByMovementBehaviour(entity));
+            entity.TryAddFacingFlipBehaviourBehaviour(new FacingFlipBehaviour(entity));
         }
     }
 }

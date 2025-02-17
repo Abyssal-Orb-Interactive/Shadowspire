@@ -7,12 +7,19 @@ using ObservableCollections;
 using System.Collections.Generic;
 using GameData;
 using UnityEngine.Rendering.Universal;
+using TimeFramework.Timers;
+using UnityEngine.UI;
 using GameplayConstructorElements.Behaviours;
+using GameplayConstructorElements.Behaviours.UI_Model;
 using GameplayConstructorElements.Behaviours.TorchModel;
 using GameplayConstructorElements.Behaviours.MovementModel;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
+using GameplayConstructorElements.Behaviours.Health_Model;
 using GameplayConstructorElements.Behaviours.Following_Model;
 using GameplayConstructorElements.Behaviours.DeathModel;
+using GameplayConstructorElements.Behaviours.AttackModel;
+using GameplayConstructorElements.Behaviours.Attack_Model;
+using GameplayConstructorElements.Behaviours.AIModel;
 
 namespace GameplayConstructorFrameworkAPIs
 {
@@ -1176,6 +1183,261 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.MaxIgnitionFalloffStrength);
           }
 
+        public static bool TryGetFractionData(this IEntity entity, out AtomicReactiveProperty<Fractions> fraction)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Fraction, out fraction);
+         }
+
+         public static bool TryAddFractionData(this IEntity entity, AtomicReactiveProperty<Fractions> fraction)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Fraction, fraction);
+          }
+
+         public static bool TryRemoveFractionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Fraction);
+          }
+
+        public static bool TryGetEnemyInVisionEventData(this IEntity entity, out AtomicEvent<IEntity> enemyInVisionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.EnemyInVisionEvent, out enemyInVisionEvent);
+         }
+
+         public static bool TryAddEnemyInVisionEventData(this IEntity entity, AtomicEvent<IEntity> enemyInVisionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.EnemyInVisionEvent, enemyInVisionEvent);
+          }
+
+         public static bool TryRemoveEnemyInVisionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.EnemyInVisionEvent);
+          }
+
+        public static bool TryGetCurrentFacingData(this IEntity entity, out AtomicReactiveProperty<Facing> currentFacing)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CurrentFacing, out currentFacing);
+         }
+
+         public static bool TryAddCurrentFacingData(this IEntity entity, AtomicReactiveProperty<Facing> currentFacing)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CurrentFacing, currentFacing);
+          }
+
+         public static bool TryRemoveCurrentFacingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CurrentFacing);
+          }
+
+        public static bool TryGetOriginFacingData(this IEntity entity, out AtomicReactiveProperty<Facing> originFacing)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.OriginFacing, out originFacing);
+         }
+
+         public static bool TryAddOriginFacingData(this IEntity entity, AtomicReactiveProperty<Facing> originFacing)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.OriginFacing, originFacing);
+          }
+
+         public static bool TryRemoveOriginFacingData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.OriginFacing);
+          }
+
+        public static bool TryGetEnemiesInVisionData(this IEntity entity, out List<IEntity> enemiesInVision)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.EnemiesInVision, out enemiesInVision);
+         }
+
+         public static bool TryAddEnemiesInVisionData(this IEntity entity, List<IEntity> enemiesInVision)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.EnemiesInVision, enemiesInVision);
+          }
+
+         public static bool TryRemoveEnemiesInVisionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.EnemiesInVision);
+          }
+
+        public static bool TryGetCanAttackData(this IEntity entity, out AtomicExpression<bool> canAttack)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanAttack, out canAttack);
+         }
+
+         public static bool TryAddCanAttackData(this IEntity entity, AtomicExpression<bool> canAttack)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanAttack, canAttack);
+          }
+
+         public static bool TryRemoveCanAttackData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanAttack);
+          }
+
+        public static bool TryGetAttackCooldownData(this IEntity entity, out AtomicReactiveProperty<float> attackCooldown)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.AttackCooldown, out attackCooldown);
+         }
+
+         public static bool TryAddAttackCooldownData(this IEntity entity, AtomicReactiveProperty<float> attackCooldown)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.AttackCooldown, attackCooldown);
+          }
+
+         public static bool TryRemoveAttackCooldownData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.AttackCooldown);
+          }
+
+        public static bool TryGetStunDurationData(this IEntity entity, out AtomicReactiveProperty<float> stunDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.StunDuration, out stunDuration);
+         }
+
+         public static bool TryAddStunDurationData(this IEntity entity, AtomicReactiveProperty<float> stunDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.StunDuration, stunDuration);
+          }
+
+         public static bool TryRemoveStunDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.StunDuration);
+          }
+
+        public static bool TryGetIsStunnedData(this IEntity entity, out AtomicReactiveProperty<bool> isStunned)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsStunned, out isStunned);
+         }
+
+         public static bool TryAddIsStunnedData(this IEntity entity, AtomicReactiveProperty<bool> isStunned)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsStunned, isStunned);
+          }
+
+         public static bool TryRemoveIsStunnedData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsStunned);
+          }
+
+        public static bool TryGetAimData(this IEntity entity, out AtomicReactiveProperty<IEntity> aim)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Aim, out aim);
+         }
+
+         public static bool TryAddAimData(this IEntity entity, AtomicReactiveProperty<IEntity> aim)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Aim, aim);
+          }
+
+         public static bool TryRemoveAimData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Aim);
+          }
+
+        public static bool TryGetIsInAttackCooldownData(this IEntity entity, out AtomicReactiveProperty<bool> isInAttackCooldown)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IsInAttackCooldown, out isInAttackCooldown);
+         }
+
+         public static bool TryAddIsInAttackCooldownData(this IEntity entity, AtomicReactiveProperty<bool> isInAttackCooldown)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IsInAttackCooldown, isInAttackCooldown);
+          }
+
+         public static bool TryRemoveIsInAttackCooldownData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IsInAttackCooldown);
+          }
+
+        public static bool TryGetCoolodownTimerData(this IEntity entity, out Timer coolodownTimer)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CoolodownTimer, out coolodownTimer);
+         }
+
+         public static bool TryAddCoolodownTimerData(this IEntity entity, Timer coolodownTimer)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CoolodownTimer, coolodownTimer);
+          }
+
+         public static bool TryRemoveCoolodownTimerData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CoolodownTimer);
+          }
+
+        public static bool TryGetStunTimerData(this IEntity entity, out Timer stunTimer)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.StunTimer, out stunTimer);
+         }
+
+         public static bool TryAddStunTimerData(this IEntity entity, Timer stunTimer)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.StunTimer, stunTimer);
+          }
+
+         public static bool TryRemoveStunTimerData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.StunTimer);
+          }
+
+        public static bool TryGetCanFaceData(this IEntity entity, out AtomicExpression<bool> canFace)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanFace, out canFace);
+         }
+
+         public static bool TryAddCanFaceData(this IEntity entity, AtomicExpression<bool> canFace)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanFace, canFace);
+          }
+
+         public static bool TryRemoveCanFaceData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanFace);
+          }
+
+        public static bool TryGetHealthBarData(this IEntity entity, out AtomicReactiveProperty<Image> healthBar)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.HealthBar, out healthBar);
+         }
+
+         public static bool TryAddHealthBarData(this IEntity entity, AtomicReactiveProperty<Image> healthBar)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.HealthBar, healthBar);
+          }
+
+         public static bool TryRemoveHealthBarData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.HealthBar);
+          }
+
+        public static bool TryGetDisplayingEntityData(this IEntity entity, out AtomicReactiveProperty<IEntity> displayingEntity)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.DisplayingEntity, out displayingEntity);
+         }
+
+         public static bool TryAddDisplayingEntityData(this IEntity entity, AtomicReactiveProperty<IEntity> displayingEntity)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.DisplayingEntity, displayingEntity);
+          }
+
+         public static bool TryRemoveDisplayingEntityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.DisplayingEntity);
+          }
+
+        public static bool TryGetHealthPercentData(this IEntity entity, out AtomicReactiveProperty<float> healthPercent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.HealthPercent, out healthPercent);
+         }
+
+         public static bool TryAddHealthPercentData(this IEntity entity, AtomicReactiveProperty<float> healthPercent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.HealthPercent, healthPercent);
+          }
+
+         public static bool TryRemoveHealthPercentData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.HealthPercent);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1255,6 +1517,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<TargetsTriggerFlippingBehaviour>((int)GlobalBehavioursAPI.TargetsTriggerFlippingBehaviour);
           }
 
+        public static bool TryGetHealthBarBehaviourBehaviour(this IEntity entity, out HealthBarBehaviour healthBarBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.HealthBarBehaviour, out healthBarBehaviour);
+         }
+
+         public static bool TryAddHealthBarBehaviourBehaviour(this IEntity entity, HealthBarBehaviour healthBarBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.HealthBarBehaviour, healthBarBehaviour);
+          }
+
+         public static bool TryRemoveHealthBarBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<HealthBarBehaviour>((int)GlobalBehavioursAPI.HealthBarBehaviour);
+          }
+
         public static bool TryGetTorchFadeBehaviourBehaviour(this IEntity entity, out TorchFadeBehaviour torchFadeBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.TorchFadeBehaviour, out torchFadeBehaviour);
@@ -1270,6 +1547,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<TorchFadeBehaviour>((int)GlobalBehavioursAPI.TorchFadeBehaviour);
           }
 
+        public static bool TryGetChangeFacingByMovementBehaviourBehaviour(this IEntity entity, out ChangeFacingByMovementBehaviour changeFacingByMovementBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.ChangeFacingByMovementBehaviour, out changeFacingByMovementBehaviour);
+         }
+
+         public static bool TryAddChangeFacingByMovementBehaviourBehaviour(this IEntity entity, ChangeFacingByMovementBehaviour changeFacingByMovementBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.ChangeFacingByMovementBehaviour, changeFacingByMovementBehaviour);
+          }
+
+         public static bool TryRemoveChangeFacingByMovementBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<ChangeFacingByMovementBehaviour>((int)GlobalBehavioursAPI.ChangeFacingByMovementBehaviour);
+          }
+
         public static bool TryGetCoyoteTimeBehaviourBehaviour(this IEntity entity, out CoyoteTimeBehaviour coyoteTimeBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.CoyoteTimeBehaviour, out coyoteTimeBehaviour);
@@ -1283,6 +1575,21 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveCoyoteTimeBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<CoyoteTimeBehaviour>((int)GlobalBehavioursAPI.CoyoteTimeBehaviour);
+          }
+
+        public static bool TryGetFacingFlipBehaviourBehaviour(this IEntity entity, out FacingFlipBehaviour facingFlipBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.FacingFlipBehaviour, out facingFlipBehaviour);
+         }
+
+         public static bool TryAddFacingFlipBehaviourBehaviour(this IEntity entity, FacingFlipBehaviour facingFlipBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.FacingFlipBehaviour, facingFlipBehaviour);
+          }
+
+         public static bool TryRemoveFacingFlipBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<FacingFlipBehaviour>((int)GlobalBehavioursAPI.FacingFlipBehaviour);
           }
 
         public static bool TryGetFreeFallingBehaviourBehaviour(this IEntity entity, out FreeFallingBehaviour freeFallingBehaviour)
@@ -1435,6 +1742,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<UseInputHandlingBehaviour>((int)GlobalBehavioursAPI.UseInputHandlingBehaviour);
           }
 
+        public static bool TryGetHealthPercentCalculationBehaviourBehaviour(this IEntity entity, out HealthPercentCalculationBehaviour healthPercentCalculationBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.HealthPercentCalculationBehaviour, out healthPercentCalculationBehaviour);
+         }
+
+         public static bool TryAddHealthPercentCalculationBehaviourBehaviour(this IEntity entity, HealthPercentCalculationBehaviour healthPercentCalculationBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.HealthPercentCalculationBehaviour, healthPercentCalculationBehaviour);
+          }
+
+         public static bool TryRemoveHealthPercentCalculationBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<HealthPercentCalculationBehaviour>((int)GlobalBehavioursAPI.HealthPercentCalculationBehaviour);
+          }
+
         public static bool TryGetFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity, out FollowTargetWithDistanceAndLerpBehaviour followTargetWithDistanceAndLerpBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour, out followTargetWithDistanceAndLerpBehaviour);
@@ -1463,6 +1785,66 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveDeathBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<DeathBehaviour>((int)GlobalBehavioursAPI.DeathBehaviour);
+          }
+
+        public static bool TryGetStunBehaviourBehaviour(this IEntity entity, out StunBehaviour stunBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.StunBehaviour, out stunBehaviour);
+         }
+
+         public static bool TryAddStunBehaviourBehaviour(this IEntity entity, StunBehaviour stunBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.StunBehaviour, stunBehaviour);
+          }
+
+         public static bool TryRemoveStunBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<StunBehaviour>((int)GlobalBehavioursAPI.StunBehaviour);
+          }
+
+        public static bool TryGetAttackCooldownBehaviourBehaviour(this IEntity entity, out AttackCooldownBehaviour attackCooldownBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.AttackCooldownBehaviour, out attackCooldownBehaviour);
+         }
+
+         public static bool TryAddAttackCooldownBehaviourBehaviour(this IEntity entity, AttackCooldownBehaviour attackCooldownBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.AttackCooldownBehaviour, attackCooldownBehaviour);
+          }
+
+         public static bool TryRemoveAttackCooldownBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<AttackCooldownBehaviour>((int)GlobalBehavioursAPI.AttackCooldownBehaviour);
+          }
+
+        public static bool TryGetAimToNearestEnemyInVisionTriggerBehaviourBehaviour(this IEntity entity, out AimToNearestEnemyInVisionTriggerBehaviour aimToNearestEnemyInVisionTriggerBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.AimToNearestEnemyInVisionTriggerBehaviour, out aimToNearestEnemyInVisionTriggerBehaviour);
+         }
+
+         public static bool TryAddAimToNearestEnemyInVisionTriggerBehaviourBehaviour(this IEntity entity, AimToNearestEnemyInVisionTriggerBehaviour aimToNearestEnemyInVisionTriggerBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.AimToNearestEnemyInVisionTriggerBehaviour, aimToNearestEnemyInVisionTriggerBehaviour);
+          }
+
+         public static bool TryRemoveAimToNearestEnemyInVisionTriggerBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<AimToNearestEnemyInVisionTriggerBehaviour>((int)GlobalBehavioursAPI.AimToNearestEnemyInVisionTriggerBehaviour);
+          }
+
+        public static bool TryGetAutoAttackAimBehaviourBehaviour(this IEntity entity, out AutoAttackAimBehaviour autoAttackAimBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.AutoAttackAimBehaviour, out autoAttackAimBehaviour);
+         }
+
+         public static bool TryAddAutoAttackAimBehaviourBehaviour(this IEntity entity, AutoAttackAimBehaviour autoAttackAimBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.AutoAttackAimBehaviour, autoAttackAimBehaviour);
+          }
+
+         public static bool TryRemoveAutoAttackAimBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<AutoAttackAimBehaviour>((int)GlobalBehavioursAPI.AutoAttackAimBehaviour);
           }
 
          #endregion
