@@ -65,14 +65,11 @@ namespace GameplayConstructorElements.Behaviours.AIModel
 
         private void OnAimChanged(IEntity newAim)
         {
-            if (newAim == null) return;
-            
             _enemyInVision.Invoke(newAim);
         }
 
         public void OnFrameRun()
         {
-            if (!_enemies.Contains(_aim.CurrentValue)) _aim.Value = null;
             
             var count = _enemies.Count;
 
@@ -89,6 +86,8 @@ namespace GameplayConstructorElements.Behaviours.AIModel
             }
             
             _aim.Value = _nearestEnemy;
+            
+            if (!_enemies.Contains(_aim.CurrentValue)) _aim.Value = null;
         }
 
         public void Sleep()

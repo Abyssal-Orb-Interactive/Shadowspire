@@ -4914,7 +4914,7 @@ MonoBehaviour:
         Entity]], mscorlib
     - Name: 
       Entry: 12
-      Data: 8
+      Data: 7
     - Name: 
       Entry: 7
       Data: 1|GameplayConstructorElements.Installers.Atomic.Global.NameInstaller,
@@ -5021,7 +5021,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|GameplayConstructorElements.Installers.Atomic.Global.Attack_Model.Data.AimInstaller,
+      Data: 13|GameplayConstructorElements.Installers.Models.Data.TargetMeleeAttackModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _aim
       Entry: 7
@@ -5033,33 +5033,16 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 15|GameplayConstructorElements.Installers.Models.Data.TargetMeleeAttackModelDataInstaller,
-        GameplayConstructorElements.Installers
-    - Name: _aim
-      Entry: 7
-      Data: 16|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameplayConstructorFramework.Entity.IEntity,
-        Entity]], AtomicStructures
-    - Name: _value
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: _meleeAttackActionEvent
       Entry: 7
-      Data: 17|AtomicFramework.AtomicStructures.AtomicEvent`2[[System.Single, mscorlib],[GameData.DamageType,
+      Data: 15|AtomicFramework.AtomicStructures.AtomicEvent`2[[System.Single, mscorlib],[GameData.DamageType,
         GameData]], AtomicStructures
     - Name: 
       Entry: 8
       Data: 
     - Name: _meleeAttackActionEventActionsFabrics
       Entry: 7
-      Data: 18|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`2[[System.Single,
+      Data: 16|AtomicFramework.AtomicStructures.Actions.IEntityActionFabric`2[[System.Single,
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[GameData.DamageType,
         GameData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], AtomicStructures.Extensions
     - Name: 
@@ -5067,21 +5050,21 @@ MonoBehaviour:
       Data: 3
     - Name: 
       Entry: 7
-      Data: 19|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventTargetDamageAction,
+      Data: 17|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventTargetDamageAction,
         GameplayConstructorElements
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 20|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventAddStunAspect,
+      Data: 18|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventAddStunAspect,
         GameplayConstructorElements
     - Name: _stunAspect
       Entry: 7
-      Data: 21|GameplayConstructorElements.Aspects.StunAspect, GameplayConstructorElements
+      Data: 19|GameplayConstructorElements.Aspects.StunAspect, GameplayConstructorElements
     - Name: _stunDuration
       Entry: 7
-      Data: 22|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 20|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5091,7 +5074,7 @@ MonoBehaviour:
       Data: 
     - Name: _isStunned
       Entry: 7
-      Data: 23|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+      Data: 21|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 5
@@ -5107,15 +5090,15 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 24|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventAddCooldownAspect,
+      Data: 22|GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent.OnMeleeAttackActionEventAddCooldownAspect,
         GameplayConstructorElements
     - Name: _cooldownAspect
       Entry: 7
-      Data: 25|Source.Gameplay_Constructor_Elements.Aspects.AttackCooldownAspect,
+      Data: 23|Source.Gameplay_Constructor_Elements.Aspects.AttackCooldownAspect,
         GameplayConstructorElements
     - Name: _attackCooldown
       Entry: 7
-      Data: 26|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 24|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5125,7 +5108,7 @@ MonoBehaviour:
       Data: 
     - Name: _isInAttackCooldown
       Entry: 7
-      Data: 27|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+      Data: 25|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 5
@@ -5147,27 +5130,27 @@ MonoBehaviour:
       Data: 
     - Name: _canAttackConditionFabrics
       Entry: 7
-      Data: 28|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+      Data: 26|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 29|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+      Data: 27|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 30|GameplayConstructorElements.Expressions.Conditions.IsNotStunnedConditionFabric,
+      Data: 28|GameplayConstructorElements.Expressions.Conditions.IsNotStunnedConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 31|GameplayConstructorElements.Expressions.Conditions.IsNotInCooldownConditionFabric,
+      Data: 29|GameplayConstructorElements.Expressions.Conditions.IsNotInCooldownConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
@@ -5183,11 +5166,11 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 32|GameplayConstructorElements.Installers.Models.Data.DamageModelDataInstaller,
+      Data: 30|GameplayConstructorElements.Installers.Models.Data.DamageModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _damage
       Entry: 7
-      Data: 33|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 31|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5197,7 +5180,7 @@ MonoBehaviour:
       Data: 
     - Name: _damageType
       Entry: 7
-      Data: 34|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameData.DamageType,
+      Data: 32|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[GameData.DamageType,
         GameData]], AtomicStructures
     - Name: _value
       Entry: 3
@@ -5210,11 +5193,11 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 35|GameplayConstructorElements.Installers.Models.Data.HealthModelDataInstaller,
+      Data: 33|GameplayConstructorElements.Installers.Models.Data.HealthModelDataInstaller,
         GameplayConstructorElements.Installers
     - Name: _maxHealth
       Entry: 7
-      Data: 36|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 34|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5224,7 +5207,7 @@ MonoBehaviour:
       Data: 
     - Name: _health
       Entry: 7
-      Data: 37|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 35|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5234,7 +5217,7 @@ MonoBehaviour:
       Data: 
     - Name: _healthPercent
       Entry: 7
-      Data: 38|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 36|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5244,20 +5227,20 @@ MonoBehaviour:
       Data: 
     - Name: _canTakeDamageConditionFabrics
       Entry: 7
-      Data: 39|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
+      Data: 37|AtomicFramework.AtomicStructures.IEntityConditionFabric[], AtomicStructures.Extensions
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 40|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
+      Data: 38|GameplayConstructorElements.Expressions.Conditions.IsAliveConditionFabric,
         GameplayConstructorElements.Expressions
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: "41|GameplayConstructorElements.Expressions.Conditions.IsNotInvincible\u0421onditionFabric,
+      Data: "39|GameplayConstructorElements.Expressions.Conditions.IsNotInvincible\u0421onditionFabric,
         GameplayConstructorElements.Expressions"
     - Name: 
       Entry: 8
@@ -5270,7 +5253,7 @@ MonoBehaviour:
       Data: 
     - Name: _invincibility
       Entry: 7
-      Data: 42|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
+      Data: 40|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Boolean,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 5
@@ -5280,7 +5263,7 @@ MonoBehaviour:
       Data: 
     - Name: _invincibilitySecondsDuration
       Entry: 7
-      Data: 43|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
+      Data: 41|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[System.Single,
         mscorlib]], AtomicStructures
     - Name: _value
       Entry: 4
@@ -5299,14 +5282,14 @@ MonoBehaviour:
       Data: 
     - Name: _behaviourInstallers
       Entry: 7
-      Data: 44|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+      Data: 42|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
         Entity]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 45|GameplayConstructorElements.Installers.Models.Behaviour.FacingModelBehavioursInstaller,
+      Data: 43|GameplayConstructorElements.Installers.Models.Behaviour.FacingModelBehavioursInstaller,
         GameplayConstructorElements.Installers
     - Name: 
       Entry: 8

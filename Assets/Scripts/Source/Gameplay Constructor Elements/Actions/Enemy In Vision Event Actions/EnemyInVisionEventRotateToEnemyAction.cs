@@ -13,6 +13,7 @@ namespace GameplayConstructorElements.Actions.EnemyInVisionEventActions
         {
             return enemy =>
             {
+                if(enemy == null) return;
                 
                 if (!enemy.TryGetTransformData(out var enemyTransform) || 
                     !entity.TryGetTransformData(out var transform) || 
