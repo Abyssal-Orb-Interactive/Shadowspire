@@ -9,7 +9,9 @@ using GameData;
 using UnityEngine.Rendering.Universal;
 using TimeFramework.Timers;
 using UnityEngine.UI;
+using TMPro;
 using GameplayConstructorElements.Behaviours;
+using GameplayConstructorElements.Behaviours.UIModel;
 using GameplayConstructorElements.Behaviours.UI_Model;
 using GameplayConstructorElements.Behaviours.TorchModel;
 using GameplayConstructorElements.Behaviours.MovementModel;
@@ -328,12 +330,12 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InteractionActionEvent);
           }
 
-        public static bool TryGetInventoryData(this IEntity entity, out ObservableDictionary<string, int> inventory)
+        public static bool TryGetInventoryData(this IEntity entity, out ObservableDictionary<string, AtomicReactiveProperty<int>> inventory)
          {
             return entity.TryGetData((int)GlobalDataAPI.Inventory, out inventory);
          }
 
-         public static bool TryAddInventoryData(this IEntity entity, ObservableDictionary<string, int> inventory)
+         public static bool TryAddInventoryData(this IEntity entity, ObservableDictionary<string, AtomicReactiveProperty<int>> inventory)
           {
             return entity.TryAddData((int)GlobalDataAPI.Inventory, inventory);
           }
@@ -1438,6 +1440,171 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.HealthPercent);
           }
 
+        public static bool TryGetUISpriteData(this IEntity entity, out AtomicReactiveProperty<Sprite> uISprite)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.UISprite, out uISprite);
+         }
+
+         public static bool TryAddUISpriteData(this IEntity entity, AtomicReactiveProperty<Sprite> uISprite)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.UISprite, uISprite);
+          }
+
+         public static bool TryRemoveUISpriteData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.UISprite);
+          }
+
+        public static bool TryGetTestData(this IEntity entity, out ObservableDictionary<string, AtomicReactiveProperty<int>> test)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Test, out test);
+         }
+
+         public static bool TryAddTestData(this IEntity entity, ObservableDictionary<string, AtomicReactiveProperty<int>> test)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Test, test);
+          }
+
+         public static bool TryRemoveTestData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Test);
+          }
+
+        public static bool TryGetIconData(this IEntity entity, out AtomicReactiveProperty<Image> icon)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.Icon, out icon);
+         }
+
+         public static bool TryAddIconData(this IEntity entity, AtomicReactiveProperty<Image> icon)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.Icon, icon);
+          }
+
+         public static bool TryRemoveIconData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.Icon);
+          }
+
+        public static bool TryGetIconGameObjectData(this IEntity entity, out AtomicReactiveProperty<GameObject> iconGameObject)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.IconGameObject, out iconGameObject);
+         }
+
+         public static bool TryAddIconGameObjectData(this IEntity entity, AtomicReactiveProperty<GameObject> iconGameObject)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.IconGameObject, iconGameObject);
+          }
+
+         public static bool TryRemoveIconGameObjectData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.IconGameObject);
+          }
+
+        public static bool TryGetQuantityGameObjectData(this IEntity entity, out AtomicReactiveProperty<GameObject> quantityGameObject)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.QuantityGameObject, out quantityGameObject);
+         }
+
+         public static bool TryAddQuantityGameObjectData(this IEntity entity, AtomicReactiveProperty<GameObject> quantityGameObject)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.QuantityGameObject, quantityGameObject);
+          }
+
+         public static bool TryRemoveQuantityGameObjectData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.QuantityGameObject);
+          }
+
+        public static bool TryGetUIQuantityData(this IEntity entity, out AtomicReactiveProperty<TMP_Text> uIQuantity)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.UIQuantity, out uIQuantity);
+         }
+
+         public static bool TryAddUIQuantityData(this IEntity entity, AtomicReactiveProperty<TMP_Text> uIQuantity)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.UIQuantity, uIQuantity);
+          }
+
+         public static bool TryRemoveUIQuantityData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.UIQuantity);
+          }
+
+        public static bool TryGetInventoryHolderData(this IEntity entity, out AtomicReactiveProperty<IEntity> inventoryHolder)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InventoryHolder, out inventoryHolder);
+         }
+
+         public static bool TryAddInventoryHolderData(this IEntity entity, AtomicReactiveProperty<IEntity> inventoryHolder)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InventoryHolder, inventoryHolder);
+          }
+
+         public static bool TryRemoveInventoryHolderData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InventoryHolder);
+          }
+
+        public static bool TryGetInventoryWindowData(this IEntity entity, out AtomicReactiveProperty<GameObject> inventoryWindow)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InventoryWindow, out inventoryWindow);
+         }
+
+         public static bool TryAddInventoryWindowData(this IEntity entity, AtomicReactiveProperty<GameObject> inventoryWindow)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InventoryWindow, inventoryWindow);
+          }
+
+         public static bool TryRemoveInventoryWindowData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InventoryWindow);
+          }
+
+        public static bool TryGetInventoryScrollViewContentHolderData(this IEntity entity, out AtomicReactiveProperty<GameObject> inventoryScrollViewContentHolder)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InventoryScrollViewContentHolder, out inventoryScrollViewContentHolder);
+         }
+
+         public static bool TryAddInventoryScrollViewContentHolderData(this IEntity entity, AtomicReactiveProperty<GameObject> inventoryScrollViewContentHolder)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InventoryScrollViewContentHolder, inventoryScrollViewContentHolder);
+          }
+
+         public static bool TryRemoveInventoryScrollViewContentHolderData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InventoryScrollViewContentHolder);
+          }
+
+        public static bool TryGetInventorySlotPrefabData(this IEntity entity, out AtomicReactiveProperty<GameObject> inventorySlotPrefab)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InventorySlotPrefab, out inventorySlotPrefab);
+         }
+
+         public static bool TryAddInventorySlotPrefabData(this IEntity entity, AtomicReactiveProperty<GameObject> inventorySlotPrefab)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InventorySlotPrefab, inventorySlotPrefab);
+          }
+
+         public static bool TryRemoveInventorySlotPrefabData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InventorySlotPrefab);
+          }
+
+        public static bool TryGetInventorySlotsData(this IEntity entity, out AtomicReactiveProperty<List<IEntity>> inventorySlots)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InventorySlots, out inventorySlots);
+         }
+
+         public static bool TryAddInventorySlotsData(this IEntity entity, AtomicReactiveProperty<List<IEntity>> inventorySlots)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InventorySlots, inventorySlots);
+          }
+
+         public static bool TryRemoveInventorySlotsData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InventorySlots);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -1517,6 +1684,21 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveBehaviour<TargetsTriggerFlippingBehaviour>((int)GlobalBehavioursAPI.TargetsTriggerFlippingBehaviour);
           }
 
+        public static bool TryGetInventoryDisplayingBehaviourBehaviour(this IEntity entity, out InventoryDisplayingBehaviour inventoryDisplayingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.InventoryDisplayingBehaviour, out inventoryDisplayingBehaviour);
+         }
+
+         public static bool TryAddInventoryDisplayingBehaviourBehaviour(this IEntity entity, InventoryDisplayingBehaviour inventoryDisplayingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.InventoryDisplayingBehaviour, inventoryDisplayingBehaviour);
+          }
+
+         public static bool TryRemoveInventoryDisplayingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<InventoryDisplayingBehaviour>((int)GlobalBehavioursAPI.InventoryDisplayingBehaviour);
+          }
+
         public static bool TryGetHealthBarBehaviourBehaviour(this IEntity entity, out HealthBarBehaviour healthBarBehaviour)
          {
             return entity.TryGetBehaviour((int)GlobalBehavioursAPI.HealthBarBehaviour, out healthBarBehaviour);
@@ -1530,6 +1712,36 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveHealthBarBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<HealthBarBehaviour>((int)GlobalBehavioursAPI.HealthBarBehaviour);
+          }
+
+        public static bool TryGetItemsIconDisplayingBehaviourBehaviour(this IEntity entity, out ItemsIconDisplayingBehaviour itemsIconDisplayingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.ItemsIconDisplayingBehaviour, out itemsIconDisplayingBehaviour);
+         }
+
+         public static bool TryAddItemsIconDisplayingBehaviourBehaviour(this IEntity entity, ItemsIconDisplayingBehaviour itemsIconDisplayingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.ItemsIconDisplayingBehaviour, itemsIconDisplayingBehaviour);
+          }
+
+         public static bool TryRemoveItemsIconDisplayingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<ItemsIconDisplayingBehaviour>((int)GlobalBehavioursAPI.ItemsIconDisplayingBehaviour);
+          }
+
+        public static bool TryGetItemsQuantityDisplayingBehaviourBehaviour(this IEntity entity, out ItemsQuantityDisplayingBehaviour itemsQuantityDisplayingBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.ItemsQuantityDisplayingBehaviour, out itemsQuantityDisplayingBehaviour);
+         }
+
+         public static bool TryAddItemsQuantityDisplayingBehaviourBehaviour(this IEntity entity, ItemsQuantityDisplayingBehaviour itemsQuantityDisplayingBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.ItemsQuantityDisplayingBehaviour, itemsQuantityDisplayingBehaviour);
+          }
+
+         public static bool TryRemoveItemsQuantityDisplayingBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<ItemsQuantityDisplayingBehaviour>((int)GlobalBehavioursAPI.ItemsQuantityDisplayingBehaviour);
           }
 
         public static bool TryGetTorchFadeBehaviourBehaviour(this IEntity entity, out TorchFadeBehaviour torchFadeBehaviour)

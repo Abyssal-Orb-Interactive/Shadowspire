@@ -1,4 +1,5 @@
 using System;
+using AtomicFramework.AtomicStructures;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
 using GameplayConstructorFrameworkAPIs;
@@ -10,7 +11,7 @@ namespace GameplayConstructorElements.Installers.Atomic.Global.InventoryModel.Da
     [Serializable]
     public sealed class InventoryInstaller : IEntityAtomicElementInstaller
     {
-        [SerializeReference] private ObservableDictionary<string, int> _inventory = new();
+        [SerializeReference] private ObservableDictionary<string, AtomicReactiveProperty<int>> _inventory = new();
         public void InstallTo(IEntity entity)
         {
             entity.TryAddInventoryData(_inventory);

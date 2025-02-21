@@ -25,7 +25,7 @@ namespace GameplayConstructorElements.EntityExtensions
                 if (!itemsRegister.TryGetValue(id, out var itemPrefab)) continue;
                 if (itemPrefab is not Component entityComponent) continue;
                 
-                for (var i = 0; i < quantity; i++)
+                for (var i = 0; i < quantity.CurrentValue; i++)
                 {
                     Object.Instantiate(entityComponent.gameObject, dropPosition, Quaternion.identity);
                 }

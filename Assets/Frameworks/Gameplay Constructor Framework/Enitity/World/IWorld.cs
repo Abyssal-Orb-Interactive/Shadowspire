@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AtomicFramework.AtomicStructures;
 using GameplayConstructorFramework.Entity;
 
 namespace GameplayConstructorFramework.Enitity.World
@@ -10,6 +11,6 @@ namespace GameplayConstructorFramework.Enitity.World
         bool TryGetEntityWithID(int id, out IEntity entity);
         void Destroy(int entityID);
         
-        public IReadOnlyDictionary<int, IEntity> Entities { get; }
+        public IReadOnlyDictionary<int, IEntity> Entities { get; } 
     }
 }

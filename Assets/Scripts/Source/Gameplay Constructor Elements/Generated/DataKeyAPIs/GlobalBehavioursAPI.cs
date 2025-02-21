@@ -29,5 +29,8 @@ namespace GameplayConstructorFrameworkAPIs
     AutoAttackAimBehaviour = 24,
     HealthBarBehaviour = 25,
     HealthPercentCalculationBehaviour = 26,
+    ItemsIconDisplayingBehaviour = 27,
+    ItemsQuantityDisplayingBehaviour = 28,
+    InventoryDisplayingBehaviour = 29,
      }
 }

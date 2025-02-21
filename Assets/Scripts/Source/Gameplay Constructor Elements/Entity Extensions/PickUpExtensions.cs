@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using AtomicFramework.AtomicStructures;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
 
@@ -18,9 +19,9 @@ namespace GameplayConstructorElements.EntityExtensions
             var name = nameProperty.CurrentValue;
             var quantity = quantityProperty?.CurrentValue ?? 1;
             
-            if (!inventory.TryAdd(name, quantity))
+            if (!inventory.TryAdd(name, new AtomicReactiveProperty<int>(quantity)))
             {
-                inventory[name] += quantity;
+                inventory[name].Value += quantity;
             }
 
             pickUppingEntity.Dispose();
