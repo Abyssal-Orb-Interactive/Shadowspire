@@ -32,5 +32,9 @@ namespace GameplayConstructorFrameworkAPIs
     ItemsIconDisplayingBehaviour = 27,
     ItemsQuantityDisplayingBehaviour = 28,
     InventoryDisplayingBehaviour = 29,
+    InventoryWindowTogglingBehaviour = 30,
+    EscapeHandlingBehaviour = 31,
+    InventoryActionHandlingBehaviour = 32,
+    EscapeFromWindowBehaviour = 33,
      }
 }

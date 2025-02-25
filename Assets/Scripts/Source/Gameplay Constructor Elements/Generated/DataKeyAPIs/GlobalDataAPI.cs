@@ -103,9 +103,14 @@ namespace GameplayConstructorFrameworkAPIs
     QuantityGameObject = 98,
     UIQuantity = 99,
     InventoryHolder = 100,
-    InventoryWindow = 101,
-    InventoryScrollViewContentHolder = 102,
-    InventorySlotPrefab = 103,
-    InventorySlots = 104,
+    InventoryScrollViewContentHolder = 101,
+    InventorySlotPrefab = 102,
+    InventorySlots = 103,
+    World = 104,
+    InventoryInputAction = 105,
+    EscapeInputAction = 106,
+    InventoryWindow = 107,
+    InventoryWindowEntity = 108,
+    CurrentlyOpenWindow = 109,
      }
 }

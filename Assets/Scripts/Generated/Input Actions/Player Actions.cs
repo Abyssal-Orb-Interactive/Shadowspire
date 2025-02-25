@@ -64,6 +64,24 @@ namespace InputActions
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cd9e9cc-ed1c-4b45-b702-1029d7818cef"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventory Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b2f9ee8-af16-48e8-aa79-5412714cd1f9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -187,6 +205,28 @@ namespace InputActions
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e31d300b-26c5-423e-882c-c5ceecb3664e"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33eff8a2-935a-44c4-bd63-236c2a7b028e"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard+Mouse"",
+                    ""action"": ""Escape Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -216,6 +256,8 @@ namespace InputActions
             m_BaseMap_Interaction = m_BaseMap.FindAction("Interaction", throwIfNotFound: true);
             m_BaseMap_Use = m_BaseMap.FindAction("Use", throwIfNotFound: true);
             m_BaseMap_Jump = m_BaseMap.FindAction("Jump", throwIfNotFound: true);
+            m_BaseMap_EscapeAction = m_BaseMap.FindAction("Escape Action", throwIfNotFound: true);
+            m_BaseMap_InventoryAction = m_BaseMap.FindAction("Inventory Action", throwIfNotFound: true);
         }
 
         ~@PlayerActions()
@@ -286,6 +328,8 @@ namespace InputActions
         private readonly InputAction m_BaseMap_Interaction;
         private readonly InputAction m_BaseMap_Use;
         private readonly InputAction m_BaseMap_Jump;
+        private readonly InputAction m_BaseMap_EscapeAction;
+        private readonly InputAction m_BaseMap_InventoryAction;
         public struct BaseMapActions
         {
             private @PlayerActions m_Wrapper;
@@ -294,6 +338,8 @@ namespace InputActions
             public InputAction @Interaction => m_Wrapper.m_BaseMap_Interaction;
             public InputAction @Use => m_Wrapper.m_BaseMap_Use;
             public InputAction @Jump => m_Wrapper.m_BaseMap_Jump;
+            public InputAction @EscapeAction => m_Wrapper.m_BaseMap_EscapeAction;
+            public InputAction @InventoryAction => m_Wrapper.m_BaseMap_InventoryAction;
             public InputActionMap Get() { return m_Wrapper.m_BaseMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -315,6 +361,12 @@ namespace InputActions
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @EscapeAction.started += instance.OnEscapeAction;
+                @EscapeAction.performed += instance.OnEscapeAction;
+                @EscapeAction.canceled += instance.OnEscapeAction;
+                @InventoryAction.started += instance.OnInventoryAction;
+                @InventoryAction.performed += instance.OnInventoryAction;
+                @InventoryAction.canceled += instance.OnInventoryAction;
             }
 
             private void UnregisterCallbacks(IBaseMapActions instance)
@@ -331,6 +383,12 @@ namespace InputActions
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
+                @EscapeAction.started -= instance.OnEscapeAction;
+                @EscapeAction.performed -= instance.OnEscapeAction;
+                @EscapeAction.canceled -= instance.OnEscapeAction;
+                @InventoryAction.started -= instance.OnInventoryAction;
+                @InventoryAction.performed -= instance.OnInventoryAction;
+                @InventoryAction.canceled -= instance.OnInventoryAction;
             }
 
             public void RemoveCallbacks(IBaseMapActions instance)
@@ -363,6 +421,8 @@ namespace InputActions
             void OnInteraction(InputAction.CallbackContext context);
             void OnUse(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+            void OnEscapeAction(InputAction.CallbackContext context);
+            void OnInventoryAction(InputAction.CallbackContext context);
         }
     }
 }

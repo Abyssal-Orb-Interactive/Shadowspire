@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using AtomicFramework.AtomicStructures;
 using GameplayConstructor.Enitity.Behaviours;
 using GameplayConstructorFramework.Entity.Unity;
@@ -7,7 +8,9 @@ using GameplayConstructorFramework.Enitity.World;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFrameworkAPIs;
 using ObservableCollections;
+using R3;
 using UnityEngine;
+using DisposableBuilder = ReactiveLibraryFacade.DataStructures.DisposableBuilder;
 
 namespace GameplayConstructorElements.Behaviours.UIModel
 {
@@ -20,7 +23,7 @@ namespace GameplayConstructorElements.Behaviours.UIModel
 
         private IAtomicValue<IEntity> _itemsRegisterHolder = null;
         private Dictionary<string, IEntity> _itemsRegister = null;  
-        private ReactiveLibraryFacade.IObservable<IEntity> _displayingEntity = null;
+        private IReadonlyAtomicReactiveProperty<IEntity> _displayingEntity = null;
         private ObservableDictionary<string, AtomicReactiveProperty<int>> _inventory  = null;
         private IAtomicValue<List<IEntity>> _inventorySlots = null;
         private IAtomicValue<GameObject> _inventorySlotPrefab = null;
@@ -32,7 +35,8 @@ namespace GameplayConstructorElements.Behaviours.UIModel
         
         #region Subscriptions
         
-        private IDisposable _subscription = null;
+        private IDisposable _inventorySubscription = null;
+        private IDisposable _entitySubscription = null;
         
         #endregion
 
@@ -72,6 +76,9 @@ namespace GameplayConstructorElements.Behaviours.UIModel
             _entity.TryGetInventoryWindowData(out var inventoryWindow);
             _inventoryWindow = inventoryWindow;
             
+            _entity.TryGetWorldData(out var world);
+            _world = world;
+            
             OnInit();
         }
 
@@ -79,8 +86,6 @@ namespace GameplayConstructorElements.Behaviours.UIModel
         {
             _itemsRegisterHolder.CurrentValue.TryGetItemsRegisterData(out var itemsRegister);
             _itemsRegister = itemsRegister;
-            
-            
         }
 
         public void Destroy()
@@ -101,11 +106,20 @@ namespace GameplayConstructorElements.Behaviours.UIModel
 
         public void OnAwake()
         {
-            _displayingEntity.Subscribe(OnDisplayingEntityChange);
+            _entitySubscription = _displayingEntity.Subscribe(OnDisplayingEntityChange);
+            
+            var count = _usedInventorySlots.Count;
+            var slots = _usedInventorySlots.Values.ToList();
+            for (var i = 0; i < count; i++)
+            {
+                slots[i].IsActive.Value = true;
+            }
         }
-
+        
         private void OnDisplayingEntityChange(IEntity newEntity)
         {
+            _inventorySubscription?.Dispose();
+            _inventorySubscription = null;
             _usedInventorySlots.Clear();
 
             if (newEntity == null)
@@ -123,7 +137,7 @@ namespace GameplayConstructorElements.Behaviours.UIModel
             _inventory = inventory;
 
             var quantityDifference = _inventorySlots.CurrentValue.Count - _inventory.Count;
-
+            
             if (quantityDifference < 0)
             {
                 for (var i = 0; i < -quantityDifference; i++)
@@ -131,7 +145,7 @@ namespace GameplayConstructorElements.Behaviours.UIModel
                     var id = _world.CreateEntity(_inventorySlotPrefab, _inventoryScrollViewContentHolder);
                     if (_world.CurrentValue.TryGetEntityWithID(id, out var newSlot))
                     {
-                        _inventorySlots.CurrentValue.Add(newSlot);
+                        _inventorySlots.CurrentValue.Add(newSlot); 
                     }
                 }
             }
@@ -143,11 +157,49 @@ namespace GameplayConstructorElements.Behaviours.UIModel
                 var slot = _inventorySlots.CurrentValue[index];
 
                 if (!slot.TryGetDisplayingEntityData(out var displayingEntity)) continue;
+                if (!slot.TryGetInventoryHolderData(out var inventoryHolder)) continue;
                 
+                inventoryHolder.Value = _displayingEntity.CurrentValue;
                 displayingEntity.Value = item;
                 _usedInventorySlots[id] = slot;
                 index++;
             }
+            
+            _inventoryWindow.CurrentValue.SetActive(true);
+
+            var inventorySubscriptionBuilder = new DisposableBuilder();
+            inventorySubscriptionBuilder.Add(_inventory.ObserveRemove().Subscribe(OnItemRemoved));
+            inventorySubscriptionBuilder.Add(_inventory.ObserveAdd().Subscribe(OnItemAdded));
+
+            _inventorySubscription = inventorySubscriptionBuilder.Build();
+        }
+        
+        private void OnItemRemoved(CollectionRemoveEvent<KeyValuePair<string, AtomicReactiveProperty<int>>> tokenOfRemovable)
+        {
+            var itemID = tokenOfRemovable.Value.Key;
+            
+            _usedInventorySlots[itemID].Dispose();
+            _usedInventorySlots.Remove(itemID);
+        }
+        
+        private void OnItemAdded(CollectionAddEvent<KeyValuePair<string, AtomicReactiveProperty<int>>> tokenOfRemovable)
+        {
+            var itemID = tokenOfRemovable.Value.Key;
+            
+            var id = _world.CreateEntity(_inventorySlotPrefab, _inventoryScrollViewContentHolder);
+            if (_world.CurrentValue.TryGetEntityWithID(id, out var newSlot))
+            {
+                _inventorySlots.CurrentValue.Add(newSlot);
+            }
+            
+            var item = _itemsRegister[itemID];
+            
+            if (!newSlot.TryGetDisplayingEntityData(out var displayingEntity)) return;
+            if (!newSlot.TryGetInventoryHolderData(out var inventoryHolder)) return;
+            
+            inventoryHolder.Value = _displayingEntity.CurrentValue;
+            displayingEntity.Value = item;
+            _usedInventorySlots[itemID] = newSlot;
         }
 
         public void Sleep()
@@ -162,8 +214,10 @@ namespace GameplayConstructorElements.Behaviours.UIModel
 
         public void Dispose()
         {
-            _subscription?.Dispose();
-            _subscription = null;
+            _entitySubscription?.Dispose();
+            _entitySubscription = null;
+            _inventorySubscription?.Dispose();
+            _inventorySubscription = null;
         }
         
         #endregion

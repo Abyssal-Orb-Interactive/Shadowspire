@@ -75,9 +75,16 @@ namespace GameplayConstructorElements.Behaviours.UI_Model
                 return;
             }
             
+            if (!newEntity.TryGetUISpriteData(out var uiSprite))
+            {
+                Debug.Log("Here");
+                _iconGameObject.CurrentValue.SetActive(false);
+                return;
+            }
+            
+            
             if(!_iconGameObject.CurrentValue.activeSelf) _iconGameObject.CurrentValue.SetActive(true);
             
-            newEntity.TryGetUISpriteData(out var uiSprite);
             _iconSprite = uiSprite;
             
             _iconSubscription = _iconSprite.Subscribe(OnIconChanged);

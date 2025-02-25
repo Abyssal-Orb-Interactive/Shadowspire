@@ -15,6 +15,8 @@ namespace GameplayConstructorElements.Installers.Models
         [SerializeField] private AtomicEvent<float2> _movementInputAction = new();
         [SerializeField] private AtomicEvent _interactionInputAction = new();
         [SerializeField] private AtomicEvent _useInputAction = new();
+        [SerializeField] private AtomicEvent _invnetoryInputAction = new();
+        [SerializeField] private AtomicEvent _escapeAction = new();
         [SerializeField] private AtomicEvent<float> _jumpInputAction = new();
         [SerializeField] private AtomicReactiveProperty<float> _jumpInputKeyMaxPressingTime = new();
         public void InstallTo(IEntity entity)
@@ -25,6 +27,8 @@ namespace GameplayConstructorElements.Installers.Models
             entity.TryAddUseInputActionData(_useInputAction);
             entity.TryAddJumpInputActionData(_jumpInputAction);
             entity.TryAddJumpInputKeyMaxPressingTimeData(_jumpInputKeyMaxPressingTime);
+            entity.TryAddEscapeInputActionData(_escapeAction);
+            entity.TryAddInventoryInputActionData(_invnetoryInputAction);
         }
     }
 }

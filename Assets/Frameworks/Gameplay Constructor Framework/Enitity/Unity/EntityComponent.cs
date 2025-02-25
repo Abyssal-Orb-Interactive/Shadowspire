@@ -30,17 +30,12 @@ namespace GameplayConstructorFramework.Entity.Unity
         
         [SerializeField] private Entity _entity = null;
 
+        private IDisposable _subscription = null;
+
         public AtomicReactiveProperty<bool> IsActive
         {
             get => _entity.IsActive;
-            set
-            {
-                _entity.IsActive = value;
-                if (gameObject.activeSelf != value.CurrentValue)
-                {
-                    gameObject.SetActive(value.CurrentValue);
-                }
-            }
+            set => _entity.IsActive = value;
         }
         
         public int ID
@@ -94,9 +89,18 @@ namespace GameplayConstructorFramework.Entity.Unity
             foreach (var initializer in _entityInitializers)
             {
                 initializer.InitializeData(this);
-            }        
+            }
+
+            _subscription?.Dispose();
+            _subscription = null;
+            _subscription = IsActive.Subscribe(OnActiveChange);
         }
-        
+
+        private void OnActiveChange(bool isActive)
+        {
+            gameObject.SetActive(isActive);
+        }
+
         private void CreateEntity()
         {
             _entity = new Entity(_gameLoopComponent.GameLoop);
@@ -135,6 +139,8 @@ namespace GameplayConstructorFramework.Entity.Unity
         
         public void Dispose()
         {
+            _subscription?.Dispose();
+            _subscription = null;
             Destroy(gameObject);
         }
 

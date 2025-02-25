@@ -199,6 +199,7 @@ MonoBehaviour:
   _gameLoopComponent: {fileID: 0}
   _entityInitializers:
   - {fileID: 2674041505033635953}
+  - {fileID: 1126710991872342570}
   - {fileID: 8459548909823939874}
   _entity:
     <IsActive>k__BackingField:
@@ -262,6 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6730254537468087498}
   - component: {fileID: 4579496655782378271}
+  - component: {fileID: 1126710991872342570}
   m_Layer: 0
   m_Name: ---Coin Visual---
   m_TagString: Untagged
@@ -328,7 +330,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: caa516cdb721dd143bbc8000ca78d50a, type: 3}
+  m_Sprite: {fileID: -136341571894138633, guid: 83b0bdaabb63ac94b8401bf74896fbf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -339,6 +341,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1126710991872342570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067120064535976932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d28bde693af46a4a21a53e267d8d14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 4579496655782378271}
+    - {fileID: -136341571894138633, guid: 83b0bdaabb63ac94b8401bf74896fbf1, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _dataInstallers
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteRendererInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _spriteRenderer
+      Entry: 7
+      Data: 2|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.SpriteRenderer,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|GameplayConstructorElements.Installers.Atomic.Visual.Data.SpriteInstaller,
+        GameplayConstructorElements.Installers
+    - Name: _sprite
+      Entry: 7
+      Data: 4|AtomicFramework.AtomicStructures.AtomicReactiveProperty`1[[UnityEngine.Sprite,
+        UnityEngine.CoreModule]], AtomicStructures
+    - Name: _value
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _behaviourInstallers
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[GameplayConstructorFramework.Entity.Unity.IEntityAtomicElementInstaller,
+        Entity]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|GameplayConstructorElements.Installers.Atomic.Global.Visual.Behaviours.SpriteSetUpBehaviourInstaller,
+        GameplayConstructorElements.Installers
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &8036070903180843342
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +479,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 21300000, guid: caa516cdb721dd143bbc8000ca78d50a, type: 3}
+    - {fileID: -5545622709527754238, guid: 83b0bdaabb63ac94b8401bf74896fbf1, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
