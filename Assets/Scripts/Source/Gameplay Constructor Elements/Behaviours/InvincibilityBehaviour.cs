@@ -13,7 +13,6 @@ namespace GameplayConstructorElements.Behaviours
     [Serializable]
     public sealed class InvincibilityBehaviour : BehaviourBase, IInitBehaviour, ISleepingBehaviour, IDisposable
     {
-        private TimeInvoker _timeInvoker = null;
         private Timer _timer = null;
         
         #region Cache Varaibles
@@ -40,21 +39,19 @@ namespace GameplayConstructorElements.Behaviours
         
         public void Init()
         {
-            _timeInvoker = TimeInvoker.Instance;
-            
             _entity.TryGetInvincibilitySecondsDurationData(out var invincibilitySecondsDuration);
             _invincibilitySecondsDuration = invincibilitySecondsDuration;
 
             _entity.TryGetInvincibilityData(out var invincibility);
             _invincibility = invincibility;
             
+            _entity.TryGetInvincibilityTimerData(out _timer);
+            
             OnInit();
         }
 
         public void OnInit()
-        {
-            _timer = new Timer(_invincibilitySecondsDuration, _timeInvoker, TimerType.ScaledFrame);
-        }
+        {}
         
         public void Awake()
         {
@@ -64,28 +61,14 @@ namespace GameplayConstructorElements.Behaviours
 
         public void OnAwake()
         {
-            var subscriptionBuilder = new DisposableBuilder();
+            _subscription = _timer.TimerFinished.Subscribe(OnTimerFinished);
             
-            subscriptionBuilder.Add(_invincibility.Subscribe(OnInvincibilityChange));
-            subscriptionBuilder.Add(_timer.TimerFinished.Subscribe(OnTimerFinished));
-            
-            _subscription = subscriptionBuilder.Build();
-        }
-
-        private void OnInvincibilityChange(bool invincibility)
-        {
-            if (!invincibility)
-            {
-                _timer.Stop();
-                return;
-            }
-            
-            _timer.Restart();
+            _timer.Start();
         }
         
         private void OnTimerFinished()
         {
-            _invincibility.Value = false;
+            Destroy();
         }
         
         public void Sleep()
@@ -107,6 +90,7 @@ namespace GameplayConstructorElements.Behaviours
         {
             Dispose();
             _timer?.Dispose();
+            _timer = null;
         }
         
         public void Dispose()

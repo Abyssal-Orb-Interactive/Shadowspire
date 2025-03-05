@@ -7,7 +7,8 @@ using UnityEngine;
 
 namespace GameplayConstructorElements.Actions.AttackActionsEvents.MeleeAttackActionEvent
 {
-    public class OnMeleeAttackActionEventAddCooldownAspect : IEntityActionFabric<float, DamageType>
+    [Serializable]
+    public sealed class OnMeleeAttackActionEventAddCooldownAspect : IEntityActionFabric<float, DamageType>
     {
         [SerializeField] private AttackCooldownAspect _cooldownAspect = new();
 

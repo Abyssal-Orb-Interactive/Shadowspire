@@ -5,5 +5,6 @@ namespace GameData
         Pierce = 0,
         Slash = 1,
         Blunt = 2,
+        Poison = 3,
     }
 }

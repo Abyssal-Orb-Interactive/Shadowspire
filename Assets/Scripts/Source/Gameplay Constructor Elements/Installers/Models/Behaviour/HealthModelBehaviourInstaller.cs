@@ -1,5 +1,4 @@
 using System;
-using GameplayConstructorElements.Behaviours;
 using GameplayConstructorElements.Behaviours.Health_Model;
 using GameplayConstructorFramework.Entity;
 using GameplayConstructorFramework.Entity.Unity;
@@ -12,7 +11,6 @@ namespace GameplayConstructorElements.Installers.Models.Behaviour
     {
         public void InstallTo(IEntity entity)
         {
-            entity.TryAddInvincibilityBehaviourBehaviour(new InvincibilityBehaviour(entity));
             entity.TryAddHealthPercentCalculationBehaviourBehaviour(new HealthPercentCalculationBehaviour(entity));
         }
     }

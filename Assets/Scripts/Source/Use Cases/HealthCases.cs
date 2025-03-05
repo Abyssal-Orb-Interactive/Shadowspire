@@ -55,5 +55,24 @@ namespace UseCases
             
             healthPercent.Value = tempHealthPercent;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float CalculateHealthValueByPercent(in IAtomicValue<float> maxHealth, in IAtomicValue<float> healthPercent)
+        {
+            return CalculateHealthValueByPercent(maxHealth.CurrentValue, healthPercent.CurrentValue);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float CalculateHealthValueByPercent(in float maxHealth, in float healthPercent)
+        {
+            if (maxHealth <= 0f) return 0f;
+            
+            return healthPercent switch
+            {
+                <= 0f => 0f,
+                >= 1f => maxHealth,
+                _ => maxHealth * healthPercent
+            };
+        }
     }
 }

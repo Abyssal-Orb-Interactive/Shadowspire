@@ -20,6 +20,7 @@ using GameplayConstructorElements.Behaviours.MovementModel;
 using GameplayConstructorElements.Behaviours.InputHandlerModel;
 using GameplayConstructorElements.Behaviours.Health_Model;
 using GameplayConstructorElements.Behaviours.Following_Model;
+using GameplayConstructorElements.Behaviours.EffectsModel;
 using GameplayConstructorElements.Behaviours.DeathModel;
 using GameplayConstructorElements.Behaviours.AttackModel;
 using GameplayConstructorElements.Behaviours.Attack_Model;
@@ -1682,6 +1683,291 @@ namespace GameplayConstructorFrameworkAPIs
             return entity.TryRemoveData((int)GlobalDataAPI.InventoryWindowEntity);
           }
 
+        public static bool TryGetEffectDurationData(this IEntity entity, out AtomicReactiveProperty<float> effectDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.EffectDuration, out effectDuration);
+         }
+
+         public static bool TryAddEffectDurationData(this IEntity entity, AtomicReactiveProperty<float> effectDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.EffectDuration, effectDuration);
+          }
+
+         public static bool TryRemoveEffectDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.EffectDuration);
+          }
+
+        public static bool TryGetPoisoningEffectDurationData(this IEntity entity, out AtomicReactiveProperty<float> poisoningEffectDuration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.PoisoningEffectDuration, out poisoningEffectDuration);
+         }
+
+         public static bool TryAddPoisoningEffectDurationData(this IEntity entity, AtomicReactiveProperty<float> poisoningEffectDuration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.PoisoningEffectDuration, poisoningEffectDuration);
+          }
+
+         public static bool TryRemovePoisoningEffectDurationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.PoisoningEffectDuration);
+          }
+
+        public static bool TryGetPoisoningDamageGrowthModifierData(this IEntity entity, out AtomicReactiveProperty<float> poisoningDamageGrowthModifier)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.PoisoningDamageGrowthModifier, out poisoningDamageGrowthModifier);
+         }
+
+         public static bool TryAddPoisoningDamageGrowthModifierData(this IEntity entity, AtomicReactiveProperty<float> poisoningDamageGrowthModifier)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.PoisoningDamageGrowthModifier, poisoningDamageGrowthModifier);
+          }
+
+         public static bool TryRemovePoisoningDamageGrowthModifierData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.PoisoningDamageGrowthModifier);
+          }
+
+        public static bool TryGetCanBePoisenedData(this IEntity entity, out AtomicExpression<bool> canBePoisened)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanBePoisened, out canBePoisened);
+         }
+
+         public static bool TryAddCanBePoisenedData(this IEntity entity, AtomicExpression<bool> canBePoisened)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanBePoisened, canBePoisened);
+          }
+
+         public static bool TryRemoveCanBePoisenedData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanBePoisened);
+          }
+
+        public static bool TryGetInvincibilityTimerData(this IEntity entity, out Timer invincibilityTimer)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InvincibilityTimer, out invincibilityTimer);
+         }
+
+         public static bool TryAddInvincibilityTimerData(this IEntity entity, Timer invincibilityTimer)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InvincibilityTimer, invincibilityTimer);
+          }
+
+         public static bool TryRemoveInvincibilityTimerData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InvincibilityTimer);
+          }
+
+        public static bool TryGetPoisoningEffectDamageInPercentsData(this IEntity entity, out AtomicReactiveProperty<float> poisoningEffectDamageInPercents)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.PoisoningEffectDamageInPercents, out poisoningEffectDamageInPercents);
+         }
+
+         public static bool TryAddPoisoningEffectDamageInPercentsData(this IEntity entity, AtomicReactiveProperty<float> poisoningEffectDamageInPercents)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.PoisoningEffectDamageInPercents, poisoningEffectDamageInPercents);
+          }
+
+         public static bool TryRemovePoisoningEffectDamageInPercentsData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.PoisoningEffectDamageInPercents);
+          }
+
+        public static bool TryGetNumberOfPoisoningEffectsData(this IEntity entity, out AtomicReactiveProperty<int> numberOfPoisoningEffects)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.NumberOfPoisoningEffects, out numberOfPoisoningEffects);
+         }
+
+         public static bool TryAddNumberOfPoisoningEffectsData(this IEntity entity, AtomicReactiveProperty<int> numberOfPoisoningEffects)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.NumberOfPoisoningEffects, numberOfPoisoningEffects);
+          }
+
+         public static bool TryRemoveNumberOfPoisoningEffectsData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.NumberOfPoisoningEffects);
+          }
+
+        public static bool TryGetMaxNumberOfPoisoningEffectsData(this IEntity entity, out AtomicReactiveProperty<int> maxNumberOfPoisoningEffects)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.MaxNumberOfPoisoningEffects, out maxNumberOfPoisoningEffects);
+         }
+
+         public static bool TryAddMaxNumberOfPoisoningEffectsData(this IEntity entity, AtomicReactiveProperty<int> maxNumberOfPoisoningEffects)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.MaxNumberOfPoisoningEffects, maxNumberOfPoisoningEffects);
+          }
+
+         public static bool TryRemoveMaxNumberOfPoisoningEffectsData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.MaxNumberOfPoisoningEffects);
+          }
+
+        public static bool TryGetPoisoningEffectTimerData(this IEntity entity, out Timer poisoningEffectTimer)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.PoisoningEffectTimer, out poisoningEffectTimer);
+         }
+
+         public static bool TryAddPoisoningEffectTimerData(this IEntity entity, Timer poisoningEffectTimer)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.PoisoningEffectTimer, poisoningEffectTimer);
+          }
+
+         public static bool TryRemovePoisoningEffectTimerData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.PoisoningEffectTimer);
+          }
+
+        public static bool TryGetPoisoningEffectDamageExpressionData(this IEntity entity, out AtomicExpression<float> poisoningEffectDamageExpression)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.PoisoningEffectDamageExpression, out poisoningEffectDamageExpression);
+         }
+
+         public static bool TryAddPoisoningEffectDamageExpressionData(this IEntity entity, AtomicExpression<float> poisoningEffectDamageExpression)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.PoisoningEffectDamageExpression, poisoningEffectDamageExpression);
+          }
+
+         public static bool TryRemovePoisoningEffectDamageExpressionData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.PoisoningEffectDamageExpression);
+          }
+
+        public static bool TryGetInvincibilityStartEventData(this IEntity entity, out AtomicEvent invincibilityStartEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.InvincibilityStartEvent, out invincibilityStartEvent);
+         }
+
+         public static bool TryAddInvincibilityStartEventData(this IEntity entity, AtomicEvent invincibilityStartEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.InvincibilityStartEvent, invincibilityStartEvent);
+          }
+
+         public static bool TryRemoveInvincibilityStartEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.InvincibilityStartEvent);
+          }
+
+        public static bool TryGetTouchInteractionEventData(this IEntity entity, out AtomicEvent<IEntity> touchInteractionEvent)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.TouchInteractionEvent, out touchInteractionEvent);
+         }
+
+         public static bool TryAddTouchInteractionEventData(this IEntity entity, AtomicEvent<IEntity> touchInteractionEvent)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.TouchInteractionEvent, touchInteractionEvent);
+          }
+
+         public static bool TryRemoveTouchInteractionEventData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.TouchInteractionEvent);
+          }
+
+        public static bool TryGetRegenerationPercentPerSecondData(this IEntity entity, out AtomicReactiveProperty<float> regenerationPercentPerSecond)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.RegenerationPercentPerSecond, out regenerationPercentPerSecond);
+         }
+
+         public static bool TryAddRegenerationPercentPerSecondData(this IEntity entity, AtomicReactiveProperty<float> regenerationPercentPerSecond)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.RegenerationPercentPerSecond, regenerationPercentPerSecond);
+          }
+
+         public static bool TryRemoveRegenerationPercentPerSecondData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.RegenerationPercentPerSecond);
+          }
+
+        public static bool TryGetCanRegenerateData(this IEntity entity, out AtomicExpression<bool> canRegenerate)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.CanRegenerate, out canRegenerate);
+         }
+
+         public static bool TryAddCanRegenerateData(this IEntity entity, AtomicExpression<bool> canRegenerate)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.CanRegenerate, canRegenerate);
+          }
+
+         public static bool TryRemoveCanRegenerateData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.CanRegenerate);
+          }
+
+        public static bool TryGetStopRegenerationData(this IEntity entity, out AtomicEvent stopRegeneration)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.StopRegeneration, out stopRegeneration);
+         }
+
+         public static bool TryAddStopRegenerationData(this IEntity entity, AtomicEvent stopRegeneration)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.StopRegeneration, stopRegeneration);
+          }
+
+         public static bool TryRemoveStopRegenerationData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.StopRegeneration);
+          }
+
+        public static bool TryGetRegenerationTimerData(this IEntity entity, out Timer regenerationTimer)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.RegenerationTimer, out regenerationTimer);
+         }
+
+         public static bool TryAddRegenerationTimerData(this IEntity entity, Timer regenerationTimer)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.RegenerationTimer, regenerationTimer);
+          }
+
+         public static bool TryRemoveRegenerationTimerData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.RegenerationTimer);
+          }
+
+        public static bool TryGetPoisoningEffectContinuedData(this IEntity entity, out AtomicEvent poisoningEffectContinued)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.PoisoningEffectContinued, out poisoningEffectContinued);
+         }
+
+         public static bool TryAddPoisoningEffectContinuedData(this IEntity entity, AtomicEvent poisoningEffectContinued)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.PoisoningEffectContinued, poisoningEffectContinued);
+          }
+
+         public static bool TryRemovePoisoningEffectContinuedData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.PoisoningEffectContinued);
+          }
+
+        public static bool TryGetRegenerationDurationInSecondsData(this IEntity entity, out AtomicReactiveProperty<float> regenerationDurationInSeconds)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.RegenerationDurationInSeconds, out regenerationDurationInSeconds);
+         }
+
+         public static bool TryAddRegenerationDurationInSecondsData(this IEntity entity, AtomicReactiveProperty<float> regenerationDurationInSeconds)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.RegenerationDurationInSeconds, regenerationDurationInSeconds);
+          }
+
+         public static bool TryRemoveRegenerationDurationInSecondsData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.RegenerationDurationInSeconds);
+          }
+
+        public static bool TryGetStartPoisoningDamageModifierData(this IEntity entity, out AtomicReactiveProperty<float> startPoisoningDamageModifier)
+         {
+            return entity.TryGetData((int)GlobalDataAPI.StartPoisoningDamageModifier, out startPoisoningDamageModifier);
+         }
+
+         public static bool TryAddStartPoisoningDamageModifierData(this IEntity entity, AtomicReactiveProperty<float> startPoisoningDamageModifier)
+          {
+            return entity.TryAddData((int)GlobalDataAPI.StartPoisoningDamageModifier, startPoisoningDamageModifier);
+          }
+
+         public static bool TryRemoveStartPoisoningDamageModifierData(this IEntity entity)
+          {
+            return entity.TryRemoveData((int)GlobalDataAPI.StartPoisoningDamageModifier);
+          }
+
          #endregion
 
          #region behavioursAPI
@@ -2119,6 +2405,36 @@ namespace GameplayConstructorFrameworkAPIs
          public static bool TryRemoveFollowTargetWithDistanceAndLerpBehaviourBehaviour(this IEntity entity)
           {
             return entity.TryRemoveBehaviour<FollowTargetWithDistanceAndLerpBehaviour>((int)GlobalBehavioursAPI.FollowTargetWithDistanceAndLerpBehaviour);
+          }
+
+        public static bool TryGetPercentRegenerationBehaviourBehaviour(this IEntity entity, out PercentRegenerationBehaviour percentRegenerationBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.PercentRegenerationBehaviour, out percentRegenerationBehaviour);
+         }
+
+         public static bool TryAddPercentRegenerationBehaviourBehaviour(this IEntity entity, PercentRegenerationBehaviour percentRegenerationBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.PercentRegenerationBehaviour, percentRegenerationBehaviour);
+          }
+
+         public static bool TryRemovePercentRegenerationBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<PercentRegenerationBehaviour>((int)GlobalBehavioursAPI.PercentRegenerationBehaviour);
+          }
+
+        public static bool TryGetPoisoningBehaviourBehaviour(this IEntity entity, out PoisoningBehaviour poisoningBehaviour)
+         {
+            return entity.TryGetBehaviour((int)GlobalBehavioursAPI.PoisoningBehaviour, out poisoningBehaviour);
+         }
+
+         public static bool TryAddPoisoningBehaviourBehaviour(this IEntity entity, PoisoningBehaviour poisoningBehaviour)
+          {
+            return entity.TryAddBehaviour((int)GlobalBehavioursAPI.PoisoningBehaviour, poisoningBehaviour);
+          }
+
+         public static bool TryRemovePoisoningBehaviourBehaviour(this IEntity entity)
+          {
+            return entity.TryRemoveBehaviour<PoisoningBehaviour>((int)GlobalBehavioursAPI.PoisoningBehaviour);
           }
 
         public static bool TryGetDeathBehaviourBehaviour(this IEntity entity, out DeathBehaviour deathBehaviour)

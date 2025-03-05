@@ -10,6 +10,7 @@ namespace GameplayConstructorElements.UnityIntegration
         private void OnTriggerStay2D(Collider2D otherEntityCollider)
         {
             otherEntityCollider.TryTakeDamageFrom(this);
+            otherEntityCollider.TryInvokeInvincibility();
         }
     }
 }

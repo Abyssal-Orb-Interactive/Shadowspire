@@ -36,5 +36,7 @@ namespace GameplayConstructorFrameworkAPIs
     EscapeHandlingBehaviour = 31,
     InventoryActionHandlingBehaviour = 32,
     EscapeFromWindowBehaviour = 33,
+    PoisoningBehaviour = 34,
+    PercentRegenerationBehaviour = 35,
      }
 }

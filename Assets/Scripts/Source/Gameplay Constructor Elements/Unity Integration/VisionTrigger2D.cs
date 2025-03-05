@@ -16,7 +16,6 @@ namespace GameplayConstructorElements.UnityIntegration
 
        private IEntity _entity = null;
        private List<IEntity> _enemiesInVision = new();
-       private IAtomicAction<IEntity> _enemyInVisionEvent = null;
        private IAtomicValue<Fractions> _fraction = null;
 
        private void Start()
@@ -24,10 +23,7 @@ namespace GameplayConstructorElements.UnityIntegration
            gameObject.transform.parent.TryGetEntity(out _entity);
            
            if (_entity == null) return;
-
-           _entity.TryGetEnemyInVisionEventData(out var enemyInVisionEvent);
-           _enemyInVisionEvent = enemyInVisionEvent;
-
+           
            _entity.TryGetFractionData(out var fraction);
            _fraction = fraction;
            
@@ -37,7 +33,7 @@ namespace GameplayConstructorElements.UnityIntegration
 
        private void OnTriggerEnter2D(Collider2D other)
         {
-            if(_entity == null || _enemyInVisionEvent == null || _fraction == null) return;
+            if(_entity == null || _fraction == null) return;
             
             if (!other.TryGetEntity(out var otherEntity)) return;
             if (!otherEntity.TryGetFractionData(out var otherFraction))  return;
@@ -48,7 +44,7 @@ namespace GameplayConstructorElements.UnityIntegration
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if(_entity == null || _enemyInVisionEvent == null || _fraction == null) return;
+            if(_entity == null || _fraction == null) return;
             
             if (!other.TryGetEntity(out var otherEntity)) return;
             if (!otherEntity.TryGetFractionData(out var otherFraction))  return;
